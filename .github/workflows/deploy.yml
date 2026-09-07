@@ -1,0 +1,62 @@
+name: Pubblica il sito su GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Scarica il progetto
+        uses: actions/checkout@v6
+
+      - name: Configura GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Calcola il percorso del sito
+        id: path
+        shell: bash
+        run: |
+          repository_name="${GITHUB_REPOSITORY#*/}"
+          if [[ "$repository_name" == *.github.io ]]; then
+            echo "base_path=" >> "$GITHUB_OUTPUT"
+          else
+            echo "base_path=/$repository_name" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Installa le dipendenze
+        working-directory: site
+        run: npm ci
+
+      - name: Genera il sito statico
+        working-directory: site
+        env:
+          BASE_PATH: ${{ steps.path.outputs.base_path }}
+        run: npm run build
+
+      - name: Carica il sito generato
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: site/dist/client
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Pubblica
+        id: deployment
+        uses: actions/deploy-pages@v4

@@ -1,0 +1,20 @@
+import Link from 'next/link';
+import { assetPath, sitePath } from '@/lib/paths';
+
+export function SiteFooter() {
+  return (
+    <footer className="site-footer">
+      <div className="footer-brand">
+        <img src={assetPath('/assets/logo-testo-bianco.png')} alt="Nerone Basket Anzio" />
+      </div>
+      <nav aria-label="Link nel piè di pagina">
+        <Link href={sitePath('/campionati')}>Campionati</Link>
+        <Link href={sitePath('/calendario')}>Calendario</Link>
+        <Link href={sitePath('/roster')}>Roster</Link>
+        <Link href={sitePath('/notizie')}>Notizie</Link>
+        <Link href={sitePath('/club')}>Contatti e campo</Link>
+      </nav>
+      <p className="footer-note">Nerone Basket Anzio · Stagione 2026/27</p>
+    </footer>
+  );
+}
