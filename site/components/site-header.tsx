@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import Link from '@/components/site-link';
 import { Menu } from 'lucide-react';
 import { assetPath, sitePath } from '@/lib/paths';
 

@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { it } from 'date-fns/locale';
-import Link from 'next/link';
+import Link from '@/components/site-link';
 import { Car, House } from 'lucide-react';
 import { Calendar } from '@/components/ui/calendar';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';

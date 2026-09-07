@@ -4,7 +4,7 @@ import { CompetitionFilters } from '@/components/competition-filters';
 import type { Competition } from '@/lib/site-data';
 import { assetPath, sitePath } from '@/lib/paths';
 import { sportsData } from '@/lib/generated-data';
-import Link from 'next/link';
+import Link from '@/components/site-link';
 import {
   Table,
   TableBody,

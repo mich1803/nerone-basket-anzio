@@ -4,7 +4,7 @@ import { SiteFooter } from '@/components/site-footer';
 import { PageIntro } from '@/components/page-intro';
 import { sportsData } from '@/lib/generated-data';
 import { assetPath, sitePath } from '@/lib/paths';
-import Link from 'next/link';
+import Link from '@/components/site-link';
 
 export const metadata: Metadata = { title: 'Notizie' };
 export const dynamic = 'force-static';

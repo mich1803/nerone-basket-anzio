@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import Link from '@/components/site-link';
 import { ArrowRight, CalendarDays, MapPin } from 'lucide-react';
 import { SiteFooter } from '@/components/site-footer';
 import { SiteHeader } from '@/components/site-header';
