@@ -5,5 +5,6 @@
 - `rosters.csv`: collega un giocatore a campionato, stagione, numero e ruolo.
 - `players`: un file YAML per giocatore. Il percorso sportivo resta discorsivo dentro `bio`; non esiste un campo `career`.
 - `content/news`: articoli in Markdown.
+- `home-social.json`: i tre post Instagram promossi nella home, mostrati nell'ordine indicato nel file.
 
 Gli ID non vanno cambiati dopo la pubblicazione, perché collegano pagine, statistiche e notizie nel tempo.

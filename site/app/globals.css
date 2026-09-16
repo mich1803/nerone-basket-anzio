@@ -110,6 +110,16 @@ h1 span { color: var(--red); }
 .countdown span { color: rgba(255,255,255,.68); font-size: .58rem; font-weight: 900; letter-spacing: .08em; text-transform: uppercase; }
 .countdown b { display: block; color: #fff; font-family: var(--display); font-size: 1.6rem; line-height: 1; }
 
+.promoted-social { padding: 92px clamp(24px, 5vw, 76px) 104px; overflow: hidden; background: #111; color: #fff; }
+.promoted-social-heading { display: grid; grid-template-columns: 1fr minmax(260px, 390px); align-items: end; gap: 44px; margin-bottom: 44px; }
+.promoted-social-heading h2 { max-width: 920px; margin: 0; font-family: var(--display); font-size: clamp(2.8rem, 5.8vw, 5.6rem); letter-spacing: .018em; line-height: .98; text-transform: uppercase; }
+.promoted-social-heading > p { margin: 0; color: rgba(255,255,255,.58); line-height: 1.65; }
+.promoted-social-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+.promoted-social-card { position: relative; min-width: 0; overflow: hidden; background: #000; color: #fff; border-top: 6px solid var(--red); }
+.instagram-embed { display: block; width: 100%; height: 650px; border: 0; background: #000; color-scheme: dark; }
+.promoted-social-card > a { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 17px 19px; border-top: 1px solid rgba(255,255,255,.16); font-size: .76rem; font-weight: 900; letter-spacing: .08em; text-transform: uppercase; transition: background 160ms ease, color 160ms ease; }
+.promoted-social-card > a:hover, .promoted-social-card > a:focus-visible { background: var(--red-deep); color: #fff; }
+
 .competition-strip { padding: 88px clamp(24px, 5vw, 76px) 110px; }
 .section-heading { display: grid; grid-template-columns: 1fr minmax(300px, 480px); align-items: end; gap: 44px; margin-bottom: 42px; }
 .section-heading h2 { margin: 0; font-family: var(--display); font-size: clamp(2.8rem, 6vw, 5.8rem); line-height: .9; text-transform: uppercase; }
@@ -394,6 +404,9 @@ h1 span { color: var(--red); }
   .photo-wash { background: linear-gradient(90deg, #080808 0%, rgba(8,8,8,.78) 66%, rgba(8,8,8,.35)); }
   .next-game { grid-template-columns: 145px 1fr; }
   .next-game-meta { left: 145px; }
+  .promoted-social-heading { grid-template-columns: 1fr; }
+  .promoted-social-grid { display: flex; margin-right: calc(clamp(24px, 5vw, 76px) * -1); padding-right: clamp(24px, 5vw, 76px); overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: thin; }
+  .promoted-social-card { flex: 0 0 min(430px, 82vw); scroll-snap-align: start; }
   .section-heading { grid-template-columns: 1fr; }
   .league-layout, .calendar-layout, .roster-preview, .venue-card, .club-grid { grid-template-columns: 1fr; }
   .contact-card { grid-column: auto; }
@@ -419,6 +432,11 @@ h1 span { color: var(--red); }
   .next-game-state { padding: 16px 18px 54px; }
   .countdown { display: none; }
   .next-game-meta { left: 0; padding-inline: 18px; gap: 18px; }
+  .promoted-social { padding-block: 70px 78px; }
+  .promoted-social-heading { margin-bottom: 32px; }
+  .promoted-social-heading h2 { font-size: clamp(2.7rem, 13vw, 4.1rem); }
+  .promoted-social-card { flex-basis: min(380px, 86vw); }
+  .instagram-embed { height: 610px; }
   .competition-grid { grid-template-columns: 1fr; }
   .competition-card { min-height: 230px; }
   .page-intro { min-height: 370px; padding-top: 145px; }

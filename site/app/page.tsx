@@ -5,6 +5,8 @@ import { SiteHeader } from '@/components/site-header';
 import { assetPath, sitePath } from '@/lib/paths';
 import { sportsData } from '@/lib/generated-data';
 import { Countdown } from '@/components/countdown';
+import { PromotedSocial } from '@/components/promoted-social';
+import homeSocial from '@/data/home-social.json';
 
 const competitions = [
   { name: 'Amatori UISP Platinum', slug: 'platinum', code: 'PLT' },
@@ -62,6 +64,8 @@ export default function Home() {
           {nextGame && <Countdown target={`${nextGame.date}T${nextGame.time || '00:00'}:00`} />}
         </aside>
       </section>
+
+      <PromotedSocial posts={homeSocial.posts} />
 
       <section className="competition-strip" aria-labelledby="competitions-title">
         <div className="section-heading">
