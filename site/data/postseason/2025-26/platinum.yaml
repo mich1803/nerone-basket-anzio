@@ -1,0 +1,49 @@
+title: Fasi finali
+closing_note: "* Invito alle finali nazionali UISP a Rimini"
+play_in:
+  title: Play-in prime sei
+  note: Le prime due squadre di ogni girone accedono alle semifinali.
+  groups:
+    - id: 1-4-6
+      name: Girone 1-4-6
+      rows:
+        - team_id: atletico-san-lorenzo
+          wins: 3
+          losses: 1
+          difference: 40
+          qualified: true
+        - team_id: nerone
+          wins: 3
+          losses: 1
+          difference: 11
+          qualified: true
+        - team_id: club-marino-lions
+          wins: 0
+          losses: 4
+          difference: -51
+          qualified: false
+    - id: 2-3-5
+      name: Girone 2-3-5
+      rows:
+        - team_id: tivoli-basket
+          wins: 2
+          losses: 2
+          difference: 5
+          qualified: true
+        - team_id: evergreen-la-squad
+          wins: 2
+          losses: 2
+          difference: 0
+          qualified: true
+        - team_id: delfino-basket-anzio
+          wins: 2
+          losses: 2
+          difference: -5
+          qualified: false
+bracket:
+  title: Final Four
+  semifinal_game_ids:
+    - 2025-26-plt-semifinal-01
+    - 2025-26-plt-semifinal-02
+  final_game_id: 2025-26-plt-final
+  champion_team_id: evergreen-la-squad

@@ -7,6 +7,51 @@ export const sportsData: SportsData = {
       "name": "Nerone Basket Anzio",
       "short_name": "Nerone",
       "logo": "/assets/logo-nero.png"
+    },
+    "atletico-san-lorenzo": {
+      "name": "Atletico San Lorenzo",
+      "short_name": "San Lorenzo",
+      "logo": "/assets/teams/2025-26/atletico-san-lorenzo.webp"
+    },
+    "evergreen-la-squad": {
+      "name": "Pol. Evergreen La Squad",
+      "short_name": "La Squad",
+      "logo": "/assets/teams/2025-26/evergreen-la-squad.webp"
+    },
+    "delfino-basket-anzio": {
+      "name": "Delfino Basket Anzio",
+      "short_name": "Delfino Anzio",
+      "logo": "/assets/teams/2025-26/delfino-basket-anzio.webp"
+    },
+    "tivoli-basket": {
+      "name": "Tivoli Basket",
+      "short_name": "Tivoli",
+      "logo": "/assets/teams/2025-26/tivoli-basket.webp"
+    },
+    "club-marino-lions": {
+      "name": "Club Marino Lions",
+      "short_name": "Marino Lions",
+      "logo": "/assets/teams/2025-26/club-marino-lions.webp"
+    },
+    "elite-roma-all-saints": {
+      "name": "Elite Roma All Saints",
+      "short_name": "Elite Roma",
+      "logo": "/assets/teams/2025-26/elite-roma-all-saints.webp"
+    },
+    "free-mind-roma": {
+      "name": "Free Mind Roma",
+      "short_name": "Free Mind",
+      "logo": "/assets/teams/2025-26/free-mind-roma.webp"
+    },
+    "basket-palestrina": {
+      "name": "Basket Palestrina",
+      "short_name": "Palestrina",
+      "logo": "/assets/teams/2025-26/basket-palestrina.webp"
+    },
+    "boys-90-fiumicino": {
+      "name": "Boys 90 Fiumicino",
+      "short_name": "Boys 90",
+      "logo": "/assets/teams/2025-26/boys-90-fiumicino.webp"
     }
   },
   "players": [
@@ -51,13 +96,18 @@ export const sportsData: SportsData = {
       "bio": "Profilo in aggiornamento."
     },
     {
-      "id": "fabio-massimo-perna",
-      "name": "Fabio Massimo Perna",
+      "id": "fabio-cheli",
+      "name": "Fabio Cheli",
       "bio": "Profilo in aggiornamento."
     },
     {
       "id": "francesco-graziosi",
       "name": "Francesco Graziosi",
+      "bio": "Profilo in aggiornamento."
+    },
+    {
+      "id": "francesco",
+      "name": "Francesco …",
       "bio": "Profilo in aggiornamento."
     },
     {
@@ -78,6 +128,11 @@ export const sportsData: SportsData = {
     {
       "id": "lorenzo-de-vita",
       "name": "Lorenzo De Vita",
+      "bio": "Profilo in aggiornamento."
+    },
+    {
+      "id": "lorenzo-iommetti",
+      "name": "Lorenzo Iommetti",
       "bio": "Profilo in aggiornamento."
     },
     {
@@ -232,7 +287,7 @@ export const sportsData: SportsData = {
     {
       "season": "2026-27",
       "competition": "",
-      "player_id": "fabio-massimo-perna",
+      "player_id": "fabio-cheli",
       "number": null,
       "role": "",
       "active": true
@@ -364,6 +419,174 @@ export const sportsData: SportsData = {
       "number": 5,
       "role": "",
       "active": true
+    },
+    {
+      "season": "2026-27",
+      "competition": "",
+      "player_id": "francesco",
+      "number": null,
+      "role": "",
+      "active": true
+    },
+    {
+      "season": "2025-26",
+      "competition": "",
+      "player_id": "andrea-piccolo",
+      "number": 0,
+      "role": "",
+      "active": true
+    },
+    {
+      "season": "2025-26",
+      "competition": "",
+      "player_id": "lorenzo-pettineo",
+      "number": 14,
+      "role": "",
+      "active": true
+    },
+    {
+      "season": "2025-26",
+      "competition": "",
+      "player_id": "marco-de-saverio",
+      "number": 4,
+      "role": "",
+      "active": true
+    },
+    {
+      "season": "2025-26",
+      "competition": "",
+      "player_id": "riccardo-mastroianni",
+      "number": 10,
+      "role": "",
+      "active": true
+    },
+    {
+      "season": "2025-26",
+      "competition": "",
+      "player_id": "matteo-ceci",
+      "number": 36,
+      "role": "",
+      "active": true
+    },
+    {
+      "season": "2025-26",
+      "competition": "",
+      "player_id": "lorenzo-de-vita",
+      "number": 18,
+      "role": "",
+      "active": true
+    },
+    {
+      "season": "2025-26",
+      "competition": "",
+      "player_id": "cristiano-fabbri",
+      "number": null,
+      "role": "",
+      "active": true
+    },
+    {
+      "season": "2025-26",
+      "competition": "",
+      "player_id": "marco-paterlini",
+      "number": 9,
+      "role": "",
+      "active": true
+    },
+    {
+      "season": "2025-26",
+      "competition": "",
+      "player_id": "andrea-balistreri",
+      "number": null,
+      "role": "",
+      "active": true
+    },
+    {
+      "season": "2025-26",
+      "competition": "",
+      "player_id": "marco-dalfonso",
+      "number": null,
+      "role": "",
+      "active": true
+    },
+    {
+      "season": "2025-26",
+      "competition": "",
+      "player_id": "gianluca-fabbri",
+      "number": 91,
+      "role": "",
+      "active": true
+    },
+    {
+      "season": "2025-26",
+      "competition": "",
+      "player_id": "alessandro-graziosi",
+      "number": null,
+      "role": "",
+      "active": true
+    },
+    {
+      "season": "2025-26",
+      "competition": "",
+      "player_id": "francesco-graziosi",
+      "number": null,
+      "role": "",
+      "active": true
+    },
+    {
+      "season": "2025-26",
+      "competition": "",
+      "player_id": "mirko-gentile",
+      "number": 1,
+      "role": "",
+      "active": true
+    },
+    {
+      "season": "2025-26",
+      "competition": "",
+      "player_id": "alessio-marsili",
+      "number": 2,
+      "role": "",
+      "active": true
+    },
+    {
+      "season": "2025-26",
+      "competition": "",
+      "player_id": "franko-maione-buch",
+      "number": 99,
+      "role": "",
+      "active": true
+    },
+    {
+      "season": "2025-26",
+      "competition": "",
+      "player_id": "lorenzo-minoccheri",
+      "number": 21,
+      "role": "",
+      "active": true
+    },
+    {
+      "season": "2025-26",
+      "competition": "",
+      "player_id": "claudio-spagnoli",
+      "number": 3,
+      "role": "",
+      "active": true
+    },
+    {
+      "season": "2025-26",
+      "competition": "",
+      "player_id": "michele-magrini",
+      "number": 5,
+      "role": "",
+      "active": true
+    },
+    {
+      "season": "2025-26",
+      "competition": "",
+      "player_id": "lorenzo-iommetti",
+      "number": null,
+      "role": "",
+      "active": true
     }
   ],
   "competitions": [
@@ -390,6 +613,664 @@ export const sportsData: SportsData = {
       "games": [],
       "playerStats": [],
       "standings": []
+    }
+  ],
+  "seasons": [
+    {
+      "id": "2026-27",
+      "competitions": [
+        {
+          "id": "platinum",
+          "name": "Amatori UISP Platinum",
+          "team": "nerone",
+          "standings_points": {
+            "win": null,
+            "loss": null
+          },
+          "games": [],
+          "playerStats": [],
+          "standings": []
+        },
+        {
+          "id": "gold",
+          "name": "Amatori UISP Gold",
+          "team": "nerone",
+          "standings_points": {
+            "win": null,
+            "loss": null
+          },
+          "games": [],
+          "playerStats": [],
+          "standings": []
+        }
+      ]
+    },
+    {
+      "id": "2025-26",
+      "competitions": [
+        {
+          "id": "platinum",
+          "name": "Amatori UISP Platinum",
+          "team": "nerone",
+          "standings_points": {
+            "win": 2,
+            "loss": 0
+          },
+          "games": [
+            {
+              "id": "2025-26-plt-01",
+              "date": "",
+              "time": "",
+              "status": "final",
+              "home_team": "boys-90-fiumicino",
+              "away_team": "nerone",
+              "home_score": 46,
+              "away_score": 50,
+              "venue": "",
+              "address": "",
+              "instagram_url": "",
+              "notes": "",
+              "phase": "",
+              "round": "",
+              "competition": "platinum"
+            },
+            {
+              "id": "2025-26-plt-02",
+              "date": "",
+              "time": "",
+              "status": "final",
+              "home_team": "nerone",
+              "away_team": "club-marino-lions",
+              "home_score": 60,
+              "away_score": 64,
+              "venue": "",
+              "address": "",
+              "instagram_url": "",
+              "notes": "",
+              "phase": "",
+              "round": "",
+              "competition": "platinum"
+            },
+            {
+              "id": "2025-26-plt-03",
+              "date": "",
+              "time": "",
+              "status": "final",
+              "home_team": "nerone",
+              "away_team": "elite-roma-all-saints",
+              "home_score": 63,
+              "away_score": 50,
+              "venue": "",
+              "address": "",
+              "instagram_url": "",
+              "notes": "",
+              "phase": "",
+              "round": "",
+              "competition": "platinum"
+            },
+            {
+              "id": "2025-26-plt-04",
+              "date": "",
+              "time": "",
+              "status": "final",
+              "home_team": "nerone",
+              "away_team": "boys-90-fiumicino",
+              "home_score": 20,
+              "away_score": 0,
+              "venue": "",
+              "address": "",
+              "instagram_url": "",
+              "notes": "Risultato ufficiale omologato",
+              "phase": "",
+              "round": "",
+              "competition": "platinum"
+            },
+            {
+              "id": "2025-26-plt-05",
+              "date": "",
+              "time": "",
+              "status": "final",
+              "home_team": "tivoli-basket",
+              "away_team": "nerone",
+              "home_score": 63,
+              "away_score": 70,
+              "venue": "",
+              "address": "",
+              "instagram_url": "",
+              "notes": "",
+              "phase": "",
+              "round": "",
+              "competition": "platinum"
+            },
+            {
+              "id": "2025-26-plt-06",
+              "date": "",
+              "time": "",
+              "status": "final",
+              "home_team": "club-marino-lions",
+              "away_team": "nerone",
+              "home_score": 55,
+              "away_score": 58,
+              "venue": "",
+              "address": "",
+              "instagram_url": "",
+              "notes": "",
+              "phase": "",
+              "round": "",
+              "competition": "platinum"
+            },
+            {
+              "id": "2025-26-plt-07",
+              "date": "",
+              "time": "",
+              "status": "final",
+              "home_team": "nerone",
+              "away_team": "basket-palestrina",
+              "home_score": 20,
+              "away_score": 0,
+              "venue": "",
+              "address": "",
+              "instagram_url": "",
+              "notes": "Risultato ufficiale omologato",
+              "phase": "",
+              "round": "",
+              "competition": "platinum"
+            },
+            {
+              "id": "2025-26-plt-08",
+              "date": "",
+              "time": "",
+              "status": "final",
+              "home_team": "free-mind-roma",
+              "away_team": "nerone",
+              "home_score": 73,
+              "away_score": 78,
+              "venue": "",
+              "address": "",
+              "instagram_url": "",
+              "notes": "",
+              "phase": "",
+              "round": "",
+              "competition": "platinum"
+            },
+            {
+              "id": "2025-26-plt-09",
+              "date": "",
+              "time": "",
+              "status": "final",
+              "home_team": "nerone",
+              "away_team": "delfino-basket-anzio",
+              "home_score": 65,
+              "away_score": 70,
+              "venue": "",
+              "address": "",
+              "instagram_url": "",
+              "notes": "",
+              "phase": "",
+              "round": "",
+              "competition": "platinum"
+            },
+            {
+              "id": "2025-26-plt-10",
+              "date": "",
+              "time": "",
+              "status": "final",
+              "home_team": "evergreen-la-squad",
+              "away_team": "nerone",
+              "home_score": 71,
+              "away_score": 51,
+              "venue": "",
+              "address": "",
+              "instagram_url": "",
+              "notes": "",
+              "phase": "",
+              "round": "",
+              "competition": "platinum"
+            },
+            {
+              "id": "2025-26-plt-11",
+              "date": "",
+              "time": "",
+              "status": "final",
+              "home_team": "delfino-basket-anzio",
+              "away_team": "nerone",
+              "home_score": 60,
+              "away_score": 55,
+              "venue": "",
+              "address": "",
+              "instagram_url": "",
+              "notes": "",
+              "phase": "",
+              "round": "",
+              "competition": "platinum"
+            },
+            {
+              "id": "2025-26-plt-12",
+              "date": "",
+              "time": "",
+              "status": "final",
+              "home_team": "nerone",
+              "away_team": "atletico-san-lorenzo",
+              "home_score": 50,
+              "away_score": 64,
+              "venue": "",
+              "address": "",
+              "instagram_url": "",
+              "notes": "",
+              "phase": "",
+              "round": "",
+              "competition": "platinum"
+            },
+            {
+              "id": "2025-26-plt-13",
+              "date": "",
+              "time": "",
+              "status": "final",
+              "home_team": "nerone",
+              "away_team": "tivoli-basket",
+              "home_score": 62,
+              "away_score": 63,
+              "venue": "",
+              "address": "",
+              "instagram_url": "",
+              "notes": "",
+              "phase": "",
+              "round": "",
+              "competition": "platinum"
+            },
+            {
+              "id": "2025-26-plt-14",
+              "date": "",
+              "time": "",
+              "status": "final",
+              "home_team": "elite-roma-all-saints",
+              "away_team": "nerone",
+              "home_score": 53,
+              "away_score": 60,
+              "venue": "",
+              "address": "",
+              "instagram_url": "",
+              "notes": "",
+              "phase": "",
+              "round": "",
+              "competition": "platinum"
+            },
+            {
+              "id": "2025-26-plt-15",
+              "date": "",
+              "time": "",
+              "status": "final",
+              "home_team": "basket-palestrina",
+              "away_team": "nerone",
+              "home_score": 68,
+              "away_score": 66,
+              "venue": "",
+              "address": "",
+              "instagram_url": "",
+              "notes": "",
+              "phase": "",
+              "round": "",
+              "competition": "platinum"
+            },
+            {
+              "id": "2025-26-plt-16",
+              "date": "",
+              "time": "",
+              "status": "final",
+              "home_team": "nerone",
+              "away_team": "free-mind-roma",
+              "home_score": 68,
+              "away_score": 65,
+              "venue": "",
+              "address": "",
+              "instagram_url": "",
+              "notes": "",
+              "phase": "",
+              "round": "",
+              "competition": "platinum"
+            },
+            {
+              "id": "2025-26-plt-17",
+              "date": "",
+              "time": "",
+              "status": "final",
+              "home_team": "nerone",
+              "away_team": "evergreen-la-squad",
+              "home_score": 20,
+              "away_score": 0,
+              "venue": "",
+              "address": "",
+              "instagram_url": "",
+              "notes": "Risultato ufficiale omologato",
+              "phase": "",
+              "round": "",
+              "competition": "platinum"
+            },
+            {
+              "id": "2025-26-plt-18",
+              "date": "",
+              "time": "",
+              "status": "final",
+              "home_team": "atletico-san-lorenzo",
+              "away_team": "nerone",
+              "home_score": 55,
+              "away_score": 43,
+              "venue": "",
+              "address": "",
+              "instagram_url": "",
+              "notes": "",
+              "phase": "",
+              "round": "",
+              "competition": "platinum"
+            },
+            {
+              "id": "2025-26-plt-playin-01",
+              "date": "2026-04-26",
+              "time": "",
+              "status": "final",
+              "home_team": "nerone",
+              "away_team": "club-marino-lions",
+              "home_score": 71,
+              "away_score": 51,
+              "venue": "",
+              "address": "",
+              "instagram_url": "",
+              "notes": "",
+              "phase": "play-in",
+              "round": "Play-in · Girone 1-4-6",
+              "competition": "platinum"
+            },
+            {
+              "id": "2025-26-plt-playin-02",
+              "date": "2026-05-03",
+              "time": "",
+              "status": "final",
+              "home_team": "club-marino-lions",
+              "away_team": "nerone",
+              "home_score": 59,
+              "away_score": 61,
+              "venue": "",
+              "address": "",
+              "instagram_url": "",
+              "notes": "",
+              "phase": "play-in",
+              "round": "Play-in · Girone 1-4-6",
+              "competition": "platinum"
+            },
+            {
+              "id": "2025-26-plt-playin-03",
+              "date": "2026-05-17",
+              "time": "",
+              "status": "final",
+              "home_team": "nerone",
+              "away_team": "atletico-san-lorenzo",
+              "home_score": 53,
+              "away_score": 47,
+              "venue": "",
+              "address": "",
+              "instagram_url": "",
+              "notes": "",
+              "phase": "play-in",
+              "round": "Play-in · Girone 1-4-6",
+              "competition": "platinum"
+            },
+            {
+              "id": "2025-26-plt-playin-04",
+              "date": "2026-05-20",
+              "time": "",
+              "status": "final",
+              "home_team": "atletico-san-lorenzo",
+              "away_team": "nerone",
+              "home_score": 54,
+              "away_score": 37,
+              "venue": "",
+              "address": "",
+              "instagram_url": "",
+              "notes": "",
+              "phase": "play-in",
+              "round": "Play-in · Girone 1-4-6",
+              "competition": "platinum"
+            },
+            {
+              "id": "2025-26-plt-semifinal-01",
+              "date": "2026-06-08",
+              "time": "",
+              "status": "final",
+              "home_team": "evergreen-la-squad",
+              "away_team": "atletico-san-lorenzo",
+              "home_score": 61,
+              "away_score": 52,
+              "venue": "",
+              "address": "",
+              "instagram_url": "",
+              "notes": "",
+              "phase": "final-four",
+              "round": "Semifinale",
+              "competition": "platinum"
+            },
+            {
+              "id": "2025-26-plt-semifinal-02",
+              "date": "2026-06-08",
+              "time": "",
+              "status": "final",
+              "home_team": "tivoli-basket",
+              "away_team": "nerone",
+              "home_score": 57,
+              "away_score": 54,
+              "venue": "",
+              "address": "",
+              "instagram_url": "",
+              "notes": "",
+              "phase": "final-four",
+              "round": "Semifinale",
+              "competition": "platinum"
+            },
+            {
+              "id": "2025-26-plt-final",
+              "date": "2026-06-11",
+              "time": "",
+              "status": "final",
+              "home_team": "evergreen-la-squad",
+              "away_team": "tivoli-basket",
+              "home_score": 73,
+              "away_score": 61,
+              "venue": "",
+              "address": "",
+              "instagram_url": "",
+              "notes": "",
+              "phase": "final-four",
+              "round": "Finale",
+              "competition": "platinum"
+            }
+          ],
+          "playerStats": [],
+          "standings": [
+            {
+              "team_id": "atletico-san-lorenzo",
+              "name": "Atletico San Lorenzo",
+              "played": 18,
+              "wins": 16,
+              "losses": 2,
+              "points_for": 1119,
+              "points_against": 930,
+              "difference": 189,
+              "table_points": 32
+            },
+            {
+              "team_id": "evergreen-la-squad",
+              "name": "Pol. Evergreen La Squad",
+              "played": 18,
+              "wins": 13,
+              "losses": 5,
+              "points_for": 1013,
+              "points_against": 804,
+              "difference": 209,
+              "table_points": 26
+            },
+            {
+              "team_id": "delfino-basket-anzio",
+              "name": "Delfino Basket Anzio",
+              "played": 18,
+              "wins": 12,
+              "losses": 6,
+              "points_for": 941,
+              "points_against": 832,
+              "difference": 109,
+              "table_points": 24
+            },
+            {
+              "team_id": "tivoli-basket",
+              "name": "Tivoli Basket",
+              "played": 18,
+              "wins": 10,
+              "losses": 8,
+              "points_for": 1101,
+              "points_against": 1045,
+              "difference": 56,
+              "table_points": 20
+            },
+            {
+              "team_id": "nerone",
+              "name": "Nerone Basket Anzio",
+              "played": 18,
+              "wins": 10,
+              "losses": 8,
+              "points_for": 959,
+              "points_against": 920,
+              "difference": 39,
+              "table_points": 20
+            },
+            {
+              "team_id": "club-marino-lions",
+              "name": "Club Marino Lions",
+              "played": 18,
+              "wins": 9,
+              "losses": 9,
+              "points_for": 1006,
+              "points_against": 970,
+              "difference": 36,
+              "table_points": 18
+            },
+            {
+              "team_id": "elite-roma-all-saints",
+              "name": "Elite Roma All Saints",
+              "played": 18,
+              "wins": 8,
+              "losses": 10,
+              "points_for": 994,
+              "points_against": 1020,
+              "difference": -26,
+              "table_points": 16
+            },
+            {
+              "team_id": "free-mind-roma",
+              "name": "Free Mind Roma",
+              "played": 18,
+              "wins": 7,
+              "losses": 11,
+              "points_for": 997,
+              "points_against": 1088,
+              "difference": -91,
+              "table_points": 14
+            },
+            {
+              "team_id": "basket-palestrina",
+              "name": "Basket Palestrina",
+              "played": 18,
+              "wins": 3,
+              "losses": 15,
+              "points_for": 330,
+              "points_against": 605,
+              "difference": -275,
+              "table_points": 6
+            },
+            {
+              "team_id": "boys-90-fiumicino",
+              "name": "Boys 90 Fiumicino",
+              "played": 18,
+              "wins": 2,
+              "losses": 16,
+              "points_for": 747,
+              "points_against": 993,
+              "difference": -246,
+              "table_points": 4
+            }
+          ],
+          "postseason": {
+            "title": "Fasi finali",
+            "closing_note": "* Invito alle finali nazionali UISP a Rimini",
+            "play_in": {
+              "title": "Play-in prime sei",
+              "note": "Le prime due squadre di ogni girone accedono alle semifinali.",
+              "groups": [
+                {
+                  "id": "1-4-6",
+                  "name": "Girone 1-4-6",
+                  "rows": [
+                    {
+                      "team_id": "atletico-san-lorenzo",
+                      "wins": 3,
+                      "losses": 1,
+                      "difference": 40,
+                      "qualified": true
+                    },
+                    {
+                      "team_id": "nerone",
+                      "wins": 3,
+                      "losses": 1,
+                      "difference": 11,
+                      "qualified": true
+                    },
+                    {
+                      "team_id": "club-marino-lions",
+                      "wins": 0,
+                      "losses": 4,
+                      "difference": -51,
+                      "qualified": false
+                    }
+                  ]
+                },
+                {
+                  "id": "2-3-5",
+                  "name": "Girone 2-3-5",
+                  "rows": [
+                    {
+                      "team_id": "tivoli-basket",
+                      "wins": 2,
+                      "losses": 2,
+                      "difference": 5,
+                      "qualified": true
+                    },
+                    {
+                      "team_id": "evergreen-la-squad",
+                      "wins": 2,
+                      "losses": 2,
+                      "difference": 0,
+                      "qualified": true
+                    },
+                    {
+                      "team_id": "delfino-basket-anzio",
+                      "wins": 2,
+                      "losses": 2,
+                      "difference": -5,
+                      "qualified": false
+                    }
+                  ]
+                }
+              ]
+            },
+            "bracket": {
+              "title": "Final Four",
+              "semifinal_game_ids": [
+                "2025-26-plt-semifinal-01",
+                "2025-26-plt-semifinal-02"
+              ],
+              "final_game_id": "2025-26-plt-final",
+              "champion_team_id": "evergreen-la-squad"
+            }
+          }
+        }
+      ]
     }
   ],
   "news": []

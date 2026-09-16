@@ -55,8 +55,8 @@ const rosters = csv('rosters.csv').map((row) => ({
   active: row.active.toLowerCase() !== 'false',
 }));
 
-const competitions = competitionConfig.competitions.map((competition) => {
-  const gameRows = csv(join('games', competitionConfig.season, `${competition.id}.csv`));
+function buildCompetition(seasonId, competition) {
+  const gameRows = csv(join('games', seasonId, `${competition.id}.csv`));
   const games = gameRows.map((row) => ({
     ...row,
     home_score: numberOrNull(row.home_score),
@@ -72,7 +72,7 @@ const competitions = competitionConfig.competitions.map((competition) => {
     if (game.status === 'final' && (game.home_score == null || game.away_score == null)) errors.push(`${game.id}: risultato finale incompleto.`);
   }
 
-  const statRows = csv(join('player-stats', competitionConfig.season, `${competition.id}.csv`));
+  const statRows = csv(join('player-stats', seasonId, `${competition.id}.csv`));
   const playerStats = statRows.map((row) => ({
     ...row,
     points: numberOrNull(row.points) ?? 0,
@@ -90,6 +90,40 @@ const competitions = competitionConfig.competitions.map((competition) => {
     if (!gameIds.has(stat.game_id)) errors.push(`${stat.game_id}: statistiche collegate a una partita inesistente.`);
     if (!playerIds.has(stat.player_id)) errors.push(`${stat.game_id}: giocatore ${stat.player_id} non definito.`);
     if (stat.minutes && !/^\d{1,2}:\d{2}$/.test(stat.minutes)) errors.push(`${stat.game_id}: minuti non validi per ${stat.player_id}; usare MM:SS.`);
+  }
+
+  const postseasonPath = join(dataRoot, 'postseason', seasonId, `${competition.id}.yaml`);
+  const postseason = existsSync(postseasonPath) ? YAML.parse(readFileSync(postseasonPath, 'utf8')) : undefined;
+  if (postseason) {
+    for (const group of postseason.play_in?.groups ?? []) {
+      for (const row of group.rows ?? []) {
+        if (!teams[row.team_id]) errors.push(`${seasonId}/${competition.id}: squadra ${row.team_id} del play-in non definita in teams.yaml.`);
+      }
+    }
+    const bracketGameIds = [...(postseason.bracket?.semifinal_game_ids ?? []), postseason.bracket?.final_game_id].filter(Boolean);
+    for (const gameId of bracketGameIds) {
+      if (!gameIds.has(gameId)) errors.push(`${seasonId}/${competition.id}: partita ${gameId} del bracket non definita.`);
+    }
+    if (postseason.bracket?.champion_team_id && !teams[postseason.bracket.champion_team_id]) errors.push(`${seasonId}/${competition.id}: squadra campione ${postseason.bracket.champion_team_id} non definita.`);
+  }
+
+  const explicitStandings = csv(join('standings', seasonId, `${competition.id}.csv`));
+  if (explicitStandings.length) {
+    const rows = explicitStandings.map((row) => ({
+      team_id: row.team_id,
+      name: teams[row.team_id]?.name ?? row.team_id,
+      played: numberOrNull(row.played) ?? 0,
+      wins: numberOrNull(row.wins) ?? 0,
+      losses: numberOrNull(row.losses) ?? 0,
+      points_for: numberOrNull(row.points_for) ?? 0,
+      points_against: numberOrNull(row.points_against) ?? 0,
+      difference: (numberOrNull(row.points_for) ?? 0) - (numberOrNull(row.points_against) ?? 0),
+      table_points: numberOrNull(row.table_points),
+    }));
+    for (const row of rows) {
+      if (!teams[row.team_id]) errors.push(`${seasonId}/${competition.id}: squadra ${row.team_id} della classifica non definita in teams.yaml.`);
+    }
+    return { ...competition, games, playerStats, standings: rows, postseason };
   }
 
   const standings = new Map();
@@ -117,8 +151,17 @@ const competitions = competitionConfig.competitions.map((competition) => {
     table_points: typeof winPoints === 'number' && typeof lossPoints === 'number' ? row.wins * winPoints + row.losses * lossPoints : null,
   })).sort((a, b) => (b.table_points ?? b.wins) - (a.table_points ?? a.wins) || b.difference - a.difference);
 
-  return { ...competition, games, playerStats, standings: rows };
-});
+  return { ...competition, games, playerStats, standings: rows, postseason };
+}
+
+const seasonConfigs = competitionConfig.seasons ?? [{ id: competitionConfig.season, competitions: competitionConfig.competitions }];
+const seasons = seasonConfigs.map((season) => ({
+  id: season.id,
+  competitions: season.competitions.map((competition) => buildCompetition(season.id, competition)),
+}));
+const currentSeasonId = competitionConfig.current_season ?? competitionConfig.season;
+const competitions = seasons.find((season) => season.id === currentSeasonId)?.competitions ?? [];
+if (!competitions.length) errors.push(`La stagione corrente ${currentSeasonId} non è definita in competitions.yaml.`);
 
 const news = existsSync(contentRoot) ? readdirSync(contentRoot)
   .filter((file) => file.endsWith('.md') && !file.startsWith('_'))
@@ -134,6 +177,6 @@ if (errors.length) {
   process.exit(1);
 }
 
-const output = { season: competitionConfig.season, teams, players, rosters, competitions, news };
+const output = { season: currentSeasonId, teams, players, rosters, competitions, seasons, news };
 writeFileSync(join(projectRoot, 'lib', 'generated-data.ts'), `// Generato automaticamente da scripts/build-data.mjs.\nimport type { SportsData } from './data-types';\nexport const sportsData: SportsData = ${JSON.stringify(output, null, 2)};\n`);
-console.log(`Dati validati: ${competitions.reduce((total, competition) => total + competition.games.length, 0)} partite, ${players.length} giocatori, ${news.length} notizie.`);
+console.log(`Dati validati: ${seasons.reduce((total, season) => total + season.competitions.reduce((sum, competition) => sum + competition.games.length, 0), 0)} partite, ${players.length} giocatori, ${news.length} notizie.`);

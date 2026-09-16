@@ -1,0 +1,26 @@
+id,date,time,status,home_team,away_team,home_score,away_score,venue,address,instagram_url,notes,phase,round
+2025-26-plt-01,,,final,boys-90-fiumicino,nerone,46,50,,,,
+2025-26-plt-02,,,final,nerone,club-marino-lions,60,64,,,,
+2025-26-plt-03,,,final,nerone,elite-roma-all-saints,63,50,,,,
+2025-26-plt-04,,,final,nerone,boys-90-fiumicino,20,0,,,,Risultato ufficiale omologato
+2025-26-plt-05,,,final,tivoli-basket,nerone,63,70,,,,
+2025-26-plt-06,,,final,club-marino-lions,nerone,55,58,,,,
+2025-26-plt-07,,,final,nerone,basket-palestrina,20,0,,,,Risultato ufficiale omologato
+2025-26-plt-08,,,final,free-mind-roma,nerone,73,78,,,,
+2025-26-plt-09,,,final,nerone,delfino-basket-anzio,65,70,,,,
+2025-26-plt-10,,,final,evergreen-la-squad,nerone,71,51,,,,
+2025-26-plt-11,,,final,delfino-basket-anzio,nerone,60,55,,,,
+2025-26-plt-12,,,final,nerone,atletico-san-lorenzo,50,64,,,,
+2025-26-plt-13,,,final,nerone,tivoli-basket,62,63,,,,
+2025-26-plt-14,,,final,elite-roma-all-saints,nerone,53,60,,,,
+2025-26-plt-15,,,final,basket-palestrina,nerone,68,66,,,,
+2025-26-plt-16,,,final,nerone,free-mind-roma,68,65,,,,
+2025-26-plt-17,,,final,nerone,evergreen-la-squad,20,0,,,,Risultato ufficiale omologato
+2025-26-plt-18,,,final,atletico-san-lorenzo,nerone,55,43,,,,
+2025-26-plt-playin-01,2026-04-26,,final,nerone,club-marino-lions,71,51,,,,,play-in,Play-in · Girone 1-4-6
+2025-26-plt-playin-02,2026-05-03,,final,club-marino-lions,nerone,59,61,,,,,play-in,Play-in · Girone 1-4-6
+2025-26-plt-playin-03,2026-05-17,,final,nerone,atletico-san-lorenzo,53,47,,,,,play-in,Play-in · Girone 1-4-6
+2025-26-plt-playin-04,2026-05-20,,final,atletico-san-lorenzo,nerone,54,37,,,,,play-in,Play-in · Girone 1-4-6
+2025-26-plt-semifinal-01,2026-06-08,,final,evergreen-la-squad,atletico-san-lorenzo,61,52,,,,,final-four,Semifinale
+2025-26-plt-semifinal-02,2026-06-08,,final,tivoli-basket,nerone,57,54,,,,,final-four,Semifinale
+2025-26-plt-final,2026-06-11,,final,evergreen-la-squad,tivoli-basket,73,61,,,,,final-four,Finale

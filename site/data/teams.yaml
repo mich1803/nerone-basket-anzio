@@ -3,4 +3,49 @@ nerone:
   short_name: Nerone
   logo: /assets/logo-nero.png
 
+atletico-san-lorenzo:
+  name: Atletico San Lorenzo
+  short_name: San Lorenzo
+  logo: /assets/teams/2025-26/atletico-san-lorenzo.webp
+
+evergreen-la-squad:
+  name: Pol. Evergreen La Squad
+  short_name: La Squad
+  logo: /assets/teams/2025-26/evergreen-la-squad.webp
+
+delfino-basket-anzio:
+  name: Delfino Basket Anzio
+  short_name: Delfino Anzio
+  logo: /assets/teams/2025-26/delfino-basket-anzio.webp
+
+tivoli-basket:
+  name: Tivoli Basket
+  short_name: Tivoli
+  logo: /assets/teams/2025-26/tivoli-basket.webp
+
+club-marino-lions:
+  name: Club Marino Lions
+  short_name: Marino Lions
+  logo: /assets/teams/2025-26/club-marino-lions.webp
+
+elite-roma-all-saints:
+  name: Elite Roma All Saints
+  short_name: Elite Roma
+  logo: /assets/teams/2025-26/elite-roma-all-saints.webp
+
+free-mind-roma:
+  name: Free Mind Roma
+  short_name: Free Mind
+  logo: /assets/teams/2025-26/free-mind-roma.webp
+
+basket-palestrina:
+  name: Basket Palestrina
+  short_name: Palestrina
+  logo: /assets/teams/2025-26/basket-palestrina.webp
+
+boys-90-fiumicino:
+  name: Boys 90 Fiumicino
+  short_name: Boys 90
+  logo: /assets/teams/2025-26/boys-90-fiumicino.webp
+
 # Aggiungere qui le altre squadre, usando un ID stabile.

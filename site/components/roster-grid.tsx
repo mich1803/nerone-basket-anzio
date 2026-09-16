@@ -13,37 +13,71 @@ type RosterCardPlayer = {
   photo?: string;
 };
 
-type SortOption = 'name' | 'number' | 'appearances';
+type SortOption = 'surname' | 'number' | 'appearances';
 
-export function RosterGrid({ players }: { players: RosterCardPlayer[] }) {
+function surnameOf(name: string) {
+  const value = name.trim().split(/\s+/).slice(1).join(' ');
+  return value === '…' ? null : value;
+}
+
+function compareBySurname(first: RosterCardPlayer, second: RosterCardPlayer) {
+  const firstSurname = surnameOf(first.name);
+  const secondSurname = surnameOf(second.name);
+  if (firstSurname === null) return secondSurname === null ? first.name.localeCompare(second.name, 'it') : 1;
+  if (secondSurname === null) return -1;
+
+  return firstSurname.localeCompare(secondSurname, 'it')
+    || first.name.localeCompare(second.name, 'it');
+}
+
+export function RosterGrid({
+  playersBySeason,
+  seasons,
+  initialSeason,
+}: {
+  playersBySeason: Record<string, RosterCardPlayer[]>;
+  seasons: string[];
+  initialSeason: string;
+}) {
+  const [season, setSeason] = useState(initialSeason);
   const [sortBy, setSortBy] = useState<SortOption>('number');
+  const players = playersBySeason[season] ?? [];
   const sortedPlayers = useMemo(() => [...players].sort((first, second) => {
     if (sortBy === 'appearances') {
-      return second.appearances - first.appearances || first.name.localeCompare(second.name, 'it');
+      return second.appearances - first.appearances || compareBySurname(first, second);
     }
     if (sortBy === 'number') {
       const firstNumber = first.number ?? Number.POSITIVE_INFINITY;
       const secondNumber = second.number ?? Number.POSITIVE_INFINITY;
-      return firstNumber - secondNumber || first.name.localeCompare(second.name, 'it');
+      return firstNumber - secondNumber || compareBySurname(first, second);
     }
-    return first.name.localeCompare(second.name, 'it');
+    return compareBySurname(first, second);
   }), [players, sortBy]);
 
   return (
     <>
       <div className="roster-toolbar">
-        <p><strong>{players.length}</strong> giocatori</p>
-        <label>
-          <span>Ordina per</span>
-          <Select value={sortBy} onValueChange={(value) => setSortBy(value as SortOption)}>
-            <SelectTrigger className="filter-trigger"><SelectValue /></SelectTrigger>
-            <SelectContent>
-              <SelectItem value="name">Ordine alfabetico</SelectItem>
-              <SelectItem value="number">Numero di maglia</SelectItem>
-              <SelectItem value="appearances">Presenze</SelectItem>
-            </SelectContent>
-          </Select>
-        </label>
+        <p><strong>{players.length}</strong> giocatori · {season.replace('-', '/')}</p>
+        <div className="roster-filters">
+          <label htmlFor="roster-season-filter">
+            <span>Stagione</span>
+            <Select value={season} onValueChange={(value) => value && setSeason(value)}>
+              <SelectTrigger id="roster-season-filter" className="filter-trigger"><SelectValue /></SelectTrigger>
+              <SelectContent>{seasons.map((item) => <SelectItem value={item} key={item}>{item.replace('-', '/')}</SelectItem>)}</SelectContent>
+            </Select>
+          </label>
+          <label htmlFor="roster-sort-filter">
+            <span>Ordina per</span>
+            <Select value={sortBy} onValueChange={(value) => setSortBy(value as SortOption)}>
+              <SelectTrigger id="roster-sort-filter" className="filter-trigger"><SelectValue /></SelectTrigger>
+              <SelectContent>
+                <SelectItem value="surname">Cognome</SelectItem>
+                <SelectItem value="number">Numero di maglia</SelectItem>
+                <SelectItem value="appearances">Presenze</SelectItem>
+              </SelectContent>
+            </Select>
+          </label>
+        </div>
       </div>
 
       <div className="roster-grid">

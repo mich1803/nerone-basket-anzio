@@ -7,6 +7,7 @@ import { sportsData } from '@/lib/generated-data';
 import { Countdown } from '@/components/countdown';
 import { PromotedSocial } from '@/components/promoted-social';
 import homeSocial from '@/data/home-social.json';
+import { archivePath } from '@/lib/site-data';
 
 const competitions = [
   { name: 'Amatori UISP Platinum', slug: 'platinum', code: 'PLT' },
@@ -81,7 +82,7 @@ export default function Home() {
 
         <div className="competition-grid">
           {competitions.map((competition, index) => (
-            <Link href={sitePath(`/campionati/${competition.slug}`)} className="competition-card" key={competition.slug}>
+            <Link href={sitePath(archivePath('campionato', competition.slug, '2026-27'))} className="competition-card" key={competition.slug}>
               <span className="competition-index">0{index + 1}</span>
               <span className="competition-code">{competition.code}</span>
               <div>

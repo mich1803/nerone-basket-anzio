@@ -9,6 +9,7 @@ export function SiteFooter() {
       </div>
       <nav aria-label="Link nel piè di pagina">
         <Link href={sitePath('/campionati')}>Campionati</Link>
+        <Link href={sitePath('/partite/platinum')}>Partite</Link>
         <Link href={sitePath('/calendario')}>Calendario</Link>
         <Link href={sitePath('/roster')}>Roster</Link>
         <Link href={sitePath('/notizie')}>Notizie</Link>

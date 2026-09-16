@@ -1,14 +1,24 @@
-season: 2026-27
-competitions:
-  - id: platinum
-    name: Amatori UISP Platinum
-    team: nerone
-    standings_points:
-      win:
-      loss:
-  - id: gold
-    name: Amatori UISP Gold
-    team: nerone
-    standings_points:
-      win:
-      loss:
+current_season: 2026-27
+seasons:
+  - id: 2026-27
+    competitions:
+      - id: platinum
+        name: Amatori UISP Platinum
+        team: nerone
+        standings_points:
+          win:
+          loss:
+      - id: gold
+        name: Amatori UISP Gold
+        team: nerone
+        standings_points:
+          win:
+          loss:
+  - id: 2025-26
+    competitions:
+      - id: platinum
+        name: Amatori UISP Platinum
+        team: nerone
+        standings_points:
+          win: 2
+          loss: 0

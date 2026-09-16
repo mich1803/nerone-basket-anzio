@@ -25,3 +25,11 @@ export type Competition = (typeof competitions)[number];
 export function getCompetition(slug: string) {
   return competitions.find((competition) => competition.slug === slug);
 }
+
+export function seasonRouteId(seasonId: string) {
+  return seasonId.split('-')[1]?.slice(-2) ?? seasonId;
+}
+
+export function archivePath(section: 'campionato' | 'partite', competition: string, seasonId: string) {
+  return `/${section}/${competition}/${seasonRouteId(seasonId)}`;
+}

@@ -4,6 +4,7 @@ import { assetPath, sitePath } from '@/lib/paths';
 
 const links = [
   { href: '/campionati', label: 'Campionati' },
+  { href: '/partite/platinum', label: 'Partite' },
   { href: '/calendario', label: 'Calendario' },
   { href: '/roster', label: 'Roster' },
   { href: '/notizie', label: 'Notizie' },

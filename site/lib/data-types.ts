@@ -4,7 +4,7 @@ export type RosterEntry = { season: string; competition: string; player_id: stri
 export type Game = {
   id: string; date: string; time: string; status: string; home_team: string; away_team: string;
   home_score: number | null; away_score: number | null; venue: string; address: string;
-  instagram_url: string; competition: string;
+  instagram_url: string; notes?: string; phase?: string; round?: string; competition: string;
 };
 export type PlayerStat = {
   game_id: string; player_id: string; minutes: string; points: number; fouls: number;
@@ -15,12 +15,21 @@ export type Standing = {
   team_id: string; name: string; played: number; wins: number; losses: number;
   points_for: number; points_against: number; difference: number; table_points: number | null;
 };
+export type PostseasonGroupRow = { team_id: string; wins: number; losses: number; difference: number; qualified: boolean };
+export type PostseasonGroup = { id: string; name: string; rows: PostseasonGroupRow[] };
+export type PostseasonData = {
+  title: string;
+  closing_note?: string;
+  play_in: { title: string; note?: string; groups: PostseasonGroup[] };
+  bracket: { title: string; semifinal_game_ids: string[]; final_game_id: string; champion_team_id: string };
+};
 export type CompetitionData = {
   id: string; name: string; team: string; standings_points: { win: number | null; loss: number | null };
-  games: Game[]; playerStats: PlayerStat[]; standings: Standing[];
+  games: Game[]; playerStats: PlayerStat[]; standings: Standing[]; postseason?: PostseasonData;
 };
+export type SeasonData = { id: string; competitions: CompetitionData[] };
 export type NewsItem = { slug: string; title: string; date: string; cover?: string; players?: string[]; games?: string[]; excerpt?: string; body: string };
 export type SportsData = {
   season: string; teams: Record<string, Team>; players: Player[]; rosters: RosterEntry[];
-  competitions: CompetitionData[]; news: NewsItem[];
+  competitions: CompetitionData[]; seasons: SeasonData[]; news: NewsItem[];
 };

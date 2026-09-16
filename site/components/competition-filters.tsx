@@ -1,6 +1,5 @@
 'use client';
 
-import { useRouter } from 'next/navigation';
 import {
   Select,
   SelectContent,
@@ -8,28 +7,43 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select';
-import { competitions } from '@/lib/site-data';
 import { sitePath } from '@/lib/paths';
 
-export function CompetitionFilters({ current }: { current: string }) {
-  const router = useRouter();
-
+export function CompetitionFilters({
+  current,
+  season,
+  seasonOptions,
+  competitionOptions,
+}: {
+  current: string;
+  season: string;
+  seasonOptions: { id: string; href: string }[];
+  competitionOptions: { id: string; label: string; href: string }[];
+}) {
   return (
     <div className="filters" aria-label="Filtri campionato">
-      <label>
+      <label htmlFor="season-filter">
         <span>Stagione</span>
-        <Select defaultValue="2026-27">
-          <SelectTrigger className="filter-trigger"><SelectValue /></SelectTrigger>
-          <SelectContent><SelectItem value="2026-27">2026/27</SelectItem></SelectContent>
+        <Select value={season} onValueChange={(value) => {
+          const option = seasonOptions.find((item) => item.id === value);
+          if (option) window.location.assign(sitePath(option.href));
+        }}>
+          <SelectTrigger id="season-filter" className="filter-trigger"><SelectValue /></SelectTrigger>
+          <SelectContent>{seasonOptions.map((item) => (
+            <SelectItem value={item.id} key={item.id}>{item.id.replace('-', '/')}</SelectItem>
+          ))}</SelectContent>
         </Select>
       </label>
-      <label>
+      <label htmlFor="competition-filter">
         <span>Campionato</span>
-        <Select defaultValue={current} onValueChange={(value) => router.push(sitePath(`/campionati/${value}`))}>
-          <SelectTrigger className="filter-trigger"><SelectValue /></SelectTrigger>
+        <Select value={current} onValueChange={(value) => {
+          const option = competitionOptions.find((item) => item.id === value);
+          if (option) window.location.assign(sitePath(option.href));
+        }}>
+          <SelectTrigger id="competition-filter" className="filter-trigger"><SelectValue /></SelectTrigger>
           <SelectContent>
-            {competitions.map((competition) => (
-              <SelectItem value={competition.slug} key={competition.slug}>{competition.shortName}</SelectItem>
+            {competitionOptions.map((competition) => (
+              <SelectItem value={competition.id} key={competition.id}>{competition.label}</SelectItem>
             ))}
           </SelectContent>
         </Select>
