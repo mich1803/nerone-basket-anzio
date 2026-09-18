@@ -59,6 +59,7 @@ function buildCompetition(seasonId, competition) {
   const gameRows = csv(join('games', seasonId, `${competition.id}.csv`));
   const games = gameRows.map((row) => ({
     ...row,
+    social_urls: row.instagram_url ? row.instagram_url.split('|').filter(Boolean) : [],
     home_score: numberOrNull(row.home_score),
     away_score: numberOrNull(row.away_score),
     competition: competition.id,

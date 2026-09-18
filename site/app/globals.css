@@ -277,6 +277,15 @@ a.bracket-match:hover { border-color: #d56d76; transform: translateY(-2px); }
 .bracket-final > p { margin: 0; font-size: .72rem; letter-spacing: .09em; text-align: center; text-transform: uppercase; }
 .bracket-final > p strong { color: #ed9aa1; }
 .postseason-closing-note { margin: 18px 0 0; color: #65625d; font-size: .78rem; font-style: italic; line-height: 1.5; }
+.game-map-link { display: inline-flex; align-items: center; gap: 8px; text-decoration: underline; text-underline-offset: 3px; }
+.player-social-section { padding-top: 0; border-top: 1px solid #cfccc4; }
+.social-embeds { width: 100%; margin-top: 58px; }
+.player-social-section .social-embeds { margin-top: 0; }
+.social-embeds h2 { margin: 0 0 22px; font-family: var(--display); font-size: clamp(2.2rem, 3.5vw, 3.5rem); text-transform: uppercase; }
+.social-embeds-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 280px)); gap: 14px; justify-content: start; }
+.social-embed-card { width: 100%; max-width: 280px; overflow: hidden; background: #090909; color: #fff; }
+.social-embed-card iframe { display: block; width: 100%; height: 430px; border: 0; color-scheme: dark; }
+.social-embed-card a { display: flex; align-items: center; justify-content: space-between; padding: 16px 18px; border-top: 1px solid rgba(255,255,255,.15); font-size: .75rem; font-weight: 900; text-transform: uppercase; }
 
 .calendar-section { background: #0a0a0a; color: var(--white); }
 .calendar-layout { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(290px, .62fr); gap: 2px; }
@@ -351,14 +360,18 @@ a.bracket-match:hover { border-color: #d56d76; transform: translateY(-2px); }
 .stats-empty { padding: 35px; background: #e5e2dc; color: #66635e; }
 
 .game-hero { padding: 175px clamp(24px, 6vw, 90px) 65px; background: #0a0a0a; color: #fff; }
-.game-hero > .eyebrow { text-align: center; }
-.scoreboard { display: grid; grid-template-columns: 1fr auto 1fr; gap: 40px; align-items: center; max-width: 1200px; margin: 50px auto; }
-.scoreboard > div { display: grid; justify-items: center; gap: 20px; text-align: center; }
-.scoreboard img { width: 120px; height: 120px; object-fit: contain; }
+.game-hero > .eyebrow { margin-bottom: 16px; text-align: center; }
+.game-matchup-title { max-width: 1050px; margin: 0 auto; font-size: clamp(2.4rem, 5vw, 5.2rem); letter-spacing: .035em; line-height: .95; text-align: center; }
+.game-matchup-title span { color: #d26770; font-size: .58em; vertical-align: .14em; }
+.scoreboard { display: grid; grid-template-columns: minmax(100px, 1fr) auto minmax(100px, 1fr); gap: clamp(28px, 5vw, 72px); align-items: center; max-width: 940px; margin: 34px auto 46px; }
+.scoreboard > div { display: grid; text-align: center; }
+.scoreboard > div:first-child { justify-items: end; }
+.scoreboard > div:last-child { justify-items: start; }
+.scoreboard img { width: clamp(95px, 10vw, 145px); height: clamp(95px, 10vw, 145px); object-fit: contain; }
 .scoreboard h1 { margin: 0; font-family: var(--display); font-size: clamp(2.8rem, 5vw, 5.5rem); line-height: .9; text-transform: uppercase; }
 .scoreboard > strong { display: flex; gap: 18px; align-items: center; font-family: 'Arial Narrow', Arial, sans-serif; font-size: clamp(5rem, 11vw, 11rem); font-weight: 500; letter-spacing: -.07em; font-variant-numeric: tabular-nums; line-height: 1; }
 .scoreboard > strong span { color: var(--red); }
-.game-meta { display: flex; justify-content: center; gap: 35px; color: rgba(255,255,255,.7); font-size: .82rem; font-weight: 800; text-transform: uppercase; }
+.game-meta { display: flex; justify-content: center; gap: 22px 35px; flex-wrap: wrap; color: rgba(255,255,255,.7); font-size: .82rem; font-weight: 800; text-transform: uppercase; }
 .game-meta span { display: inline-flex; align-items: center; gap: 9px; }
 .social-game-link { margin-top: 30px; }
 

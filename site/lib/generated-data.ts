@@ -78,7 +78,11 @@ export const sportsData: SportsData = {
     {
       "id": "andrea-piccolo",
       "name": "Andrea Piccolo",
-      "bio": "Profilo in aggiornamento."
+      "bio": "Profilo in aggiornamento.",
+      "social_urls": [
+        "https://www.instagram.com/reel/DRzbBzwCBOT/",
+        "https://www.instagram.com/reel/DYhceqRImyb/"
+      ]
     },
     {
       "id": "claudio-spagnoli",
@@ -113,7 +117,10 @@ export const sportsData: SportsData = {
     {
       "id": "franko-maione-buch",
       "name": "Franko Maione Buch",
-      "bio": "Profilo in aggiornamento."
+      "bio": "Profilo in aggiornamento.",
+      "social_urls": [
+        "https://www.instagram.com/reel/DTLKI6FCGwT/"
+      ]
     },
     {
       "id": "gabriele-stirpe",
@@ -123,7 +130,10 @@ export const sportsData: SportsData = {
     {
       "id": "gianluca-fabbri",
       "name": "Gianluca Fabbri",
-      "bio": "Profilo in aggiornamento."
+      "bio": "Profilo in aggiornamento.",
+      "social_urls": [
+        "https://www.instagram.com/reel/DUc9j4sCAco/"
+      ]
     },
     {
       "id": "lorenzo-de-vita",
@@ -138,7 +148,10 @@ export const sportsData: SportsData = {
     {
       "id": "lorenzo-minoccheri",
       "name": "Lorenzo Minoccheri",
-      "bio": "Profilo in aggiornamento."
+      "bio": "Profilo in aggiornamento.",
+      "social_urls": [
+        "https://www.instagram.com/reel/DRuOkViCF3o/"
+      ]
     },
     {
       "id": "lorenzo-pettineo",
@@ -148,12 +161,18 @@ export const sportsData: SportsData = {
     {
       "id": "marco-dalfonso",
       "name": "Marco D'Alfonso",
-      "bio": "Profilo in aggiornamento."
+      "bio": "Profilo in aggiornamento.",
+      "social_urls": [
+        "https://www.instagram.com/reel/DXrc8_OCG4Z/"
+      ]
     },
     {
       "id": "marco-de-saverio",
       "name": "Marco De Saverio",
-      "bio": "Profilo in aggiornamento."
+      "bio": "Profilo in aggiornamento.",
+      "social_urls": [
+        "https://www.instagram.com/reel/DUvXVAyCCpW/"
+      ]
     },
     {
       "id": "marco-paterlini",
@@ -168,7 +187,10 @@ export const sportsData: SportsData = {
     {
       "id": "matteo-ceci",
       "name": "Matteo Ceci",
-      "bio": "Profilo in aggiornamento."
+      "bio": "Profilo in aggiornamento.",
+      "social_urls": [
+        "https://www.instagram.com/reel/DYfOW_coWpJ/"
+      ]
     },
     {
       "id": "matteo-virzi",
@@ -180,7 +202,10 @@ export const sportsData: SportsData = {
       "name": "Michele Magrini",
       "birth_date": "18-01-2003",
       "instagram": "https://www.instagram.com/michelemagrini_/",
-      "bio": "Profilo in aggiornamento."
+      "bio": "Profilo in aggiornamento.",
+      "social_urls": [
+        "https://www.instagram.com/reel/DX1uhCiIa9A/"
+      ]
     },
     {
       "id": "mirko-gentile",
@@ -659,53 +684,68 @@ export const sportsData: SportsData = {
           "games": [
             {
               "id": "2025-26-plt-01",
-              "date": "",
-              "time": "",
+              "date": "2025-11-08",
+              "time": "19:00",
               "status": "final",
               "home_team": "boys-90-fiumicino",
               "away_team": "nerone",
               "home_score": 46,
               "away_score": 50,
-              "venue": "",
-              "address": "",
-              "instagram_url": "",
+              "venue": "Boys 90 Fiumicino",
+              "address": "Via del Faro 225, Fiumicino (RM)",
+              "instagram_url": "https://www.instagram.com/p/DQzJBbjiOsd/|https://www.instagram.com/p/DQ10ar0iJjB/|https://www.instagram.com/reel/DRACF2siIEn/",
               "notes": "",
               "phase": "",
               "round": "",
+              "social_urls": [
+                "https://www.instagram.com/p/DQzJBbjiOsd/",
+                "https://www.instagram.com/p/DQ10ar0iJjB/",
+                "https://www.instagram.com/reel/DRACF2siIEn/"
+              ],
               "competition": "platinum"
             },
             {
               "id": "2025-26-plt-02",
-              "date": "",
-              "time": "",
+              "date": "2025-11-23",
+              "time": "20:30",
               "status": "final",
               "home_team": "nerone",
               "away_team": "club-marino-lions",
               "home_score": 60,
               "away_score": 64,
-              "venue": "",
-              "address": "",
-              "instagram_url": "",
+              "venue": "Campo 4Kasette",
+              "address": "Via Nettunense km36.5, (4Kasette), Anzio (RM)",
+              "instagram_url": "https://www.instagram.com/p/DRXGfCtiOzn/|https://www.instagram.com/p/DRZrPMeiMc4/|https://www.instagram.com/p/DRe1bzBiAXi/",
               "notes": "",
               "phase": "",
               "round": "",
+              "social_urls": [
+                "https://www.instagram.com/p/DRXGfCtiOzn/",
+                "https://www.instagram.com/p/DRZrPMeiMc4/",
+                "https://www.instagram.com/p/DRe1bzBiAXi/"
+              ],
               "competition": "platinum"
             },
             {
               "id": "2025-26-plt-03",
-              "date": "",
-              "time": "",
+              "date": "2025-11-30",
+              "time": "20:30",
               "status": "final",
               "home_team": "nerone",
               "away_team": "elite-roma-all-saints",
               "home_score": 63,
               "away_score": 50,
-              "venue": "",
-              "address": "",
-              "instagram_url": "",
+              "venue": "Campo 4Kasette",
+              "address": "Via Nettunense km36.5, (4Kasette), Anzio (RM)",
+              "instagram_url": "https://www.instagram.com/p/DRpOD7BCGTS/|https://www.instagram.com/p/DRrun3FCB52/|https://www.instagram.com/p/DRuKYediKGs/",
               "notes": "",
               "phase": "",
               "round": "",
+              "social_urls": [
+                "https://www.instagram.com/p/DRpOD7BCGTS/",
+                "https://www.instagram.com/p/DRrun3FCB52/",
+                "https://www.instagram.com/p/DRuKYediKGs/"
+              ],
               "competition": "platinum"
             },
             {
@@ -723,40 +763,51 @@ export const sportsData: SportsData = {
               "notes": "Risultato ufficiale omologato",
               "phase": "",
               "round": "",
+              "social_urls": [],
               "competition": "platinum"
             },
             {
               "id": "2025-26-plt-05",
-              "date": "",
-              "time": "",
+              "date": "2026-02-03",
+              "time": "21:15",
               "status": "final",
               "home_team": "tivoli-basket",
               "away_team": "nerone",
               "home_score": 63,
               "away_score": 70,
-              "venue": "",
-              "address": "",
-              "instagram_url": "",
+              "venue": "Istituto Baccelli",
+              "address": "Viale dei Pini 19, Tivoli (RM)",
+              "instagram_url": "https://www.instagram.com/p/DUTKQOzCGTq/|https://www.instagram.com/p/DUVqSawiM2j/",
               "notes": "",
               "phase": "",
               "round": "",
+              "social_urls": [
+                "https://www.instagram.com/p/DUTKQOzCGTq/",
+                "https://www.instagram.com/p/DUVqSawiM2j/"
+              ],
               "competition": "platinum"
             },
             {
               "id": "2025-26-plt-06",
-              "date": "",
-              "time": "",
+              "date": "2026-02-08",
+              "time": "20:00",
               "status": "final",
               "home_team": "club-marino-lions",
               "away_team": "nerone",
               "home_score": 55,
               "away_score": 58,
-              "venue": "",
-              "address": "",
-              "instagram_url": "",
+              "venue": "Palasport Cava dei Selci",
+              "address": "Via Appia km18,4, Marino (RM)",
+              "instagram_url": "https://www.instagram.com/p/DUdgoCNiN_D/|https://www.instagram.com/p/DUgKh37iMqn/|https://www.instagram.com/p/DUitfhFiMHE/|https://www.instagram.com/p/DUn81UEiPhS/",
               "notes": "",
               "phase": "",
               "round": "",
+              "social_urls": [
+                "https://www.instagram.com/p/DUdgoCNiN_D/",
+                "https://www.instagram.com/p/DUgKh37iMqn/",
+                "https://www.instagram.com/p/DUitfhFiMHE/",
+                "https://www.instagram.com/p/DUn81UEiPhS/"
+              ],
               "competition": "platinum"
             },
             {
@@ -774,159 +825,195 @@ export const sportsData: SportsData = {
               "notes": "Risultato ufficiale omologato",
               "phase": "",
               "round": "",
+              "social_urls": [],
               "competition": "platinum"
             },
             {
               "id": "2025-26-plt-08",
-              "date": "",
-              "time": "",
+              "date": "2026-03-08",
+              "time": "18:30",
               "status": "final",
               "home_team": "free-mind-roma",
               "away_team": "nerone",
               "home_score": 73,
               "away_score": 78,
-              "venue": "",
-              "address": "",
-              "instagram_url": "",
+              "venue": "Flami&Ale",
+              "address": "Via di Torre Spaccata 155, Roma",
+              "instagram_url": "https://www.instagram.com/p/DVoDCmSiBaJ/|https://www.instagram.com/p/DVq-9WtiJZj/",
               "notes": "",
               "phase": "",
               "round": "",
+              "social_urls": [
+                "https://www.instagram.com/p/DVoDCmSiBaJ/",
+                "https://www.instagram.com/p/DVq-9WtiJZj/"
+              ],
               "competition": "platinum"
             },
             {
               "id": "2025-26-plt-09",
-              "date": "",
-              "time": "",
+              "date": "2026-03-15",
+              "time": "20:30",
               "status": "final",
               "home_team": "nerone",
               "away_team": "delfino-basket-anzio",
               "home_score": 65,
               "away_score": 70,
-              "venue": "",
-              "address": "",
-              "instagram_url": "",
+              "venue": "Campo 4Kasette",
+              "address": "Via Nettunense km36.5, (4Kasette), Anzio (RM)",
+              "instagram_url": "https://www.instagram.com/p/DV6HVNpCFKX/|https://www.instagram.com/p/DV9Ef_AiGKd/",
               "notes": "",
               "phase": "",
               "round": "",
+              "social_urls": [
+                "https://www.instagram.com/p/DV6HVNpCFKX/",
+                "https://www.instagram.com/p/DV9Ef_AiGKd/"
+              ],
               "competition": "platinum"
             },
             {
               "id": "2025-26-plt-10",
-              "date": "",
-              "time": "",
+              "date": "2026-03-25",
+              "time": "20:30",
               "status": "final",
               "home_team": "evergreen-la-squad",
               "away_team": "nerone",
               "home_score": 71,
               "away_score": 51,
-              "venue": "",
-              "address": "",
-              "instagram_url": "",
+              "venue": "Liceo Volterra",
+              "address": "Via dell'Acqua Acetosa 8A, Ciampino (RM)",
+              "instagram_url": "https://www.instagram.com/p/DWUOMNdCGo_/|https://www.instagram.com/p/DWZuBltDVhO/",
               "notes": "",
               "phase": "",
               "round": "",
+              "social_urls": [
+                "https://www.instagram.com/p/DWUOMNdCGo_/",
+                "https://www.instagram.com/p/DWZuBltDVhO/"
+              ],
               "competition": "platinum"
             },
             {
               "id": "2025-26-plt-11",
-              "date": "",
-              "time": "",
+              "date": "2026-03-30",
+              "time": "21:15",
               "status": "final",
               "home_team": "delfino-basket-anzio",
               "away_team": "nerone",
               "home_score": 60,
               "away_score": 55,
-              "venue": "",
-              "address": "",
-              "instagram_url": "",
+              "venue": "Campo 4Kasette",
+              "address": "Via Nettunense km36.5, (4Kasette), Anzio (RM)",
+              "instagram_url": "https://www.instagram.com/p/DWgyiGNCNB1/|https://www.instagram.com/p/DWl_4JNCC_J/",
               "notes": "",
               "phase": "",
               "round": "",
+              "social_urls": [
+                "https://www.instagram.com/p/DWgyiGNCNB1/",
+                "https://www.instagram.com/p/DWl_4JNCC_J/"
+              ],
               "competition": "platinum"
             },
             {
               "id": "2025-26-plt-12",
-              "date": "",
-              "time": "",
+              "date": "2026-04-08",
+              "time": "20:30",
               "status": "final",
               "home_team": "nerone",
               "away_team": "atletico-san-lorenzo",
               "home_score": 50,
               "away_score": 64,
-              "venue": "",
-              "address": "",
-              "instagram_url": "",
+              "venue": "Campo 4Kasette",
+              "address": "Via Nettunense km36.5, (4Kasette), Anzio (RM)",
+              "instagram_url": "https://www.instagram.com/p/DW34ZrZiH4u/|https://www.instagram.com/p/DW_y1tDiPyW/",
               "notes": "",
               "phase": "",
               "round": "",
+              "social_urls": [
+                "https://www.instagram.com/p/DW34ZrZiH4u/",
+                "https://www.instagram.com/p/DW_y1tDiPyW/"
+              ],
               "competition": "platinum"
             },
             {
               "id": "2025-26-plt-13",
-              "date": "",
-              "time": "",
+              "date": "2026-04-12",
+              "time": "20:30",
               "status": "final",
               "home_team": "nerone",
               "away_team": "tivoli-basket",
               "home_score": 62,
               "away_score": 63,
-              "venue": "",
-              "address": "",
-              "instagram_url": "",
+              "venue": "Campo 4Kasette",
+              "address": "Via Nettunense km36.5, (4Kasette), Anzio (RM)",
+              "instagram_url": "https://www.instagram.com/p/DXCULRGiO6H/",
               "notes": "",
               "phase": "",
               "round": "",
+              "social_urls": [
+                "https://www.instagram.com/p/DXCULRGiO6H/"
+              ],
               "competition": "platinum"
             },
             {
               "id": "2025-26-plt-14",
-              "date": "",
-              "time": "",
+              "date": "2026-02-18",
+              "time": "20:15",
               "status": "final",
               "home_team": "elite-roma-all-saints",
               "away_team": "nerone",
               "home_score": 53,
               "away_score": 60,
-              "venue": "",
-              "address": "",
-              "instagram_url": "",
+              "venue": "Colle La Salle",
+              "address": "Via dell'Imbrecciato 181, Roma",
+              "instagram_url": "https://www.instagram.com/p/DU5_umAiNec/|https://www.instagram.com/p/DU-3HX3iDfP/",
               "notes": "",
               "phase": "",
               "round": "",
+              "social_urls": [
+                "https://www.instagram.com/p/DU5_umAiNec/",
+                "https://www.instagram.com/p/DU-3HX3iDfP/"
+              ],
               "competition": "platinum"
             },
             {
               "id": "2025-26-plt-15",
-              "date": "",
-              "time": "",
+              "date": "2026-02-15",
+              "time": "17:00",
               "status": "final",
               "home_team": "basket-palestrina",
               "away_team": "nerone",
               "home_score": 68,
               "away_score": 66,
-              "venue": "",
-              "address": "",
-              "instagram_url": "",
+              "venue": "Palestrina",
+              "address": "Via di Valle Zampea 2, Palestrina (RM)",
+              "instagram_url": "https://www.instagram.com/p/DUv5VxWiIrV/|https://www.instagram.com/p/DUx9s8dCGfc/",
               "notes": "",
               "phase": "",
               "round": "",
+              "social_urls": [
+                "https://www.instagram.com/p/DUv5VxWiIrV/",
+                "https://www.instagram.com/p/DUx9s8dCGfc/"
+              ],
               "competition": "platinum"
             },
             {
               "id": "2025-26-plt-16",
-              "date": "",
-              "time": "",
+              "date": "2026-01-04",
+              "time": "20:30",
               "status": "final",
               "home_team": "nerone",
               "away_team": "free-mind-roma",
               "home_score": 68,
               "away_score": 65,
-              "venue": "",
-              "address": "",
-              "instagram_url": "",
+              "venue": "Campo 4Kasette",
+              "address": "Via Nettunense km36.5, (4Kasette), Anzio (RM)",
+              "instagram_url": "https://www.instagram.com/p/DTDnCefiCoJ/|https://www.instagram.com/p/DTFtJW3iAC-/",
               "notes": "",
               "phase": "",
               "round": "",
+              "social_urls": [
+                "https://www.instagram.com/p/DTDnCefiCoJ/",
+                "https://www.instagram.com/p/DTFtJW3iAC-/"
+              ],
               "competition": "platinum"
             },
             {
@@ -944,91 +1031,112 @@ export const sportsData: SportsData = {
               "notes": "Risultato ufficiale omologato",
               "phase": "",
               "round": "",
+              "social_urls": [],
               "competition": "platinum"
             },
             {
               "id": "2025-26-plt-18",
-              "date": "",
-              "time": "",
+              "date": "2025-12-11",
+              "time": "21:15",
               "status": "final",
               "home_team": "atletico-san-lorenzo",
               "away_team": "nerone",
               "home_score": 55,
               "away_score": 43,
-              "venue": "",
-              "address": "",
-              "instagram_url": "",
+              "venue": "C.S. Cavalieri di Colombo",
+              "address": "Via dei Sabelli 88/c, Roma",
+              "instagram_url": "https://www.instagram.com/p/DSFY7H1CJk5/|https://www.instagram.com/p/DSH-isICPPE/",
               "notes": "",
               "phase": "",
               "round": "",
+              "social_urls": [
+                "https://www.instagram.com/p/DSFY7H1CJk5/",
+                "https://www.instagram.com/p/DSH-isICPPE/"
+              ],
               "competition": "platinum"
             },
             {
               "id": "2025-26-plt-playin-01",
               "date": "2026-04-26",
-              "time": "",
+              "time": "20:30",
               "status": "final",
               "home_team": "nerone",
               "away_team": "club-marino-lions",
               "home_score": 71,
               "away_score": 51,
-              "venue": "",
-              "address": "",
-              "instagram_url": "",
+              "venue": "Campo 4Kasette",
+              "address": "Via Nettunense km36.5, (4Kasette), Anzio (RM)",
+              "instagram_url": "https://www.instagram.com/p/DXmSsKZiPqg/|https://www.instagram.com/p/DXpHuAfCBt4/",
               "notes": "",
               "phase": "play-in",
               "round": "Play-in · Girone 1-4-6",
+              "social_urls": [
+                "https://www.instagram.com/p/DXmSsKZiPqg/",
+                "https://www.instagram.com/p/DXpHuAfCBt4/"
+              ],
               "competition": "platinum"
             },
             {
               "id": "2025-26-plt-playin-02",
               "date": "2026-05-03",
-              "time": "",
+              "time": "20:00",
               "status": "final",
               "home_team": "club-marino-lions",
               "away_team": "nerone",
               "home_score": 59,
               "away_score": 61,
-              "venue": "",
-              "address": "",
-              "instagram_url": "",
+              "venue": "Palasport Cava dei Selci",
+              "address": "Via Appia km18,4, Marino (RM)",
+              "instagram_url": "https://www.instagram.com/p/DX4WPSviGzv/|https://www.instagram.com/p/DX7RRiYiI5a/",
               "notes": "",
               "phase": "play-in",
               "round": "Play-in · Girone 1-4-6",
+              "social_urls": [
+                "https://www.instagram.com/p/DX4WPSviGzv/",
+                "https://www.instagram.com/p/DX7RRiYiI5a/"
+              ],
               "competition": "platinum"
             },
             {
               "id": "2025-26-plt-playin-03",
               "date": "2026-05-17",
-              "time": "",
+              "time": "21:00",
               "status": "final",
               "home_team": "nerone",
               "away_team": "atletico-san-lorenzo",
               "home_score": 53,
               "away_score": 47,
-              "venue": "",
-              "address": "",
-              "instagram_url": "",
+              "venue": "Campo 4Kasette",
+              "address": "Via Nettunense km36.5, (4Kasette), Anzio (RM)",
+              "instagram_url": "https://www.instagram.com/p/DYcUR9TorLb/|https://www.instagram.com/p/DYe5d6eItra/",
               "notes": "",
               "phase": "play-in",
               "round": "Play-in · Girone 1-4-6",
+              "social_urls": [
+                "https://www.instagram.com/p/DYcUR9TorLb/",
+                "https://www.instagram.com/p/DYe5d6eItra/"
+              ],
               "competition": "platinum"
             },
             {
               "id": "2025-26-plt-playin-04",
               "date": "2026-05-20",
-              "time": "",
+              "time": "21:15",
               "status": "final",
               "home_team": "atletico-san-lorenzo",
               "away_team": "nerone",
               "home_score": 54,
               "away_score": 37,
-              "venue": "",
-              "address": "",
-              "instagram_url": "",
+              "venue": "C.S. Cavalieri di Colombo",
+              "address": "Via dei Sabelli 88/c, Roma",
+              "instagram_url": "https://www.instagram.com/p/DYkB-6OIMP-/|https://www.instagram.com/p/DYmuL16It88/",
               "notes": "",
               "phase": "play-in",
               "round": "Play-in · Girone 1-4-6",
+              "social_urls": [
+                "https://www.instagram.com/p/DYkB-6OIMP-/",
+                "https://www.instagram.com/p/DYmuL16It88/"
+              ],
               "competition": "platinum"
             },
             {
@@ -1046,23 +1154,28 @@ export const sportsData: SportsData = {
               "notes": "",
               "phase": "final-four",
               "round": "Semifinale",
+              "social_urls": [],
               "competition": "platinum"
             },
             {
               "id": "2025-26-plt-semifinal-02",
               "date": "2026-06-08",
-              "time": "",
+              "time": "21:40",
               "status": "final",
               "home_team": "tivoli-basket",
               "away_team": "nerone",
               "home_score": 57,
               "away_score": 54,
-              "venue": "",
-              "address": "",
-              "instagram_url": "",
+              "venue": "Pala Avenali",
+              "address": "Via dell'Arcadia, Roma",
+              "instagram_url": "https://www.instagram.com/p/DZUwYCIISp5/|https://www.instagram.com/p/DZczQyoCI8r/",
               "notes": "",
               "phase": "final-four",
               "round": "Semifinale",
+              "social_urls": [
+                "https://www.instagram.com/p/DZUwYCIISp5/",
+                "https://www.instagram.com/p/DZczQyoCI8r/"
+              ],
               "competition": "platinum"
             },
             {
@@ -1080,6 +1193,7 @@ export const sportsData: SportsData = {
               "notes": "",
               "phase": "final-four",
               "round": "Finale",
+              "social_urls": [],
               "competition": "platinum"
             }
           ],

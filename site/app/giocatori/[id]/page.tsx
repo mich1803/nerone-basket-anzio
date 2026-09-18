@@ -6,6 +6,7 @@ import { SiteFooter } from '@/components/site-footer';
 import { sportsData } from '@/lib/generated-data';
 import { assetPath, instagramUrl } from '@/lib/paths';
 import { PlayerStats } from '@/components/player-stats';
+import { SocialEmbeds } from '@/components/social-embeds';
 
 export const dynamic = 'force-static';
 export const dynamicParams = false;
@@ -55,6 +56,7 @@ export default async function PlayerPage({ params }: { params: Promise<{ id: str
         <PlayerStats rows={rows} />
       </aside>
     </section>
+    {player.social_urls?.length ? <section className="page-section player-social-section"><SocialEmbeds posts={player.social_urls} title="Contenuti correlati" /></section> : null}
     <SiteFooter />
   </main>;
 }

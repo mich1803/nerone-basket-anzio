@@ -122,7 +122,7 @@ export function CompetitionPageView({ competition, seasonId }: { competition: Co
                 <table>
                   <thead><tr><th>Squadra</th><th>V–S</th><th>Diff.</th></tr></thead>
                   <tbody>{group.rows.map((row) => <tr className={row.team_id === 'nerone' ? 'playin-nerone' : ''} key={row.team_id}>
-                    <td><img src={assetPath(sportsData.teams[row.team_id]?.logo || '/assets/logo-nero.png')} alt="" /><strong>{sportsData.teams[row.team_id]?.short_name ?? row.team_id}</strong>{row.qualified && <span>Qualificata</span>}</td>
+                    <td><img src={assetPath(row.team_id === 'nerone' ? '/assets/logo-bianco.png' : sportsData.teams[row.team_id]?.logo || '/assets/logo-nero.png')} alt="" /><strong>{sportsData.teams[row.team_id]?.short_name ?? row.team_id}</strong>{row.qualified && <span>Qualificata</span>}</td>
                     <td>{row.wins}–{row.losses}</td>
                     <td>{row.difference > 0 ? '+' : ''}{row.difference}</td>
                   </tr>)}</tbody>

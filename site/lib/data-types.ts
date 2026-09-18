@@ -1,10 +1,10 @@
 export type Team = { name: string; short_name: string; logo?: string };
-export type Player = { id: string; name: string; birth_date?: string; instagram?: string; photo?: string; bio: string };
+export type Player = { id: string; name: string; birth_date?: string; instagram?: string; photo?: string; bio: string; social_urls?: string[] };
 export type RosterEntry = { season: string; competition: string; player_id: string; number: number | null; role: string; active: boolean };
 export type Game = {
   id: string; date: string; time: string; status: string; home_team: string; away_team: string;
   home_score: number | null; away_score: number | null; venue: string; address: string;
-  instagram_url: string; notes?: string; phase?: string; round?: string; competition: string;
+  instagram_url: string; social_urls: string[]; notes?: string; phase?: string; round?: string; competition: string;
 };
 export type PlayerStat = {
   game_id: string; player_id: string; minutes: string; points: number; fouls: number;
