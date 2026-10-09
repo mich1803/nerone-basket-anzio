@@ -6,7 +6,7 @@ import Link from '@/components/site-link';
 import type { Game } from '@/lib/data-types';
 import { sportsData } from '@/lib/generated-data';
 import { assetPath, sitePath } from '@/lib/paths';
-import { archivePath, competitions, type Competition } from '@/lib/site-data';
+import { archivePath, competitions, isClubTeam, type Competition } from '@/lib/site-data';
 
 const monthNames = ['gennaio', 'febbraio', 'marzo', 'aprile', 'maggio', 'giugno', 'luglio', 'agosto', 'settembre', 'ottobre', 'novembre', 'dicembre'];
 
@@ -44,6 +44,7 @@ function ResultCard({ game }: { game: Game }) {
 export function GamesPageView({ competition, seasonId }: { competition: Competition; seasonId: string }) {
   const selectedSeason = sportsData.seasons.find((season) => season.id === seasonId);
   const data = selectedSeason?.competitions.find((item) => item.id === competition.slug);
+  const competitionName = data?.name ?? competition.name;
   const availableSeasons = sportsData.seasons.filter((season) => season.competitions.some((item) => item.id === competition.slug));
   const seasonOptions = availableSeasons.map((season) => {
     const targetCompetition = season.competitions.some((item) => item.id === competition.slug)
@@ -54,8 +55,8 @@ export function GamesPageView({ competition, seasonId }: { competition: Competit
   const competitionOptions = competitions
     .filter((item) => selectedSeason?.competitions.some((dataItem) => dataItem.id === item.slug))
     .map((item) => ({ id: item.slug, label: item.shortName, href: archivePath('partite', item.slug, seasonId) }));
-  const neroneGames = data?.games.filter((game) => game.home_team === 'nerone' || game.away_team === 'nerone') ?? [];
-  const otherGames = orderedGames(data?.games.filter((game) => game.home_team !== 'nerone' && game.away_team !== 'nerone') ?? []);
+  const neroneGames = data?.games.filter((game) => isClubTeam(game.home_team) || isClubTeam(game.away_team)) ?? [];
+  const otherGames = orderedGames(data?.games.filter((game) => !isClubTeam(game.home_team) && !isClubTeam(game.away_team)) ?? []);
   const groups = [
     { id: 'final-four', title: 'Final Four', games: orderedGames(neroneGames.filter((game) => game.phase === 'final-four')) },
     { id: 'play-in', title: 'Play-in', games: orderedGames(neroneGames.filter((game) => game.phase === 'play-in')) },
@@ -66,7 +67,7 @@ export function GamesPageView({ competition, seasonId }: { competition: Competit
     <SiteHeader />
     <section className="league-hero games-hero">
       <img className="league-hero-bg" alt="" src={assetPath('/assets/calendar-bg.jpg')} />
-      <p className="eyebrow">{competition.name} · {seasonId.replace('-', '/')}</p>
+      <p className="eyebrow">{competitionName} · {seasonId.replace('-', '/')}</p>
       <span className="league-hero-code">{competition.code}</span>
       <h1>Partite</h1>
     </section>
@@ -80,7 +81,7 @@ export function GamesPageView({ competition, seasonId }: { competition: Competit
       <div className="games-archive-layout">
         <div className="games-primary">
           <div className="content-heading">
-            <p className="eyebrow dark">Nerone Basket Anzio</p>
+            <p className="eyebrow dark">Le nostre squadre</p>
             <h2>Tutte le partite</h2>
           </div>
           {groups.length ? groups.map((group) => <section className="game-phase" key={group.id}>

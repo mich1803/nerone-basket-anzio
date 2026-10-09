@@ -8,6 +8,11 @@ export const sportsData: SportsData = {
       "short_name": "Nerone",
       "logo": "/assets/logo-nero.png"
     },
+    "nerone-bounganvillae": {
+      "name": "Nerone Basket Bounganvillae Anzio",
+      "short_name": "Nerone Bounganvillae",
+      "logo": "/assets/logo-nero.png"
+    },
     "atletico-san-lorenzo": {
       "name": "Atletico San Lorenzo",
       "short_name": "San Lorenzo",
@@ -56,6 +61,16 @@ export const sportsData: SportsData = {
   },
   "players": [
     {
+      "id": "alberto-balzani",
+      "name": "Alberto Balzani",
+      "bio": "Profilo in aggiornamento."
+    },
+    {
+      "id": "alessandro-basile",
+      "name": "Alessandro Basile",
+      "bio": "Profilo in aggiornamento."
+    },
+    {
       "id": "alessandro-bucci",
       "name": "Alessandro Bucci",
       "bio": "Profilo in aggiornamento."
@@ -73,6 +88,11 @@ export const sportsData: SportsData = {
     {
       "id": "andrea-balistreri",
       "name": "Andrea Balistreri",
+      "bio": "Profilo in aggiornamento."
+    },
+    {
+      "id": "andrea-di-stella",
+      "name": "Andrea Di Stella",
       "bio": "Profilo in aggiornamento."
     },
     {
@@ -110,8 +130,8 @@ export const sportsData: SportsData = {
       "bio": "Profilo in aggiornamento."
     },
     {
-      "id": "francesco",
-      "name": "Francesco …",
+      "id": "francesco-menicucci",
+      "name": "Francesco Menicucci",
       "bio": "Profilo in aggiornamento."
     },
     {
@@ -146,6 +166,11 @@ export const sportsData: SportsData = {
       "bio": "Profilo in aggiornamento."
     },
     {
+      "id": "lorenzo-maccotta",
+      "name": "Lorenzo Maccotta",
+      "bio": "Profilo in aggiornamento."
+    },
+    {
       "id": "lorenzo-minoccheri",
       "name": "Lorenzo Minoccheri",
       "bio": "Profilo in aggiornamento.",
@@ -156,6 +181,11 @@ export const sportsData: SportsData = {
     {
       "id": "lorenzo-pettineo",
       "name": "Lorenzo Pettineo",
+      "bio": "Profilo in aggiornamento."
+    },
+    {
+      "id": "manuel-barzi",
+      "name": "Manuel Barzi",
       "bio": "Profilo in aggiornamento."
     },
     {
@@ -231,7 +261,8 @@ export const sportsData: SportsData = {
   "rosters": [
     {
       "season": "2026-27",
-      "competition": "",
+      "competition": "platinum",
+      "team_id": "nerone",
       "player_id": "andrea-piccolo",
       "number": 0,
       "role": "",
@@ -239,15 +270,35 @@ export const sportsData: SportsData = {
     },
     {
       "season": "2026-27",
-      "competition": "",
-      "player_id": "lorenzo-pettineo",
-      "number": 14,
+      "competition": "platinum",
+      "team_id": "nerone",
+      "player_id": "mirko-gentile",
+      "number": 1,
       "role": "",
       "active": true
     },
     {
       "season": "2026-27",
-      "competition": "",
+      "competition": "platinum",
+      "team_id": "nerone",
+      "player_id": "alessio-marsili",
+      "number": 2,
+      "role": "",
+      "active": true
+    },
+    {
+      "season": "2026-27",
+      "competition": "platinum",
+      "team_id": "nerone",
+      "player_id": "claudio-spagnoli",
+      "number": 3,
+      "role": "",
+      "active": true
+    },
+    {
+      "season": "2026-27",
+      "competition": "platinum",
+      "team_id": "nerone",
       "player_id": "marco-de-saverio",
       "number": 4,
       "role": "",
@@ -255,7 +306,8 @@ export const sportsData: SportsData = {
     },
     {
       "season": "2026-27",
-      "competition": "",
+      "competition": "platinum",
+      "team_id": "nerone",
       "player_id": "riccardo-mastroianni",
       "number": 10,
       "role": "",
@@ -263,71 +315,62 @@ export const sportsData: SportsData = {
     },
     {
       "season": "2026-27",
-      "competition": "",
-      "player_id": "alessandro-bucci",
+      "competition": "platinum",
+      "team_id": "nerone",
+      "player_id": "lorenzo-pettineo",
+      "number": 14,
+      "role": "",
+      "active": true
+    },
+    {
+      "season": "2026-27",
+      "competition": "platinum",
+      "team_id": "nerone",
+      "player_id": "lorenzo-minoccheri",
+      "number": 21,
+      "role": "",
+      "active": true
+    },
+    {
+      "season": "2026-27",
+      "competition": "platinum",
+      "team_id": "nerone",
+      "player_id": "gianluca-fabbri",
+      "number": 91,
+      "role": "",
+      "active": true
+    },
+    {
+      "season": "2026-27",
+      "competition": "platinum",
+      "team_id": "nerone",
+      "player_id": "franko-maione-buch",
+      "number": 99,
+      "role": "",
+      "active": true
+    },
+    {
+      "season": "2026-27",
+      "competition": "platinum",
+      "team_id": "nerone",
+      "player_id": "andrea-balistreri",
       "number": null,
       "role": "",
       "active": true
     },
     {
       "season": "2026-27",
-      "competition": "",
-      "player_id": "matteo-bertoni",
+      "competition": "platinum",
+      "team_id": "nerone",
+      "player_id": "marco-dalfonso",
       "number": null,
       "role": "",
       "active": true
     },
     {
       "season": "2026-27",
-      "competition": "",
-      "player_id": "matteo-ceci",
-      "number": 36,
-      "role": "",
-      "active": true
-    },
-    {
-      "season": "2026-27",
-      "competition": "",
-      "player_id": "lorenzo-de-vita",
-      "number": 18,
-      "role": "",
-      "active": true
-    },
-    {
-      "season": "2026-27",
-      "competition": "",
-      "player_id": "valerio-di-cicco",
-      "number": null,
-      "role": "",
-      "active": true
-    },
-    {
-      "season": "2026-27",
-      "competition": "",
-      "player_id": "cristiano-fabbri",
-      "number": null,
-      "role": "",
-      "active": true
-    },
-    {
-      "season": "2026-27",
-      "competition": "",
-      "player_id": "fabio-cheli",
-      "number": null,
-      "role": "",
-      "active": true
-    },
-    {
-      "season": "2026-27",
-      "competition": "",
-      "player_id": "marco-paterlini",
-      "number": 9,
-      "role": "",
-      "active": true
-    },
-    {
-      "season": "2026-27",
-      "competition": "",
+      "competition": "platinum",
+      "team_id": "nerone",
       "player_id": "gabriele-stirpe",
       "number": null,
       "role": "",
@@ -335,15 +378,89 @@ export const sportsData: SportsData = {
     },
     {
       "season": "2026-27",
-      "competition": "",
-      "player_id": "matteo-virzi",
+      "competition": "platinum",
+      "team_id": "nerone",
+      "player_id": "alessandro-basile",
       "number": null,
       "role": "",
       "active": true
     },
     {
       "season": "2026-27",
-      "competition": "",
+      "competition": "platinum",
+      "team_id": "nerone",
+      "player_id": "manuel-barzi",
+      "number": null,
+      "role": "",
+      "active": true
+    },
+    {
+      "season": "2026-27",
+      "competition": "platinum",
+      "team_id": "nerone-bounganvillae",
+      "player_id": "michele-magrini",
+      "number": 5,
+      "role": "",
+      "active": true
+    },
+    {
+      "season": "2026-27",
+      "competition": "platinum",
+      "team_id": "nerone-bounganvillae",
+      "player_id": "marco-paterlini",
+      "number": 9,
+      "role": "",
+      "active": true
+    },
+    {
+      "season": "2026-27",
+      "competition": "platinum",
+      "team_id": "nerone-bounganvillae",
+      "player_id": "lorenzo-de-vita",
+      "number": 18,
+      "role": "",
+      "active": true
+    },
+    {
+      "season": "2026-27",
+      "competition": "platinum",
+      "team_id": "nerone-bounganvillae",
+      "player_id": "matteo-ceci",
+      "number": 36,
+      "role": "",
+      "active": true
+    },
+    {
+      "season": "2026-27",
+      "competition": "platinum",
+      "team_id": "nerone-bounganvillae",
+      "player_id": "matteo-bertoni",
+      "number": null,
+      "role": "",
+      "active": true
+    },
+    {
+      "season": "2026-27",
+      "competition": "platinum",
+      "team_id": "nerone-bounganvillae",
+      "player_id": "alessandro-bucci",
+      "number": null,
+      "role": "",
+      "active": true
+    },
+    {
+      "season": "2026-27",
+      "competition": "platinum",
+      "team_id": "nerone-bounganvillae",
+      "player_id": "fabio-cheli",
+      "number": null,
+      "role": "",
+      "active": true
+    },
+    {
+      "season": "2026-27",
+      "competition": "platinum",
+      "team_id": "nerone-bounganvillae",
       "player_id": "stefano-ciuffetti",
       "number": null,
       "role": "",
@@ -351,7 +468,26 @@ export const sportsData: SportsData = {
     },
     {
       "season": "2026-27",
-      "competition": "",
+      "competition": "platinum",
+      "team_id": "nerone-bounganvillae",
+      "player_id": "valerio-di-cicco",
+      "number": null,
+      "role": "",
+      "active": true
+    },
+    {
+      "season": "2026-27",
+      "competition": "platinum",
+      "team_id": "nerone-bounganvillae",
+      "player_id": "cristiano-fabbri",
+      "number": null,
+      "role": "",
+      "active": true
+    },
+    {
+      "season": "2026-27",
+      "competition": "platinum",
+      "team_id": "nerone-bounganvillae",
       "player_id": "davide-incoronato",
       "number": null,
       "role": "",
@@ -359,103 +495,53 @@ export const sportsData: SportsData = {
     },
     {
       "season": "2026-27",
-      "competition": "",
-      "player_id": "andrea-balistreri",
+      "competition": "platinum",
+      "team_id": "nerone-bounganvillae",
+      "player_id": "matteo-virzi",
       "number": null,
       "role": "",
       "active": true
     },
     {
       "season": "2026-27",
-      "competition": "",
-      "player_id": "marco-dalfonso",
+      "competition": "platinum",
+      "team_id": "nerone-bounganvillae",
+      "player_id": "francesco-menicucci",
       "number": null,
       "role": "",
       "active": true
     },
     {
       "season": "2026-27",
-      "competition": "",
-      "player_id": "gianluca-fabbri",
-      "number": 91,
-      "role": "",
-      "active": true
-    },
-    {
-      "season": "2026-27",
-      "competition": "",
-      "player_id": "alessandro-graziosi",
+      "competition": "platinum",
+      "team_id": "nerone-bounganvillae",
+      "player_id": "andrea-di-stella",
       "number": null,
       "role": "",
       "active": true
     },
     {
       "season": "2026-27",
-      "competition": "",
-      "player_id": "francesco-graziosi",
+      "competition": "platinum",
+      "team_id": "nerone-bounganvillae",
+      "player_id": "alberto-balzani",
       "number": null,
       "role": "",
       "active": true
     },
     {
       "season": "2026-27",
-      "competition": "",
-      "player_id": "mirko-gentile",
-      "number": 1,
-      "role": "",
-      "active": true
-    },
-    {
-      "season": "2026-27",
-      "competition": "",
-      "player_id": "alessio-marsili",
-      "number": 2,
-      "role": "",
-      "active": true
-    },
-    {
-      "season": "2026-27",
-      "competition": "",
-      "player_id": "franko-maione-buch",
-      "number": 99,
-      "role": "",
-      "active": true
-    },
-    {
-      "season": "2026-27",
-      "competition": "",
-      "player_id": "lorenzo-minoccheri",
-      "number": 21,
-      "role": "",
-      "active": true
-    },
-    {
-      "season": "2026-27",
-      "competition": "",
-      "player_id": "claudio-spagnoli",
-      "number": 3,
-      "role": "",
-      "active": true
-    },
-    {
-      "season": "2026-27",
-      "competition": "",
-      "player_id": "michele-magrini",
-      "number": 5,
-      "role": "",
-      "active": true
-    },
-    {
-      "season": "2026-27",
-      "competition": "",
-      "player_id": "francesco",
+      "competition": "platinum",
+      "team_id": "nerone-bounganvillae",
+      "player_id": "lorenzo-maccotta",
       "number": null,
       "role": "",
       "active": true
     },
     {
       "season": "2025-26",
-      "competition": "",
+      "competition": "platinum",
+      "team_id": "nerone",
       "player_id": "andrea-piccolo",
       "number": 0,
       "role": "",
@@ -463,7 +549,8 @@ export const sportsData: SportsData = {
     },
     {
       "season": "2025-26",
-      "competition": "",
+      "competition": "platinum",
+      "team_id": "nerone",
       "player_id": "lorenzo-pettineo",
       "number": 14,
       "role": "",
@@ -471,7 +558,8 @@ export const sportsData: SportsData = {
     },
     {
       "season": "2025-26",
-      "competition": "",
+      "competition": "platinum",
+      "team_id": "nerone",
       "player_id": "marco-de-saverio",
       "number": 4,
       "role": "",
@@ -479,7 +567,8 @@ export const sportsData: SportsData = {
     },
     {
       "season": "2025-26",
-      "competition": "",
+      "competition": "platinum",
+      "team_id": "nerone",
       "player_id": "riccardo-mastroianni",
       "number": 10,
       "role": "",
@@ -487,7 +576,8 @@ export const sportsData: SportsData = {
     },
     {
       "season": "2025-26",
-      "competition": "",
+      "competition": "platinum",
+      "team_id": "nerone",
       "player_id": "matteo-ceci",
       "number": 36,
       "role": "",
@@ -495,7 +585,8 @@ export const sportsData: SportsData = {
     },
     {
       "season": "2025-26",
-      "competition": "",
+      "competition": "platinum",
+      "team_id": "nerone",
       "player_id": "lorenzo-de-vita",
       "number": 18,
       "role": "",
@@ -503,7 +594,8 @@ export const sportsData: SportsData = {
     },
     {
       "season": "2025-26",
-      "competition": "",
+      "competition": "platinum",
+      "team_id": "nerone",
       "player_id": "cristiano-fabbri",
       "number": null,
       "role": "",
@@ -511,7 +603,8 @@ export const sportsData: SportsData = {
     },
     {
       "season": "2025-26",
-      "competition": "",
+      "competition": "platinum",
+      "team_id": "nerone",
       "player_id": "marco-paterlini",
       "number": 9,
       "role": "",
@@ -519,7 +612,8 @@ export const sportsData: SportsData = {
     },
     {
       "season": "2025-26",
-      "competition": "",
+      "competition": "platinum",
+      "team_id": "nerone",
       "player_id": "andrea-balistreri",
       "number": null,
       "role": "",
@@ -527,7 +621,8 @@ export const sportsData: SportsData = {
     },
     {
       "season": "2025-26",
-      "competition": "",
+      "competition": "platinum",
+      "team_id": "nerone",
       "player_id": "marco-dalfonso",
       "number": null,
       "role": "",
@@ -535,7 +630,8 @@ export const sportsData: SportsData = {
     },
     {
       "season": "2025-26",
-      "competition": "",
+      "competition": "platinum",
+      "team_id": "nerone",
       "player_id": "gianluca-fabbri",
       "number": 91,
       "role": "",
@@ -543,7 +639,8 @@ export const sportsData: SportsData = {
     },
     {
       "season": "2025-26",
-      "competition": "",
+      "competition": "platinum",
+      "team_id": "nerone",
       "player_id": "alessandro-graziosi",
       "number": null,
       "role": "",
@@ -551,7 +648,8 @@ export const sportsData: SportsData = {
     },
     {
       "season": "2025-26",
-      "competition": "",
+      "competition": "platinum",
+      "team_id": "nerone",
       "player_id": "francesco-graziosi",
       "number": null,
       "role": "",
@@ -559,7 +657,8 @@ export const sportsData: SportsData = {
     },
     {
       "season": "2025-26",
-      "competition": "",
+      "competition": "platinum",
+      "team_id": "nerone",
       "player_id": "mirko-gentile",
       "number": 1,
       "role": "",
@@ -567,7 +666,8 @@ export const sportsData: SportsData = {
     },
     {
       "season": "2025-26",
-      "competition": "",
+      "competition": "platinum",
+      "team_id": "nerone",
       "player_id": "alessio-marsili",
       "number": 2,
       "role": "",
@@ -575,7 +675,8 @@ export const sportsData: SportsData = {
     },
     {
       "season": "2025-26",
-      "competition": "",
+      "competition": "platinum",
+      "team_id": "nerone",
       "player_id": "franko-maione-buch",
       "number": 99,
       "role": "",
@@ -583,7 +684,8 @@ export const sportsData: SportsData = {
     },
     {
       "season": "2025-26",
-      "competition": "",
+      "competition": "platinum",
+      "team_id": "nerone",
       "player_id": "lorenzo-minoccheri",
       "number": 21,
       "role": "",
@@ -591,7 +693,8 @@ export const sportsData: SportsData = {
     },
     {
       "season": "2025-26",
-      "competition": "",
+      "competition": "platinum",
+      "team_id": "nerone",
       "player_id": "claudio-spagnoli",
       "number": 3,
       "role": "",
@@ -599,7 +702,8 @@ export const sportsData: SportsData = {
     },
     {
       "season": "2025-26",
-      "competition": "",
+      "competition": "platinum",
+      "team_id": "nerone",
       "player_id": "michele-magrini",
       "number": 5,
       "role": "",
@@ -607,7 +711,8 @@ export const sportsData: SportsData = {
     },
     {
       "season": "2025-26",
-      "competition": "",
+      "competition": "platinum",
+      "team_id": "nerone",
       "player_id": "lorenzo-iommetti",
       "number": null,
       "role": "",
@@ -617,20 +722,11 @@ export const sportsData: SportsData = {
   "competitions": [
     {
       "id": "platinum",
-      "name": "Amatori UISP Platinum",
-      "team": "nerone",
-      "standings_points": {
-        "win": null,
-        "loss": null
-      },
-      "games": [],
-      "playerStats": [],
-      "standings": []
-    },
-    {
-      "id": "gold",
-      "name": "Amatori UISP Gold",
-      "team": "nerone",
+      "name": "Amatori UISP",
+      "teams": [
+        "nerone",
+        "nerone-bounganvillae"
+      ],
       "standings_points": {
         "win": null,
         "loss": null
@@ -646,20 +742,11 @@ export const sportsData: SportsData = {
       "competitions": [
         {
           "id": "platinum",
-          "name": "Amatori UISP Platinum",
-          "team": "nerone",
-          "standings_points": {
-            "win": null,
-            "loss": null
-          },
-          "games": [],
-          "playerStats": [],
-          "standings": []
-        },
-        {
-          "id": "gold",
-          "name": "Amatori UISP Gold",
-          "team": "nerone",
+          "name": "Amatori UISP",
+          "teams": [
+            "nerone",
+            "nerone-bounganvillae"
+          ],
           "standings_points": {
             "win": null,
             "loss": null

@@ -3,7 +3,7 @@ import { CompetitionPageView } from '@/components/competition-page-view';
 import { competitions } from '@/lib/site-data';
 import { getLatestSeasonForCompetition } from '@/lib/archive-data';
 
-export const metadata: Metadata = { title: 'Amatori UISP Platinum' };
+export const metadata: Metadata = { title: 'Amatori UISP' };
 export const dynamic = 'force-static';
 
 export default function PlatinumPage() {

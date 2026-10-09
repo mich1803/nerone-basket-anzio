@@ -6,19 +6,23 @@ export const season = {
 export const competitions = [
   {
     slug: 'platinum',
-    name: 'Amatori UISP Platinum',
-    shortName: 'Platinum',
-    code: 'PLT',
-    teamName: 'Nerone Basket Anzio',
-  },
-  {
-    slug: 'gold',
-    name: 'Amatori UISP Gold',
-    shortName: 'Gold',
-    code: 'GLD',
+    name: 'Amatori UISP',
+    shortName: 'Amatori UISP',
+    code: 'UISP',
     teamName: 'Nerone Basket Anzio',
   },
 ] as const;
+
+export const clubTeams = [
+  { id: 'nerone', name: 'Nerone Basket Anzio', shortName: 'Nerone' },
+  { id: 'nerone-bounganvillae', name: 'Nerone Basket Bounganvillae Anzio', shortName: 'Bounganvillae' },
+] as const;
+
+export type ClubTeamId = (typeof clubTeams)[number]['id'];
+
+export function isClubTeam(teamId: string): teamId is ClubTeamId {
+  return clubTeams.some((team) => team.id === teamId);
+}
 
 export type Competition = (typeof competitions)[number];
 

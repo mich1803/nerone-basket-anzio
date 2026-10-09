@@ -51,9 +51,15 @@ const playerIds = new Set(players.map((player) => player.id));
 
 const rosters = csv('rosters.csv').map((row) => ({
   ...row,
+  team_id: row.team_id || 'nerone',
   number: numberOrNull(row.number),
   active: row.active.toLowerCase() !== 'false',
 }));
+
+for (const membership of rosters) {
+  if (!playerIds.has(membership.player_id)) errors.push(`Roster ${membership.season}: giocatore ${membership.player_id} non definito.`);
+  if (!teams[membership.team_id]) errors.push(`Roster ${membership.season}: squadra ${membership.team_id} non definita.`);
+}
 
 function buildCompetition(seasonId, competition) {
   const gameRows = csv(join('games', seasonId, `${competition.id}.csv`));

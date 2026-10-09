@@ -25,6 +25,7 @@ export default async function PlayerPage({ params }: { params: Promise<{ id: str
   const player = sportsData.players.find((item) => item.id === id);
   if (!player) notFound();
   const membership = sportsData.rosters.find((entry) => entry.player_id === id && entry.season === sportsData.season);
+  const currentTeam = membership ? sportsData.teams[membership.team_id] : undefined;
   const stats = sportsData.competitions.flatMap((competition) => competition.playerStats.filter((stat) => stat.player_id === id));
   const totals = stats.reduce((sum, stat) => {
     const [minutes = 0, seconds = 0] = stat.minutes.split(':').map(Number);
@@ -47,7 +48,7 @@ export default async function PlayerPage({ params }: { params: Promise<{ id: str
   return <main>
     <SiteHeader />
     <section className="player-hero">
-      <div className="player-hero-copy"><p className="eyebrow">Roster 2026/27</p><span className="profile-number">{membership?.number ?? '—'}</span><h1>{player.name}</h1><p>{membership?.role || 'Giocatore'}</p></div>
+      <div className="player-hero-copy"><p className="eyebrow">{currentTeam?.name ?? 'Roster'} · 2026/27</p><span className="profile-number">{membership?.number ?? '—'}</span><h1>{player.name}</h1><p>{membership?.role || 'Giocatore'}</p></div>
       <figure><img src={assetPath(player.photo || '/assets/logo-bianco.png')} alt={player.name} /></figure>
     </section>
     <section className="page-section player-content">

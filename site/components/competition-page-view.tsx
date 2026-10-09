@@ -2,7 +2,7 @@ import { Trophy } from 'lucide-react';
 import { SiteHeader } from '@/components/site-header';
 import { SiteFooter } from '@/components/site-footer';
 import { CompetitionFilters } from '@/components/competition-filters';
-import { archivePath, competitions, type Competition } from '@/lib/site-data';
+import { archivePath, competitions, isClubTeam, type Competition } from '@/lib/site-data';
 import type { Game } from '@/lib/data-types';
 import { assetPath, sitePath } from '@/lib/paths';
 import { sportsData } from '@/lib/generated-data';
@@ -32,16 +32,16 @@ function BracketMatchCard({ game, label, className = '' }: { game: Game; label: 
   const body = <>
     <span>{label} · {formatGameDate(game.date)}</span>
     <div className={`bracket-team${homeWon ? ' bracket-winner' : ''}`}>
-      <img src={assetPath(game.home_team === 'nerone' ? '/assets/logo-bianco.png' : home?.logo || '/assets/logo-bianco.png')} alt="" />
+      <img src={assetPath(isClubTeam(game.home_team) ? '/assets/logo-bianco.png' : home?.logo || '/assets/logo-bianco.png')} alt="" />
       <strong>{home?.short_name ?? game.home_team}</strong><b>{game.home_score ?? '–'}</b>
     </div>
     <div className={`bracket-team${awayWon ? ' bracket-winner' : ''}`}>
-      <img src={assetPath(game.away_team === 'nerone' ? '/assets/logo-bianco.png' : away?.logo || '/assets/logo-bianco.png')} alt="" />
+      <img src={assetPath(isClubTeam(game.away_team) ? '/assets/logo-bianco.png' : away?.logo || '/assets/logo-bianco.png')} alt="" />
       <strong>{away?.short_name ?? game.away_team}</strong><b>{game.away_score ?? '–'}</b>
     </div>
   </>;
   const classes = `bracket-match ${className}`.trim();
-  return game.home_team === 'nerone' || game.away_team === 'nerone'
+  return isClubTeam(game.home_team) || isClubTeam(game.away_team)
     ? <Link className={classes} href={sitePath(`/partite/${game.id}`)}>{body}</Link>
     : <article className={classes}>{body}</article>;
 }
@@ -50,6 +50,7 @@ export function CompetitionPageView({ competition, seasonId }: { competition: Co
   const availableSeasons = sportsData.seasons.filter((season) => season.competitions.some((item) => item.id === competition.slug));
   const selectedSeason = availableSeasons.find((season) => season.id === seasonId);
   const data = selectedSeason?.competitions.find((item) => item.id === competition.slug);
+  const competitionName = data?.name ?? competition.name;
   const seasonOptions = availableSeasons.map((season) => {
     const hasCurrentCompetition = season.competitions.some((item) => item.id === competition.slug);
     const targetCompetition = hasCurrentCompetition ? competition.slug : season.competitions[0]?.id ?? competition.slug;
@@ -66,7 +67,7 @@ export function CompetitionPageView({ competition, seasonId }: { competition: Co
         <img className="league-hero-bg" alt="" src={assetPath('/assets/calendar-bg.jpg')} />
         <p className="eyebrow">Nerone Basket Anzio · {seasonId.replace('-', '/')}</p>
         <span className="league-hero-code">{competition.code}</span>
-        <h1>{competition.name}</h1>
+        <h1>{competitionName}</h1>
       </section>
 
       <section className="page-section league-content">
@@ -89,7 +90,7 @@ export function CompetitionPageView({ competition, seasonId }: { competition: Co
               </TableHeader>
               <TableBody>
                 {data?.standings.length ? data.standings.map((row, index) => (
-                  <TableRow key={row.team_id} className={row.team_id === 'nerone' ? 'nerone-row' : ''}>
+                  <TableRow key={row.team_id} className={isClubTeam(row.team_id) ? 'nerone-row' : ''}>
                     <TableCell>{index + 1}</TableCell><TableCell><strong>{row.name}</strong></TableCell>
                     <TableCell>{row.played}</TableCell><TableCell>{row.wins}</TableCell><TableCell>{row.losses}</TableCell>
                     <TableCell>{row.points_for}</TableCell><TableCell>{row.points_against}</TableCell>
@@ -121,8 +122,8 @@ export function CompetitionPageView({ competition, seasonId }: { competition: Co
                 <h4>{group.name}</h4>
                 <table>
                   <thead><tr><th>Squadra</th><th>V–S</th><th>Diff.</th></tr></thead>
-                  <tbody>{group.rows.map((row) => <tr className={row.team_id === 'nerone' ? 'playin-nerone' : ''} key={row.team_id}>
-                    <td><img src={assetPath(row.team_id === 'nerone' ? '/assets/logo-bianco.png' : sportsData.teams[row.team_id]?.logo || '/assets/logo-nero.png')} alt="" /><strong>{sportsData.teams[row.team_id]?.short_name ?? row.team_id}</strong>{row.qualified && <span>Qualificata</span>}</td>
+                  <tbody>{group.rows.map((row) => <tr className={isClubTeam(row.team_id) ? 'playin-nerone' : ''} key={row.team_id}>
+                    <td><img src={assetPath(isClubTeam(row.team_id) ? '/assets/logo-bianco.png' : sportsData.teams[row.team_id]?.logo || '/assets/logo-nero.png')} alt="" /><strong>{sportsData.teams[row.team_id]?.short_name ?? row.team_id}</strong>{row.qualified && <span>Qualificata</span>}</td>
                     <td>{row.wins}–{row.losses}</td>
                     <td>{row.difference > 0 ? '+' : ''}{row.difference}</td>
                   </tr>)}</tbody>

@@ -7,12 +7,7 @@ import { sportsData } from '@/lib/generated-data';
 import { Countdown } from '@/components/countdown';
 import { PromotedSocial } from '@/components/promoted-social';
 import homeSocial from '@/data/home-social.json';
-import { archivePath } from '@/lib/site-data';
-
-const competitions = [
-  { name: 'Amatori UISP Platinum', slug: 'platinum', code: 'PLT' },
-  { name: 'Amatori UISP Gold', slug: 'gold', code: 'GLD' },
-];
+import { archivePath, competitions } from '@/lib/site-data';
 
 export const dynamic = 'force-static';
 
@@ -72,21 +67,21 @@ export default function Home() {
         <div className="section-heading">
           <div>
             <p className="eyebrow dark">Le nostre squadre</p>
-            <h2 id="competitions-title">Scegli il campionato</h2>
+            <h2 id="competitions-title">Segui il campionato</h2>
           </div>
           <p>
-            Nella stagione 26/27 NERONE parteciperà ai due campionati amatori UISP
-            Platinum e Gold.
+            Nella stagione 26/27 le due squadre NERONE parteciperanno allo stesso
+            campionato Amatori UISP, con roster separati.
           </p>
         </div>
 
-        <div className="competition-grid">
+        <div className="competition-grid competition-grid-single">
           {competitions.map((competition, index) => (
             <Link href={sitePath(archivePath('campionato', competition.slug, '2026-27'))} className="competition-card" key={competition.slug}>
               <span className="competition-index">0{index + 1}</span>
               <span className="competition-code">{competition.code}</span>
               <div>
-                <p>Stagione 2026/27</p>
+                <p>Due squadre · Stagione 2026/27</p>
                 <h3>{competition.name}</h3>
               </div>
               <ArrowRight size={24} aria-hidden="true" />

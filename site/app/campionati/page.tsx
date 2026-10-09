@@ -12,16 +12,16 @@ export default function CompetitionsPage() {
   return (
     <main>
       <SiteHeader />
-      <PageIntro eyebrow="Stagione 2026/27" title="Campionati">
-        <p>Due squadre Nerone, due classifiche separate. Scegli il campionato da seguire.</p>
+      <PageIntro eyebrow="Stagione 2026/27" title="Campionato">
+        <p>Due squadre Nerone nello stesso campionato Amatori UISP.</p>
       </PageIntro>
-      <section className="page-section competition-chooser">
+      <section className="page-section competition-chooser competition-chooser-single">
         {competitions.map((competition, index) => (
           <Link href={sitePath(archivePath('campionato', competition.slug, '2026-27'))} className="league-panel" key={competition.slug}>
             <span className="league-number">0{index + 1}</span>
             <span className="league-code">{competition.code}</span>
             <div>
-              <p>Nerone Basket Anzio</p>
+              <p>Due squadre · Stagione 2026/27</p>
               <h2>{competition.name}</h2>
             </div>
             <span className="league-link">Apri campionato <ArrowRight size={18} /></span>

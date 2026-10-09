@@ -34,7 +34,7 @@ export function CompetitionFilters({
           ))}</SelectContent>
         </Select>
       </label>
-      <label htmlFor="competition-filter">
+      {competitionOptions.length > 1 && <label htmlFor="competition-filter">
         <span>Campionato</span>
         <Select value={current} onValueChange={(value) => {
           const option = competitionOptions.find((item) => item.id === value);
@@ -47,7 +47,7 @@ export function CompetitionFilters({
             ))}
           </SelectContent>
         </Select>
-      </label>
+      </label>}
     </div>
   );
 }

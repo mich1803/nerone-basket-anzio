@@ -3,6 +3,11 @@ nerone:
   short_name: Nerone
   logo: /assets/logo-nero.png
 
+nerone-bounganvillae:
+  name: Nerone Basket Bounganvillae Anzio
+  short_name: Nerone Bounganvillae
+  logo: /assets/logo-nero.png
+
 atletico-san-lorenzo:
   name: Atletico San Lorenzo
   short_name: San Lorenzo

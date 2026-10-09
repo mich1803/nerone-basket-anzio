@@ -8,25 +8,27 @@ import { Calendar } from '@/components/ui/calendar';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { sitePath } from '@/lib/paths';
 
-type CalendarGame = { id: string; date: string; time: string; competition: string; home: string; away: string; homeScore: number | null; awayScore: number | null; isNerone: boolean; isHome: boolean };
+type CalendarGame = { id: string; date: string; time: string; competition: string; home: string; away: string; homeScore: number | null; awayScore: number | null; clubTeamId: string; isNerone: boolean; isHome: boolean };
 
 export function SeasonCalendar({ games }: { games: CalendarGame[] }) {
   const [date, setDate] = useState<Date | undefined>();
+  const [team, setTeam] = useState('all');
   const selectedDate = date ? `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}-${String(date.getDate()).padStart(2, '0')}` : '';
-  const selectedGames = games.filter((game) => game.date === selectedDate);
-  const gameDates = games.map((game) => new Date(`${game.date}T12:00:00`));
+  const filteredGames = team === 'all' ? games : games.filter((game) => game.clubTeamId === team);
+  const selectedGames = filteredGames.filter((game) => game.date === selectedDate);
+  const gameDates = filteredGames.map((game) => new Date(`${game.date}T12:00:00`));
 
   return (
     <div className="calendar-layout">
       <div className="calendar-controls">
         <label>
-          <span>Campionato</span>
-          <Select defaultValue="all">
+          <span>Squadra</span>
+          <Select value={team} onValueChange={(value) => value && setTeam(value)}>
             <SelectTrigger className="filter-trigger"><SelectValue /></SelectTrigger>
             <SelectContent>
-              <SelectItem value="all">Tutte le squadre</SelectItem>
-              <SelectItem value="platinum">Platinum</SelectItem>
-              <SelectItem value="gold">Gold</SelectItem>
+              <SelectItem value="all">Entrambe le squadre</SelectItem>
+              <SelectItem value="nerone">Nerone Basket Anzio</SelectItem>
+              <SelectItem value="nerone-bounganvillae">Nerone Bounganvillae</SelectItem>
             </SelectContent>
           </Select>
         </label>

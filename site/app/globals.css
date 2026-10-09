@@ -163,6 +163,8 @@ h1 span { color: var(--red); }
 .page-section { padding: 82px clamp(24px, 6vw, 90px) 104px; }
 
 .competition-chooser { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; background: #bcb9b1; }
+.competition-chooser-single, .competition-grid-single { grid-template-columns: 1fr; }
+.roster-back-link { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 34px; color: var(--red-deep); font-size: .78rem; font-weight: 900; letter-spacing: .08em; text-transform: uppercase; }
 .league-panel { position: relative; display: flex; min-height: 480px; padding: 34px; overflow: hidden; flex-direction: column; justify-content: space-between; background: var(--paper); }
 .league-panel:first-child { background: #111; color: var(--white); }
 .league-number { font-size: .8rem; font-weight: 900; letter-spacing: .1em; }
