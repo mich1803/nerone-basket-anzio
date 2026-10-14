@@ -63,6 +63,9 @@ export default async function GamePage({ params }: { params: Promise<{ id: strin
   const homeLogo = home?.logo_on_dark || (isClubTeam(game.home_team) ? '/assets/logo-bianco.png' : home?.logo || '/assets/logo-bianco.png');
   const awayLogo = away?.logo_on_dark || (isClubTeam(game.away_team) ? '/assets/logo-bianco.png' : away?.logo || '/assets/logo-bianco.png');
   const clubTeam = isClubTeam(game.home_team) ? home : away;
+  const venueLabel = game.venue && game.address.toLocaleLowerCase().includes(game.venue.toLocaleLowerCase())
+    ? game.address
+    : [game.venue, game.address].filter(Boolean).join(' · ');
 
   return <main>
     <SiteHeader />
@@ -76,7 +79,7 @@ export default async function GamePage({ params }: { params: Promise<{ id: strin
       </div>
       <div className="game-meta">
         <span><CalendarDays size={17} /> {game.date ? `${formatGameDate(game.date)}${game.time ? ` · ${game.time}` : ''}` : 'Data non disponibile'}</span>
-        {game.address ? <a className="game-map-link" href={`https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(game.address)}`} target="_blank" rel="noreferrer"><MapPin size={17} /> {[game.venue, game.address].filter(Boolean).join(' · ')}</a> : <span><MapPin size={17} /> {game.venue || 'Luogo non disponibile'}</span>}
+        {game.address ? <a className="game-map-link" href={`https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(game.address)}`} target="_blank" rel="noreferrer"><MapPin size={17} /> {venueLabel}</a> : <span><MapPin size={17} /> {game.venue || 'Luogo non disponibile'}</span>}
         {game.notes && <span>{game.notes}</span>}
       </div>
     </section>

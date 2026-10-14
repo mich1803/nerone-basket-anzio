@@ -38,7 +38,7 @@ export function SeasonCalendar({ games }: { games: CalendarGame[] }) {
         locale={it}
         selected={date}
         onSelect={setDate}
-        defaultMonth={new Date(2026, 8, 1)}
+        defaultMonth={new Date()}
         modifiers={{ hasGame: gameDates }}
         modifiersClassNames={{ hasGame: 'calendar-game-day' }}
         className="season-calendar"

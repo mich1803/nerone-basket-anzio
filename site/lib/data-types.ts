@@ -28,7 +28,7 @@ export type CompetitionData = {
   games: Game[]; playerStats: PlayerStat[]; standings: Standing[]; postseason?: PostseasonData;
 };
 export type SeasonData = { id: string; competitions: CompetitionData[] };
-export type NewsItem = { slug: string; title: string; date: string; cover?: string; players?: string[]; games?: string[]; excerpt?: string; body: string };
+export type NewsItem = { slug: string; title: string; date: string; cover?: string | null; players?: string[]; games?: string[]; excerpt?: string; body: string };
 export type SportsData = {
   season: string; teams: Record<string, Team>; players: Player[]; rosters: RosterEntry[];
   competitions: CompetitionData[]; seasons: SeasonData[]; news: NewsItem[];
