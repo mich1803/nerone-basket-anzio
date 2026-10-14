@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import Link from '@/components/site-link';
 import { ArrowRight, CalendarDays, MapPin } from 'lucide-react';
 import { SiteFooter } from '@/components/site-footer';
@@ -8,8 +9,10 @@ import { Countdown } from '@/components/countdown';
 import { PromotedSocial } from '@/components/promoted-social';
 import homeSocial from '@/data/home-social.json';
 import { archivePath, competitions, isClubTeam } from '@/lib/site-data';
+import { absoluteSiteUrl } from '@/lib/seo';
 
 export const dynamic = 'force-static';
+export const metadata: Metadata = { alternates: { canonical: absoluteSiteUrl('/') } };
 
 export default function Home() {
   const today = new Date().toISOString().slice(0, 10);
@@ -19,6 +22,7 @@ export default function Home() {
   const nextAway = nextGame ? sportsData.teams[nextGame.away_team]?.short_name ?? nextGame.away_team : '';
   const nextClubTeamId = nextGame ? [nextGame.home_team, nextGame.away_team].find(isClubTeam) : undefined;
   const nextClubLogo = nextClubTeamId ? sportsData.teams[nextClubTeamId]?.logo_on_dark : undefined;
+  const latestNews = [...sportsData.news].sort((a, b) => b.date.localeCompare(a.date)).slice(0, 3);
 
   return (
     <main>
@@ -27,7 +31,7 @@ export default function Home() {
       <section className="hero" aria-labelledby="hero-title">
         <div className="hero-copy">
           <p className="eyebrow">Nerone Basket Anzio · Stagione 2026/27</p>
-          <h1 id="hero-title">Black!</h1>
+          <h1 id="hero-title"><span className="visually-hidden">Nerone Basket Anzio — </span>Black!</h1>
           <p className="hero-intro">
             Risultati, classifiche, tabellini e notizie della stagione 26/27 del
             NERONE BASKET ANZIO.
@@ -91,6 +95,25 @@ export default function Home() {
           ))}
         </div>
       </section>
+      {latestNews.length > 0 && <section className="home-news" aria-labelledby="latest-news-title">
+        <div className="section-heading">
+          <div>
+            <p className="eyebrow dark">Dal campo e dal club</p>
+            <h2 id="latest-news-title">Ultime notizie</h2>
+          </div>
+          <Link className="home-news-link" href={sitePath('/notizie')}>Tutte le notizie <ArrowRight size={18} aria-hidden="true" /></Link>
+        </div>
+        <div className="news-grid home-news-grid" data-count={latestNews.length}>
+          {latestNews.map((news) => <Link href={sitePath(`/notizie/${news.slug}`)} className="news-card" key={news.slug}>
+            {news.cover ? <figure><img src={assetPath(news.cover)} alt="" /></figure> : <span className="news-card-mark">N</span>}
+            <div>
+              <p>{new Date(`${news.date}T12:00:00`).toLocaleDateString('it-IT', { day: 'numeric', month: 'long', year: 'numeric' })}</p>
+              <h2>{news.title}</h2>
+              {news.excerpt && <span>{news.excerpt}</span>}
+            </div>
+          </Link>)}
+        </div>
+      </section>}
       <SiteFooter />
     </main>
   );

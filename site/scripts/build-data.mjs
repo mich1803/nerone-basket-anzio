@@ -6,7 +6,9 @@ import YAML from 'yaml';
 const projectRoot = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const dataRoot = join(projectRoot, 'data');
 const contentRoot = join(projectRoot, 'content', 'news');
+const publicRoot = join(projectRoot, 'public');
 const errors = [];
+const siteUrl = 'https://mich1803.github.io/nerone-basket-anzio';
 
 function parseCsv(text) {
   const rows = [];
@@ -186,4 +188,24 @@ if (errors.length) {
 
 const output = { season: currentSeasonId, teams, players, rosters, competitions, seasons, news };
 writeFileSync(join(projectRoot, 'lib', 'generated-data.ts'), `// Generato automaticamente da scripts/build-data.mjs.\nimport type { SportsData } from './data-types';\nexport const sportsData: SportsData = ${JSON.stringify(output, null, 2)};\n`);
+
+const clubTeamIds = new Set(['nerone', 'nerone-bounganvillae']);
+const seasonRouteId = (seasonId) => seasonId.split('-')[1]?.slice(-2) ?? seasonId;
+const sitemapRoutes = [...new Set([
+  '/',
+  '/calendario',
+  '/roster',
+  '/notizie',
+  '/club',
+  ...seasons.flatMap((season) => [`/campionato/${seasonRouteId(season.id)}`, `/partite/${seasonRouteId(season.id)}`]),
+  ...['nerone', 'nerone-bounganvillae'].map((teamId) => `/roster/${teamId}`),
+  ...players.map((player) => `/giocatori/${player.id}`),
+  ...seasons.flatMap((season) => season.competitions.flatMap((competition) => competition.games
+    .filter((game) => clubTeamIds.has(game.home_team) || clubTeamIds.has(game.away_team))
+    .map((game) => `/partite/${game.id}`))),
+  ...news.map((item) => `/notizie/${item.slug}`),
+])];
+const sitemapXml = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${sitemapRoutes.map((route) => `  <url><loc>${siteUrl}${route === '/' ? '/' : route}</loc></url>`).join('\n')}\n</urlset>\n`;
+writeFileSync(join(publicRoot, 'sitemap.xml'), sitemapXml);
+writeFileSync(join(publicRoot, 'robots.txt'), `User-agent: *\nAllow: /\n\nSitemap: ${siteUrl}/sitemap.xml\n`);
 console.log(`Dati validati: ${seasons.reduce((total, season) => total + season.competitions.reduce((sum, competition) => sum + competition.games.length, 0), 0)} partite, ${players.length} giocatori, ${news.length} notizie.`);
