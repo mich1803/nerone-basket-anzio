@@ -14,8 +14,8 @@ export const competitions = [
 ] as const;
 
 export const clubTeams = [
-  { id: 'nerone', name: 'Nerone Basket Anzio', shortName: 'Nerone' },
-  { id: 'nerone-bounganvillae', name: 'Nerone Basket Bounganvillae Anzio', shortName: 'Bounganvillae' },
+  { id: 'nerone', name: 'Nerone Basket Anzio', shortName: 'Nerone', code: 'NER' },
+  { id: 'nerone-bounganvillae', name: 'Nerone Basket Anzio BGV', shortName: 'Nerone BGV', code: 'BGV' },
 ] as const;
 
 export type ClubTeamId = (typeof clubTeams)[number]['id'];
@@ -34,6 +34,6 @@ export function seasonRouteId(seasonId: string) {
   return seasonId.split('-')[1]?.slice(-2) ?? seasonId;
 }
 
-export function archivePath(section: 'campionato' | 'partite', competition: string, seasonId: string) {
-  return `/${section}/${competition}/${seasonRouteId(seasonId)}`;
+export function archivePath(section: 'campionato' | 'partite', _competition: string, seasonId: string) {
+  return `/${section}/${seasonRouteId(seasonId)}`;
 }

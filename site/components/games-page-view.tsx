@@ -25,16 +25,18 @@ function orderedGames(games: Game[]) {
   });
 }
 
-function ResultCard({ game }: { game: Game }) {
+function ResultCard({ game, featured = false }: { game: Game; featured?: boolean }) {
   const home = sportsData.teams[game.home_team];
   const away = sportsData.teams[game.away_team];
+  const homeLogo = featured ? home?.logo_on_dark || home?.logo : home?.logo;
+  const awayLogo = featured ? away?.logo_on_dark || away?.logo : away?.logo;
 
-  return <Link className="result-card" href={sitePath(`/partite/${game.id}`)}>
-    <span>{formatGameDate(game.date)}{game.round ? ` · ${game.round}` : ''}{game.notes ? ` · ${game.notes}` : ''}</span>
+  return <Link className={`result-card${featured ? ' result-card-featured' : ''}`} href={sitePath(`/partite/${game.id}`)}>
+    <span>{formatGameDate(game.date)}{game.time ? ` · ${game.time}` : ''}{game.notes ? ` · ${game.notes}` : ''}{game.venue ? ` · ${game.venue}` : ''}{game.round ? ` · ${game.round}` : ''}</span>
     <div className="result-match">
       <div className="result-team-list">
-        <div className="result-team"><img src={assetPath(home?.logo || '/assets/logo-nero.png')} alt="" /><strong>{home?.short_name ?? game.home_team}</strong></div>
-        <div className="result-team"><img src={assetPath(away?.logo || '/assets/logo-nero.png')} alt="" /><strong>{away?.short_name ?? game.away_team}</strong></div>
+        <div className="result-team"><img src={assetPath(homeLogo || '/assets/logo-nero.png')} alt="" /><strong>{home?.short_name ?? game.home_team}</strong></div>
+        <div className="result-team"><img src={assetPath(awayLogo || '/assets/logo-nero.png')} alt="" /><strong>{away?.short_name ?? game.away_team}</strong></div>
       </div>
       <b>{game.home_score ?? '–'} : {game.away_score ?? '–'}</b>
     </div>
@@ -57,7 +59,12 @@ export function GamesPageView({ competition, seasonId }: { competition: Competit
     .map((item) => ({ id: item.slug, label: item.shortName, href: archivePath('partite', item.slug, seasonId) }));
   const neroneGames = data?.games.filter((game) => isClubTeam(game.home_team) || isClubTeam(game.away_team)) ?? [];
   const otherGames = orderedGames(data?.games.filter((game) => !isClubTeam(game.home_team) && !isClubTeam(game.away_team)) ?? []);
+  const nextGame = [...neroneGames]
+    .filter((game) => game.status === 'scheduled')
+    .sort((first, second) => `${first.date}T${first.time}`.localeCompare(`${second.date}T${second.time}`))[0];
   const groups = [
+    { id: 'upcoming', title: 'Prossima partita', games: nextGame ? [nextGame] : [] },
+    { id: 'friendly', title: 'Amichevoli', games: orderedGames(neroneGames.filter((game) => game.phase === 'friendly' && game.id !== nextGame?.id)) },
     { id: 'final-four', title: 'Final Four', games: orderedGames(neroneGames.filter((game) => game.phase === 'final-four')) },
     { id: 'play-in', title: 'Play-in', games: orderedGames(neroneGames.filter((game) => game.phase === 'play-in')) },
     { id: 'regular-season', title: 'Stagione regolare', games: orderedGames(neroneGames.filter((game) => !game.phase || game.phase === 'regular-season')) },
@@ -84,9 +91,9 @@ export function GamesPageView({ competition, seasonId }: { competition: Competit
             <p className="eyebrow dark">Le nostre squadre</p>
             <h2>Tutte le partite</h2>
           </div>
-          {groups.length ? groups.map((group) => <section className="game-phase" key={group.id}>
+          {groups.length ? groups.map((group) => <section className={`game-phase${group.id === 'upcoming' ? ' game-phase-upcoming' : ''}`} key={group.id}>
             <h3>{group.title}</h3>
-            <div className="result-list">{group.games.map((game) => <ResultCard game={game} key={game.id} />)}</div>
+            <div className="result-list">{group.games.map((game) => <ResultCard game={game} featured={group.id === 'upcoming'} key={game.id} />)}</div>
           </section>) : <div className="empty-result"><img src={assetPath('/assets/logo-nero.png')} alt="" /><strong>Calendario in aggiornamento</strong><p>Qui troverai tutte le partite della stagione.</p></div>}
         </div>
 

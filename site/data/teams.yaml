@@ -4,9 +4,15 @@ nerone:
   logo: /assets/logo-nero.png
 
 nerone-bounganvillae:
-  name: Nerone Basket Bounganvillae Anzio
-  short_name: Nerone Bounganvillae
-  logo: /assets/logo-nero.png
+  name: Nerone Basket Anzio BGV
+  short_name: Nerone BGV
+  logo: /assets/teams/2026-27/bgv-nero.png
+  logo_on_dark: /assets/teams/2026-27/bgv-bianco.png
+
+samurai-csi:
+  name: Samurai Basket Aprilia CSI
+  short_name: Samurai CSI
+  logo: /assets/teams/2026-27/samurai.png
 
 atletico-san-lorenzo:
   name: Atletico San Lorenzo

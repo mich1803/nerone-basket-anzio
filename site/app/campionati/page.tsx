@@ -1,34 +1,10 @@
-import Link from '@/components/site-link';
-import { ArrowRight } from 'lucide-react';
-import { SiteHeader } from '@/components/site-header';
-import { SiteFooter } from '@/components/site-footer';
-import { PageIntro } from '@/components/page-intro';
-import { archivePath, competitions } from '@/lib/site-data';
-import { sitePath } from '@/lib/paths';
+import type { Metadata } from 'next';
+import { CompetitionPageView } from '@/components/competition-page-view';
+import { competitions } from '@/lib/site-data';
 
 export const dynamic = 'force-static';
+export const metadata: Metadata = { title: 'Amatori UISP' };
 
 export default function CompetitionsPage() {
-  return (
-    <main>
-      <SiteHeader />
-      <PageIntro eyebrow="Stagione 2026/27" title="Campionato">
-        <p>Due squadre Nerone nello stesso campionato Amatori UISP.</p>
-      </PageIntro>
-      <section className="page-section competition-chooser competition-chooser-single">
-        {competitions.map((competition, index) => (
-          <Link href={sitePath(archivePath('campionato', competition.slug, '2026-27'))} className="league-panel" key={competition.slug}>
-            <span className="league-number">0{index + 1}</span>
-            <span className="league-code">{competition.code}</span>
-            <div>
-              <p>Due squadre · Stagione 2026/27</p>
-              <h2>{competition.name}</h2>
-            </div>
-            <span className="league-link">Apri campionato <ArrowRight size={18} /></span>
-          </Link>
-        ))}
-      </section>
-      <SiteFooter />
-    </main>
-  );
+  return <CompetitionPageView competition={competitions[0]} seasonId="2026-27" />;
 }

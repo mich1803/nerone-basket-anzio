@@ -8,8 +8,8 @@ export function SiteFooter() {
         <img src={assetPath('/assets/logo-testo-bianco.png')} alt="Nerone Basket Anzio" />
       </div>
       <nav aria-label="Link nel piè di pagina">
-        <Link href={sitePath('/campionati')}>Campionato</Link>
-        <Link href={sitePath('/partite/platinum')}>Partite</Link>
+        <Link href={sitePath('/campionato/27')}>Campionato</Link>
+        <Link href={sitePath('/partite/27')}>Partite</Link>
         <Link href={sitePath('/calendario')}>Calendario</Link>
         <Link href={sitePath('/roster')}>Roster</Link>
         <Link href={sitePath('/notizie')}>Notizie</Link>

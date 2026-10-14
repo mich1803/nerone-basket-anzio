@@ -21,7 +21,7 @@ export default function RosterPage() {
         {clubTeams.map((team, index) => (
           <Link href={sitePath(`/roster/${team.id}`)} className="league-panel" key={team.id}>
             <span className="league-number">0{index + 1}</span>
-            <span className="league-code">{index + 1}</span>
+            <span className="league-code">{team.code}</span>
             <div>
               <p>Amatori UISP · 2026/27</p>
               <h2>{team.name}</h2>

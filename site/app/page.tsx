@@ -7,7 +7,7 @@ import { sportsData } from '@/lib/generated-data';
 import { Countdown } from '@/components/countdown';
 import { PromotedSocial } from '@/components/promoted-social';
 import homeSocial from '@/data/home-social.json';
-import { archivePath, competitions } from '@/lib/site-data';
+import { archivePath, competitions, isClubTeam } from '@/lib/site-data';
 
 export const dynamic = 'force-static';
 
@@ -17,6 +17,8 @@ export default function Home() {
   const nextGame = upcoming[0];
   const nextHome = nextGame ? sportsData.teams[nextGame.home_team]?.short_name ?? nextGame.home_team : '';
   const nextAway = nextGame ? sportsData.teams[nextGame.away_team]?.short_name ?? nextGame.away_team : '';
+  const nextClubTeamId = nextGame ? [nextGame.home_team, nextGame.away_team].find(isClubTeam) : undefined;
+  const nextClubLogo = nextClubTeamId ? sportsData.teams[nextClubTeamId]?.logo_on_dark : undefined;
 
   return (
     <main>
@@ -31,7 +33,7 @@ export default function Home() {
             NERONE BASKET ANZIO.
           </p>
           <div className="hero-actions">
-            <Link className="button button-light" href={sitePath('/campionati')}>
+            <Link className="button button-light" href={sitePath('/campionato/27')}>
               Segui la stagione <ArrowRight size={18} aria-hidden="true" />
             </Link>
             <Link className="text-link" href={sitePath('/roster')}>Scopri i roster</Link>
@@ -45,9 +47,9 @@ export default function Home() {
         </div>
 
         <aside className="next-game" aria-label="Prossima partita">
-          <p className="panel-label">Prossima partita</p>
+          <p className="panel-label"><span>Prossima<br />partita</span></p>
           <div className="next-game-state">
-            <img src={assetPath('/assets/logo-bianco.png')} alt="" />
+            <img src={assetPath(nextClubLogo || '/assets/logo-bianco.png')} alt="" />
             <div>
               <strong>{nextGame ? `${nextHome} – ${nextAway}` : 'Calendario in aggiornamento'}</strong>
               <span>{nextGame?.competitionName ?? 'Stagione 2026/27'}</span>

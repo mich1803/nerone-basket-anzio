@@ -28,7 +28,7 @@ export function SeasonCalendar({ games }: { games: CalendarGame[] }) {
             <SelectContent>
               <SelectItem value="all">Entrambe le squadre</SelectItem>
               <SelectItem value="nerone">Nerone Basket Anzio</SelectItem>
-              <SelectItem value="nerone-bounganvillae">Nerone Bounganvillae</SelectItem>
+              <SelectItem value="nerone-bounganvillae">Nerone BGV</SelectItem>
             </SelectContent>
           </Select>
         </label>

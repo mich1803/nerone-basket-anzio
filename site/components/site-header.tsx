@@ -3,8 +3,8 @@ import { Menu } from 'lucide-react';
 import { assetPath, sitePath } from '@/lib/paths';
 
 const links = [
-  { href: '/campionati', label: 'Campionato' },
-  { href: '/partite/platinum', label: 'Partite' },
+  { href: '/campionato/27', label: 'Campionato' },
+  { href: '/partite/27', label: 'Partite' },
   { href: '/calendario', label: 'Calendario' },
   { href: '/roster', label: 'Roster' },
   { href: '/notizie', label: 'Notizie' },

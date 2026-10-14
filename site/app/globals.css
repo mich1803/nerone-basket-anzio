@@ -98,7 +98,7 @@ h1 span { color: var(--red); }
 .side-word { position: absolute; right: -21px; bottom: 92px; margin: 0; color: transparent; font-family: var(--display); font-size: clamp(5rem, 11vw, 11rem); letter-spacing: .02em; line-height: .75; text-transform: uppercase; -webkit-text-stroke: 1px rgba(255,255,255,.42); transform: rotate(-90deg) translateX(100%); transform-origin: bottom right; }
 
 .next-game { position: absolute; z-index: 5; left: clamp(28px, 5.4vw, 82px); bottom: 0; display: grid; grid-template-columns: 190px 1fr; width: min(760px, calc(100% - 56px)); min-height: 135px; background: var(--red); }
-.panel-label { display: flex; align-items: center; justify-content: center; margin: 0; border-right: 1px solid rgba(255,255,255,.25); font-size: .75rem; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; }
+.panel-label { display: flex; align-items: center; justify-content: center; margin: 0; border-right: 1px solid rgba(255,255,255,.25); font-size: .86rem; font-weight: 800; letter-spacing: .16em; line-height: 1.25; text-align: center; text-transform: uppercase; }
 .next-game-state { display: flex; align-items: center; gap: 18px; padding: 20px 26px 48px; }
 .next-game-state img { width: 62px; height: 62px; object-fit: contain; }
 .next-game-state strong, .next-game-state span { display: block; }
@@ -228,6 +228,11 @@ h1 span { color: var(--red); }
 .games-primary { min-width: 0; }
 .game-phase + .game-phase { margin-top: 54px; }
 .game-phase > h3 { margin: 0 0 16px; padding-bottom: 12px; border-bottom: 3px solid var(--ink); font-family: var(--display); font-size: clamp(1.8rem, 3vw, 2.8rem); letter-spacing: .02em; line-height: 1; text-transform: uppercase; }
+.game-phase-upcoming { margin-bottom: 54px; padding: 26px; background: #111; color: #fff; }
+.game-phase-upcoming > h3 { border-color: var(--red); }
+.result-card-featured { background: var(--red-deep); color: #fff; }
+.result-card-featured > span { color: #e0b1b5; }
+.result-card-featured:hover { background: var(--red); }
 .other-games-panel { position: sticky; top: 110px; }
 .archive-other-results { margin-top: 0; padding-top: 0; border-top: 0; }
 .archive-other-results > div { grid-template-areas: 'home score away' 'meta meta meta'; }

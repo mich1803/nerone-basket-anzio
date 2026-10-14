@@ -7,7 +7,7 @@ import { sportsData } from '@/lib/generated-data';
 import { assetPath } from '@/lib/paths';
 import { GamesPageView } from '@/components/games-page-view';
 import { getArchiveCompetitionIds, getLatestSeasonForCompetition } from '@/lib/archive-data';
-import { getCompetition, isClubTeam } from '@/lib/site-data';
+import { competitions, getCompetition, isClubTeam, seasonRouteId } from '@/lib/site-data';
 import { SocialEmbeds } from '@/components/social-embeds';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
 
@@ -23,15 +23,26 @@ function formatGameDate(date: string) {
 }
 
 export function generateStaticParams() {
-  return [...neroneGames.map(({ game }) => game.id), ...getArchiveCompetitionIds()].map((id) => ({ id }));
+  return [...new Set([
+    ...neroneGames.map(({ game }) => game.id),
+    ...getArchiveCompetitionIds(),
+    ...sportsData.seasons.map((season) => seasonRouteId(season.id)),
+  ])].map((id) => ({ id }));
+}
+
+function resolveGamesArchive(value: string) {
+  const season = sportsData.seasons.find((item) => seasonRouteId(item.id) === value);
+  if (season) return { competition: competitions[0], season };
+
+  const competition = getCompetition(value);
+  return { competition, season: competition ? getLatestSeasonForCompetition(competition.slug) : undefined };
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ id: string }> }): Promise<Metadata> {
   const { id } = await params;
   const found = neroneGames.find(({ game }) => game.id === id);
   if (!found) {
-    const competition = getCompetition(id);
-    const season = getLatestSeasonForCompetition(id);
+    const { competition, season } = resolveGamesArchive(id);
     return { title: competition && season ? `Partite ${competition.shortName} ${season.id.replace('-', '/')}` : 'Partita' };
   }
   return { title: `${sportsData.teams[found.game.home_team]?.short_name ?? found.game.home_team} – ${sportsData.teams[found.game.away_team]?.short_name ?? found.game.away_team}` };
@@ -41,8 +52,7 @@ export default async function GamePage({ params }: { params: Promise<{ id: strin
   const { id } = await params;
   const found = neroneGames.find(({ game }) => game.id === id);
   if (!found) {
-    const competition = getCompetition(id);
-    const season = getLatestSeasonForCompetition(id);
+    const { competition, season } = resolveGamesArchive(id);
     if (!competition || !season) notFound();
     return <GamesPageView competition={competition} seasonId={season.id} />;
   }
@@ -50,8 +60,8 @@ export default async function GamePage({ params }: { params: Promise<{ id: strin
   const stats = competition.playerStats.filter((stat) => stat.game_id === game.id);
   const home = sportsData.teams[game.home_team];
   const away = sportsData.teams[game.away_team];
-  const homeLogo = isClubTeam(game.home_team) ? '/assets/logo-bianco.png' : home?.logo || '/assets/logo-bianco.png';
-  const awayLogo = isClubTeam(game.away_team) ? '/assets/logo-bianco.png' : away?.logo || '/assets/logo-bianco.png';
+  const homeLogo = home?.logo_on_dark || (isClubTeam(game.home_team) ? '/assets/logo-bianco.png' : home?.logo || '/assets/logo-bianco.png');
+  const awayLogo = away?.logo_on_dark || (isClubTeam(game.away_team) ? '/assets/logo-bianco.png' : away?.logo || '/assets/logo-bianco.png');
   const clubTeam = isClubTeam(game.home_team) ? home : away;
 
   return <main>

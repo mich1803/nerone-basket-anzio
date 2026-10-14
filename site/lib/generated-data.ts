@@ -9,9 +9,15 @@ export const sportsData: SportsData = {
       "logo": "/assets/logo-nero.png"
     },
     "nerone-bounganvillae": {
-      "name": "Nerone Basket Bounganvillae Anzio",
-      "short_name": "Nerone Bounganvillae",
-      "logo": "/assets/logo-nero.png"
+      "name": "Nerone Basket Anzio BGV",
+      "short_name": "Nerone BGV",
+      "logo": "/assets/teams/2026-27/bgv-nero.png",
+      "logo_on_dark": "/assets/teams/2026-27/bgv-bianco.png"
+    },
+    "samurai-csi": {
+      "name": "Samurai Basket Aprilia CSI",
+      "short_name": "Samurai CSI",
+      "logo": "/assets/teams/2026-27/samurai.png"
     },
     "atletico-san-lorenzo": {
       "name": "Atletico San Lorenzo",
@@ -731,7 +737,26 @@ export const sportsData: SportsData = {
         "win": null,
         "loss": null
       },
-      "games": [],
+      "games": [
+        {
+          "id": "2026-27-uisp-friendly-01",
+          "date": "2026-10-15",
+          "time": "21:00",
+          "status": "scheduled",
+          "home_team": "samurai-csi",
+          "away_team": "nerone-bounganvillae",
+          "home_score": null,
+          "away_score": null,
+          "venue": "Istituto \"Carlo e Nello Rosselli\"",
+          "address": "Istituto \"Carlo e Nello Rosselli\", Via Carroceto, Aprilia (LT)",
+          "instagram_url": "",
+          "notes": "Amichevole",
+          "phase": "friendly",
+          "round": "",
+          "social_urls": [],
+          "competition": "platinum"
+        }
+      ],
       "playerStats": [],
       "standings": []
     }
@@ -751,7 +776,26 @@ export const sportsData: SportsData = {
             "win": null,
             "loss": null
           },
-          "games": [],
+          "games": [
+            {
+              "id": "2026-27-uisp-friendly-01",
+              "date": "2026-10-15",
+              "time": "21:00",
+              "status": "scheduled",
+              "home_team": "samurai-csi",
+              "away_team": "nerone-bounganvillae",
+              "home_score": null,
+              "away_score": null,
+              "venue": "Istituto \"Carlo e Nello Rosselli\"",
+              "address": "Istituto \"Carlo e Nello Rosselli\", Via Carroceto, Aprilia (LT)",
+              "instagram_url": "",
+              "notes": "Amichevole",
+              "phase": "friendly",
+              "round": "",
+              "social_urls": [],
+              "competition": "platinum"
+            }
+          ],
           "playerStats": [],
           "standings": []
         }
@@ -1474,5 +1518,16 @@ export const sportsData: SportsData = {
       ]
     }
   ],
-  "news": []
+  "news": [
+    {
+      "slug": "due-squadre-stagione-2026-27",
+      "title": "Due squadre per la stagione 2026/27",
+      "date": "2026-10-14",
+      "cover": null,
+      "players": [],
+      "games": [],
+      "excerpt": "Il Nerone Basket Anzio affronta la nuova stagione con una seconda formazione e un progetto sempre più aperto alla partecipazione.",
+      "body": "Dopo una prima stagione conclusa con il raggiungimento delle semifinali del campionato Amatori UISP, un traguardo significativo per una società al suo primo anno di attività, il Nerone Basket Anzio si prepara ad affrontare la stagione sportiva 2026/2027 con rinnovato entusiasmo e nuove prospettive.\n\nLa novità principale è la nascita di una seconda formazione, il Nerone Basket Anzio BGV, che prenderà anch'essa parte al campionato Amatori UISP.\n\nLa sigla BGV è un omaggio a “Via delle Bouganvillae”, sede del playground che rappresenta un punto di riferimento per tantissimi appassionati di pallacanestro del territorio: un luogo di incontro e condivisione dove molti dei nostri attuali giocatori hanno coltivato e continuano a vivere la propria passione per questo sport.\n\nL'introduzione di questa nuova squadra risponde a un obiettivo preciso: ampliare le opportunità di partecipazione, promuovendo sia l'avvicinamento che il ritorno alla pratica sportiva.\n\nFin dalla sua fondazione, il Nerone Basket Anzio ha scelto di mettere al centro del proprio progetto non solo la dimensione agonistica, ma anche il valore sociale ed educativo dello sport, inteso come strumento di crescita personale e aggregazione.\n\nIn quest'ottica, riteniamo fondamentale ribadire la nostra volontà di creare opportunità anziché limitarle, favorendo l'inclusione a tutti i livelli. La nascita della seconda formazione è la testimonianza di questa visione.\n\nUn doveroso e sentito ringraziamento va a tutte le realtà e i sostenitori che ci hanno affiancato durante la scorsa stagione e che continuano a garantirci il loro prezioso supporto: è anche grazie alla vostra vicinanza che questo progetto continua a crescere.\n\nCon questo spirito ci apprestiamo a iniziare la nuova stagione, consapevoli del percorso fatto e pronti ad affrontare le sfide che ci attendono.\n\nIn attesa di condividere le prossime novità sulla nuova stagione, invitiamo tutti a seguirci sui nostri canali.\n\nIl percorso del Nerone Basket Anzio continua."
+    }
+  ]
 };

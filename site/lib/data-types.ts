@@ -1,4 +1,4 @@
-export type Team = { name: string; short_name: string; logo?: string };
+export type Team = { name: string; short_name: string; logo?: string; logo_on_dark?: string };
 export type Player = { id: string; name: string; birth_date?: string; instagram?: string; photo?: string; bio: string; social_urls?: string[] };
 export type RosterEntry = { season: string; competition: string; team_id: string; player_id: string; number: number | null; role: string; active: boolean };
 export type Game = {

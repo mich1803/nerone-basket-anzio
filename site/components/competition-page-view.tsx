@@ -32,11 +32,11 @@ function BracketMatchCard({ game, label, className = '' }: { game: Game; label: 
   const body = <>
     <span>{label} · {formatGameDate(game.date)}</span>
     <div className={`bracket-team${homeWon ? ' bracket-winner' : ''}`}>
-      <img src={assetPath(isClubTeam(game.home_team) ? '/assets/logo-bianco.png' : home?.logo || '/assets/logo-bianco.png')} alt="" />
+      <img src={assetPath(home?.logo_on_dark || (isClubTeam(game.home_team) ? '/assets/logo-bianco.png' : home?.logo || '/assets/logo-bianco.png'))} alt="" />
       <strong>{home?.short_name ?? game.home_team}</strong><b>{game.home_score ?? '–'}</b>
     </div>
     <div className={`bracket-team${awayWon ? ' bracket-winner' : ''}`}>
-      <img src={assetPath(isClubTeam(game.away_team) ? '/assets/logo-bianco.png' : away?.logo || '/assets/logo-bianco.png')} alt="" />
+      <img src={assetPath(away?.logo_on_dark || (isClubTeam(game.away_team) ? '/assets/logo-bianco.png' : away?.logo || '/assets/logo-bianco.png'))} alt="" />
       <strong>{away?.short_name ?? game.away_team}</strong><b>{game.away_score ?? '–'}</b>
     </div>
   </>;
@@ -123,7 +123,7 @@ export function CompetitionPageView({ competition, seasonId }: { competition: Co
                 <table>
                   <thead><tr><th>Squadra</th><th>V–S</th><th>Diff.</th></tr></thead>
                   <tbody>{group.rows.map((row) => <tr className={isClubTeam(row.team_id) ? 'playin-nerone' : ''} key={row.team_id}>
-                    <td><img src={assetPath(isClubTeam(row.team_id) ? '/assets/logo-bianco.png' : sportsData.teams[row.team_id]?.logo || '/assets/logo-nero.png')} alt="" /><strong>{sportsData.teams[row.team_id]?.short_name ?? row.team_id}</strong>{row.qualified && <span>Qualificata</span>}</td>
+                    <td><img src={assetPath(sportsData.teams[row.team_id]?.logo_on_dark || (isClubTeam(row.team_id) ? '/assets/logo-bianco.png' : sportsData.teams[row.team_id]?.logo || '/assets/logo-nero.png'))} alt="" /><strong>{sportsData.teams[row.team_id]?.short_name ?? row.team_id}</strong>{row.qualified && <span>Qualificata</span>}</td>
                     <td>{row.wins}–{row.losses}</td>
                     <td>{row.difference > 0 ? '+' : ''}{row.difference}</td>
                   </tr>)}</tbody>
