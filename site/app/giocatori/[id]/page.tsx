@@ -26,7 +26,12 @@ export default async function PlayerPage({ params }: { params: Promise<{ id: str
   if (!player) notFound();
   const membership = sportsData.rosters.find((entry) => entry.player_id === id && entry.season === sportsData.season);
   const currentTeam = membership ? sportsData.teams[membership.team_id] : undefined;
-  const stats = sportsData.competitions.flatMap((competition) => competition.playerStats.filter((stat) => stat.player_id === id));
+  const stats = sportsData.competitions.flatMap((competition) => {
+    const officialGameIds = new Set(competition.games
+      .filter((game) => game.phase !== 'friendly')
+      .map((game) => game.id));
+    return competition.playerStats.filter((stat) => stat.player_id === id && officialGameIds.has(stat.game_id));
+  });
   const totals = stats.reduce((sum, stat) => {
     const [minutes = 0, seconds = 0] = stat.minutes.split(':').map(Number);
     return {

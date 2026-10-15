@@ -14,7 +14,7 @@ export default function CalendarPage() {
     id: game.id,
     date: game.date,
     time: game.time,
-    competition: competition.name,
+    competition: game.phase === 'friendly' ? 'Amichevole' : competition.name,
     home: sportsData.teams[game.home_team]?.short_name ?? game.home_team,
     away: sportsData.teams[game.away_team]?.short_name ?? game.away_team,
     homeScore: game.home_score,

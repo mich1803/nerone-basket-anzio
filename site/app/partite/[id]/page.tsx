@@ -63,6 +63,7 @@ export default async function GamePage({ params }: { params: Promise<{ id: strin
   const homeLogo = home?.logo_on_dark || (isClubTeam(game.home_team) ? '/assets/logo-bianco.png' : home?.logo || '/assets/logo-bianco.png');
   const awayLogo = away?.logo_on_dark || (isClubTeam(game.away_team) ? '/assets/logo-bianco.png' : away?.logo || '/assets/logo-bianco.png');
   const clubTeam = isClubTeam(game.home_team) ? home : away;
+  const gameCompetitionLabel = game.phase === 'friendly' ? 'Amichevole' : competition.name;
   const venueLabel = game.venue && game.address.toLocaleLowerCase().includes(game.venue.toLocaleLowerCase())
     ? game.address
     : [game.venue, game.address].filter(Boolean).join(' · ');
@@ -70,7 +71,7 @@ export default async function GamePage({ params }: { params: Promise<{ id: strin
   return <main>
     <SiteHeader />
     <section className="game-hero">
-      <p className="eyebrow">{competition.name} · {season.id.replace('-', '/')}{game.round ? ` · ${game.round}` : ''}</p>
+      <p className="eyebrow">{gameCompetitionLabel} · {season.id.replace('-', '/')}{game.round ? ` · ${game.round}` : ''}</p>
       <h1 className="game-matchup-title">{home?.short_name ?? game.home_team} <span>vs</span> {away?.short_name ?? game.away_team}</h1>
       <div className="scoreboard">
         <div><img src={assetPath(homeLogo)} alt={home?.short_name ?? game.home_team} /></div>
