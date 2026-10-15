@@ -53,8 +53,8 @@ export default function Home() {
           <p className="side-word">ANZIO</p>
         </div>
 
-        <aside className="next-game" aria-label="Prossima partita">
-          <p className="panel-label"><span>Prossima<br />partita</span></p>
+        <Link className="next-game" href={sitePath(nextGame ? `/partite/${nextGame.id}` : '/calendario')} aria-label={nextGame ? `Apri la partita ${nextHome} contro ${nextAway}` : 'Apri il calendario'}>
+          <p className="panel-label"><span>Prossima<br className="next-game-label-break" />{' '}partita</span></p>
           <div className="next-game-state">
             <img src={assetPath(nextClubLogo || '/assets/logo-bianco.png')} alt="" />
             <div>
@@ -67,7 +67,7 @@ export default function Home() {
             <span><MapPin size={16} /> {nextGame?.venue || 'Anzio'}</span>
           </div>
           {nextGame && <Countdown target={`${nextGame.date}T${nextGame.time || '00:00'}:00`} />}
-        </aside>
+        </Link>
       </section>
 
       <PromotedSocial posts={homeSocial.posts} />

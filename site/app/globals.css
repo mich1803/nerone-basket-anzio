@@ -98,7 +98,8 @@ h1 span { color: var(--red); }
 .photo-wash { position: absolute; inset: 0; background: linear-gradient(90deg, #080808 0%, transparent 35%), linear-gradient(0deg, rgba(8,8,8,.55), transparent 45%); }
 .side-word { position: absolute; right: -21px; bottom: 92px; margin: 0; color: transparent; font-family: var(--display); font-size: clamp(5rem, 11vw, 11rem); letter-spacing: .02em; line-height: .75; text-transform: uppercase; -webkit-text-stroke: 1px rgba(255,255,255,.42); transform: rotate(-90deg) translateX(100%); transform-origin: bottom right; }
 
-.next-game { position: absolute; z-index: 5; left: clamp(28px, 5.4vw, 82px); bottom: 0; display: grid; grid-template-columns: 190px 1fr; width: min(760px, calc(100% - 56px)); min-height: 135px; background: var(--red); }
+.next-game { position: absolute; z-index: 5; left: clamp(28px, 5.4vw, 82px); bottom: 0; display: grid; grid-template-columns: 190px 1fr; width: min(760px, calc(100% - 56px)); min-height: 135px; background: var(--red); color: #fff; }
+.next-game:focus-visible { outline: 3px solid #fff; outline-offset: 4px; }
 .panel-label { display: flex; align-items: center; justify-content: center; margin: 0; border-right: 1px solid rgba(255,255,255,.25); font-size: .86rem; font-weight: 800; letter-spacing: .16em; line-height: 1.25; text-align: center; text-transform: uppercase; }
 .next-game-state { display: flex; align-items: center; gap: 18px; padding: 20px 26px 48px; }
 .next-game-state img { width: 62px; height: 62px; object-fit: contain; }
@@ -432,9 +433,23 @@ a.bracket-match:hover { border-color: #d56d76; transform: translateY(-2px); }
 .contact-card > p:not(.eyebrow) { max-width: 520px; color: rgba(255,255,255,.72); line-height: 1.6; }
 .contact-card a { display: inline-block; margin: 24px 14px 0 0; padding: 10px 13px; border: 1px solid rgba(255,255,255,.35); font-size: .74rem; font-weight: 900; letter-spacing: .1em; text-transform: uppercase; transition: background 160ms ease, color 160ms ease; }
 .contact-card a:hover, .contact-card a:focus-visible { background: #fff; color: var(--red-deep); }
-.sponsors-empty { background: var(--paper); }
-.sponsors-empty h2 { margin: 0 0 12px; font-family: var(--display); font-size: 4rem; text-transform: uppercase; }
-.sponsors-empty > p:last-child { color: #65625d; }
+.sponsors-section { background: var(--paper); }
+.sponsors-heading { display: grid; grid-template-columns: minmax(0, 1fr) minmax(280px, .65fr); align-items: end; gap: 10px 60px; margin-bottom: 46px; }
+.sponsors-heading .eyebrow { grid-column: 1 / -1; }
+.sponsors-heading h2 { margin: 0; font-family: var(--display); font-size: clamp(3.3rem, 6vw, 5.5rem); line-height: .92; letter-spacing: .018em; text-transform: uppercase; }
+.sponsors-heading > p:last-child { max-width: 520px; margin: 0; color: #65625d; line-height: 1.65; }
+.sponsors-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(20px, 2.5vw, 34px); }
+.sponsor-card { display: grid; grid-template-rows: 230px 1fr; min-width: 0; overflow: hidden; background: #fff; border: 1px solid #d3d0c9; }
+.sponsor-logo { display: flex; align-items: center; justify-content: center; margin: 0; padding: 34px; overflow: hidden; background: #0b0b0b; }
+.sponsor-logo img { display: block; width: 100%; height: 100%; object-fit: contain; }
+.sponsor-copy { display: flex; min-height: 315px; flex-direction: column; padding: clamp(28px, 3.2vw, 42px); }
+.sponsor-copy h3 { margin: 0; font-family: var(--display); font-size: clamp(2.1rem, 3.2vw, 3.25rem); line-height: .96; letter-spacing: .018em; text-transform: uppercase; }
+.sponsor-subtitle { margin: 8px 0 0; color: var(--red); font-size: .76rem; font-weight: 900; letter-spacing: .1em; text-transform: uppercase; }
+.sponsor-description { margin: 24px 0 30px; color: #65625d; line-height: 1.6; }
+.sponsor-links { display: grid; gap: 1px; margin-top: auto; background: #dad7d0; }
+.sponsor-links a { display: flex; align-items: center; gap: 11px; min-width: 0; padding: 13px 14px; background: #f2f0eb; font-size: .76rem; font-weight: 850; letter-spacing: .04em; transition: background 160ms ease, color 160ms ease; }
+.sponsor-links a:hover, .sponsor-links a:focus-visible { background: var(--red-deep); color: #fff; }
+.sponsor-links span { min-width: 0; overflow-wrap: anywhere; }
 
 .site-footer { display: grid; grid-template-columns: 1fr auto; gap: 50px; padding: 64px clamp(24px, 6vw, 90px) 32px; background: #080808; color: #fff; }
 .footer-brand img { width: 180px; }
@@ -457,8 +472,7 @@ a.bracket-match:hover { border-color: #d56d76; transform: translateY(-2px); }
 .news-card h2,
 .article-hero h1,
 .article-body h2,
-.article-body h3,
-.sponsors-empty h2 { letter-spacing: .018em; }
+.article-body h3 { letter-spacing: .018em; }
 
 .section-heading h2,
 .competition-card h3,
@@ -474,8 +488,7 @@ a.bracket-match:hover { border-color: #d56d76; transform: translateY(-2px); }
 .news-card h2,
 .article-hero h1,
 .article-body h2,
-.article-body h3,
-.sponsors-empty h2 { line-height: .98; }
+.article-body h3 { line-height: .98; }
 
 .page-intro h1,
 .league-hero h1,
@@ -501,6 +514,7 @@ a.bracket-match:hover { border-color: #d56d76; transform: translateY(-2px); }
   .promoted-social-grid { display: flex; margin-right: calc(clamp(24px, 5vw, 76px) * -1); padding-right: clamp(24px, 5vw, 76px); overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: thin; }
   .promoted-social-card { flex: 0 0 min(430px, 82vw); scroll-snap-align: start; }
   .section-heading { grid-template-columns: 1fr; }
+  .sponsors-heading { grid-template-columns: 1fr; align-items: start; }
   .league-layout, .games-archive-layout, .calendar-layout, .roster-preview, .venue-card, .club-grid { grid-template-columns: 1fr; }
   .contact-card { grid-column: auto; }
   .news-grid { grid-template-columns: repeat(2, 1fr); }
@@ -527,6 +541,7 @@ a.bracket-match:hover { border-color: #d56d76; transform: translateY(-2px); }
   .hero-actions { align-items: flex-start; flex-direction: column; gap: 18px; }
   .next-game { left: 24px; width: calc(100% - 48px); grid-template-columns: 1fr; }
   .panel-label { justify-content: flex-start; padding: 14px 18px; border-right: 0; border-bottom: 1px solid rgba(255,255,255,.2); }
+  .next-game-label-break { display: none; }
   .next-game-state { padding: 16px 18px 54px; }
   .countdown { display: none; }
   .next-game-meta { left: 0; padding-inline: 18px; gap: 18px; }
@@ -581,6 +596,9 @@ a.bracket-match:hover { border-color: #d56d76; transform: translateY(-2px); }
   .news-grid { grid-template-columns: 1fr; padding-inline: 0; }
   .news-mark { font-size: 14rem; }
   .club-story-card, .venue-copy, .contact-card { min-height: auto; padding: 32px; }
+  .sponsors-grid { grid-template-columns: 1fr; }
+  .sponsor-card { grid-template-rows: 190px 1fr; }
+  .sponsor-copy { min-height: 0; }
   .site-footer { grid-template-columns: 1fr; }
   .site-footer nav { grid-template-columns: 1fr 1fr; }
 }
