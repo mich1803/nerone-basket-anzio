@@ -438,16 +438,16 @@ a.bracket-match:hover { border-color: #d56d76; transform: translateY(-2px); }
 .sponsors-heading .eyebrow { grid-column: 1 / -1; }
 .sponsors-heading h2 { margin: 0; font-family: var(--display); font-size: clamp(3.3rem, 6vw, 5.5rem); line-height: .92; letter-spacing: .018em; text-transform: uppercase; }
 .sponsors-heading > p:last-child { max-width: 520px; margin: 0; color: #65625d; line-height: 1.65; }
-.sponsors-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(20px, 2.5vw, 34px); }
-.sponsor-card { display: grid; grid-template-rows: 230px 1fr; min-width: 0; overflow: hidden; background: #fff; border: 1px solid #d3d0c9; }
-.sponsor-logo { display: flex; align-items: center; justify-content: center; margin: 0; padding: 34px; overflow: hidden; background: #0b0b0b; }
+.sponsors-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: clamp(14px, 1.6vw, 24px); }
+.sponsor-card { display: grid; grid-template-rows: 180px 1fr; min-width: 0; overflow: hidden; background: #fff; border: 1px solid #d3d0c9; }
+.sponsor-logo { display: flex; align-items: center; justify-content: center; margin: 0; padding: 26px; overflow: hidden; background: #0b0b0b; }
 .sponsor-logo img { display: block; width: 100%; height: 100%; object-fit: contain; }
-.sponsor-copy { display: flex; min-height: 315px; flex-direction: column; padding: clamp(28px, 3.2vw, 42px); }
-.sponsor-copy h3 { margin: 0; font-family: var(--display); font-size: clamp(2.1rem, 3.2vw, 3.25rem); line-height: .96; letter-spacing: .018em; text-transform: uppercase; }
+.sponsor-copy { display: flex; min-width: 0; min-height: 360px; flex-direction: column; padding: clamp(20px, 2vw, 28px); }
+.sponsor-copy h3 { margin: 0; font-family: var(--display); font-size: clamp(1.65rem, 2vw, 2.4rem); line-height: .96; letter-spacing: .018em; text-transform: uppercase; }
 .sponsor-subtitle { margin: 8px 0 0; color: var(--red); font-size: .76rem; font-weight: 900; letter-spacing: .1em; text-transform: uppercase; }
-.sponsor-description { margin: 24px 0 30px; color: #65625d; line-height: 1.6; }
+.sponsor-description { margin: 20px 0 26px; color: #65625d; font-size: .9rem; line-height: 1.55; overflow-wrap: anywhere; }
 .sponsor-links { display: grid; gap: 1px; margin-top: auto; background: #dad7d0; }
-.sponsor-links a { display: flex; align-items: center; gap: 11px; min-width: 0; padding: 13px 14px; background: #f2f0eb; font-size: .76rem; font-weight: 850; letter-spacing: .04em; transition: background 160ms ease, color 160ms ease; }
+.sponsor-links a { display: flex; align-items: center; gap: 9px; min-width: 0; padding: 12px; background: #f2f0eb; font-size: .7rem; font-weight: 850; letter-spacing: .035em; transition: background 160ms ease, color 160ms ease; }
 .sponsor-links a:hover, .sponsor-links a:focus-visible { background: var(--red-deep); color: #fff; }
 .sponsor-links span { min-width: 0; overflow-wrap: anywhere; }
 
@@ -515,6 +515,7 @@ a.bracket-match:hover { border-color: #d56d76; transform: translateY(-2px); }
   .promoted-social-card { flex: 0 0 min(430px, 82vw); scroll-snap-align: start; }
   .section-heading { grid-template-columns: 1fr; }
   .sponsors-heading { grid-template-columns: 1fr; align-items: start; }
+  .sponsors-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .league-layout, .games-archive-layout, .calendar-layout, .roster-preview, .venue-card, .club-grid { grid-template-columns: 1fr; }
   .contact-card { grid-column: auto; }
   .news-grid { grid-template-columns: repeat(2, 1fr); }
@@ -596,9 +597,15 @@ a.bracket-match:hover { border-color: #d56d76; transform: translateY(-2px); }
   .news-grid { grid-template-columns: 1fr; padding-inline: 0; }
   .news-mark { font-size: 14rem; }
   .club-story-card, .venue-copy, .contact-card { min-height: auto; padding: 32px; }
-  .sponsors-grid { grid-template-columns: 1fr; }
-  .sponsor-card { grid-template-rows: 190px 1fr; }
-  .sponsor-copy { min-height: 0; }
+  .sponsors-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+  .sponsor-card { grid-template-rows: 125px 1fr; }
+  .sponsor-logo { padding: 15px; }
+  .sponsor-copy { min-height: 360px; padding: 18px 14px; }
+  .sponsor-copy h3 { font-size: clamp(1.45rem, 7vw, 1.8rem); }
+  .sponsor-subtitle { font-size: .62rem; letter-spacing: .07em; }
+  .sponsor-description { margin: 16px 0 20px; font-size: .82rem; line-height: 1.45; }
+  .sponsor-links a { align-items: flex-start; gap: 7px; padding: 10px 8px; font-size: .61rem; line-height: 1.3; }
+  .sponsor-links svg { flex: 0 0 auto; width: 14px; height: 14px; }
   .site-footer { grid-template-columns: 1fr; }
   .site-footer nav { grid-template-columns: 1fr 1fr; }
 }
