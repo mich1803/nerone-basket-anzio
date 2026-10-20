@@ -8,7 +8,7 @@ import { Calendar } from '@/components/ui/calendar';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { sitePath } from '@/lib/paths';
 
-type CalendarGame = { id: string; date: string; time: string; competition: string; home: string; away: string; homeScore: number | null; awayScore: number | null; clubTeamId: string; isNerone: boolean; isHome: boolean };
+type CalendarGame = { id: string; date: string; time: string; competition: string; home: string; away: string; homeScore: number | null; awayScore: number | null; clubTeamId: string; isNerone: boolean; isHome: boolean; isFriendly: boolean };
 
 export function SeasonCalendar({ games }: { games: CalendarGame[] }) {
   const [date, setDate] = useState<Date | undefined>();
@@ -47,8 +47,8 @@ export function SeasonCalendar({ games }: { games: CalendarGame[] }) {
         <p className="eyebrow">Agenda</p>
         <h2>{date ? date.toLocaleDateString('it-IT', { day: 'numeric', month: 'long', year: 'numeric' }) : 'Seleziona un giorno'}</h2>
         {selectedGames.length ? <div className="calendar-games">{selectedGames.map((game) => {
-          const content = <><span>{game.competition} · {game.time}</span><strong>{game.home} <b>{game.homeScore ?? '–'} : {game.awayScore ?? '–'}</b> {game.away}</strong>{game.isNerone && <em>{game.isHome ? <House size={15} /> : <Car size={15} />}{game.isHome ? 'Casa' : 'Trasferta'}</em>}</>;
-          return game.isNerone ? <Link href={sitePath(`/partite/${game.id}`)} key={game.id}>{content}</Link> : <div key={game.id}>{content}</div>;
+          const content = <><span>{game.competition} · {game.time}</span><strong>{game.home} <b>{game.isFriendly ? 'vs' : `${game.homeScore ?? '–'} : ${game.awayScore ?? '–'}`}</b> {game.away}</strong>{game.isNerone && <em>{game.isHome ? <House size={15} /> : <Car size={15} />}{game.isHome ? 'Casa' : 'Trasferta'}</em>}</>;
+          return game.isNerone && !game.isFriendly ? <Link href={sitePath(`/partite/${game.id}`)} key={game.id}>{content}</Link> : <div key={game.id}>{content}</div>;
         })}</div> : <p>Le partite appariranno qui appena sarà pubblicato il calendario ufficiale.</p>}
         <div className="calendar-legend"><span><i className="home-dot" /> Casa</span><span><i className="away-dot" /> Trasferta</span></div>
       </aside>

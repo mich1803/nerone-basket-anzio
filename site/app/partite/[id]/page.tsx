@@ -14,7 +14,7 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@
 export const dynamic = 'force-static';
 export const dynamicParams = false;
 
-const neroneGames = sportsData.seasons.flatMap((season) => season.competitions.flatMap((competition) => competition.games.map((game) => ({ season, competition, game })))).filter(({ game }) => isClubTeam(game.home_team) || isClubTeam(game.away_team));
+const neroneGames = sportsData.seasons.flatMap((season) => season.competitions.flatMap((competition) => competition.games.map((game) => ({ season, competition, game })))).filter(({ game }) => (isClubTeam(game.home_team) || isClubTeam(game.away_team)) && game.phase !== 'friendly');
 const monthNames = ['gennaio', 'febbraio', 'marzo', 'aprile', 'maggio', 'giugno', 'luglio', 'agosto', 'settembre', 'ottobre', 'novembre', 'dicembre'];
 
 function formatGameDate(date: string) {

@@ -22,6 +22,7 @@ export default function CalendarPage() {
     clubTeamId: isClubTeam(game.home_team) ? game.home_team : isClubTeam(game.away_team) ? game.away_team : '',
     isNerone: isClubTeam(game.home_team) || isClubTeam(game.away_team),
     isHome: isClubTeam(game.home_team),
+    isFriendly: game.phase === 'friendly',
   })));
   return (
     <main>

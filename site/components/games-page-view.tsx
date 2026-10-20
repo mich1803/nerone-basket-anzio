@@ -28,19 +28,24 @@ function orderedGames(games: Game[]) {
 function ResultCard({ game, featured = false }: { game: Game; featured?: boolean }) {
   const home = sportsData.teams[game.home_team];
   const away = sportsData.teams[game.away_team];
+  const isFriendly = game.phase === 'friendly';
   const homeLogo = featured ? home?.logo_on_dark || home?.logo : home?.logo;
   const awayLogo = featured ? away?.logo_on_dark || away?.logo : away?.logo;
-
-  return <Link className={`result-card${featured ? ' result-card-featured' : ''}`} href={sitePath(`/partite/${game.id}`)}>
+  const classes = `result-card${featured ? ' result-card-featured' : ''}`;
+  const body = <>
     <span>{formatGameDate(game.date)}{game.time ? ` · ${game.time}` : ''}{game.notes ? ` · ${game.notes}` : ''}{game.venue ? ` · ${game.venue}` : ''}{game.round ? ` · ${game.round}` : ''}</span>
     <div className="result-match">
       <div className="result-team-list">
         <div className="result-team"><img src={assetPath(homeLogo || '/assets/logo-nero.png')} alt="" /><strong>{home?.short_name ?? game.home_team}</strong></div>
         <div className="result-team"><img src={assetPath(awayLogo || '/assets/logo-nero.png')} alt="" /><strong>{away?.short_name ?? game.away_team}</strong></div>
       </div>
-      <b>{game.home_score ?? '–'} : {game.away_score ?? '–'}</b>
+      {!isFriendly && <b>{game.home_score ?? '–'} : {game.away_score ?? '–'}</b>}
     </div>
-  </Link>;
+  </>;
+
+  return isFriendly
+    ? <article className={classes}>{body}</article>
+    : <Link className={classes} href={sitePath(`/partite/${game.id}`)}>{body}</Link>;
 }
 
 export function GamesPageView({ competition, seasonId }: { competition: Competition; seasonId: string }) {
@@ -59,8 +64,9 @@ export function GamesPageView({ competition, seasonId }: { competition: Competit
     .map((item) => ({ id: item.slug, label: item.shortName, href: archivePath('partite', item.slug, seasonId) }));
   const neroneGames = data?.games.filter((game) => isClubTeam(game.home_team) || isClubTeam(game.away_team)) ?? [];
   const otherGames = orderedGames(data?.games.filter((game) => !isClubTeam(game.home_team) && !isClubTeam(game.away_team)) ?? []);
+  const today = new Date().toISOString().slice(0, 10);
   const nextGame = [...neroneGames]
-    .filter((game) => game.status === 'scheduled')
+    .filter((game) => game.status === 'scheduled' && game.date >= today)
     .sort((first, second) => `${first.date}T${first.time}`.localeCompare(`${second.date}T${second.time}`))[0];
   const groups = [
     { id: 'upcoming', title: 'Prossima partita', games: nextGame ? [nextGame] : [] },

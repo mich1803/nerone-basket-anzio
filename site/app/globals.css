@@ -217,9 +217,9 @@ h1 span { color: var(--red); }
 .empty-result p { margin: 0; color: #65625d; line-height: 1.55; }
 .result-list { display: grid; gap: 2px; }
 .result-card { display: block; padding: 20px; background: #e8e6e0; transition: background 160ms ease, color 160ms ease; }
-.result-card:hover { background: var(--red-deep); color: #fff; }
+a.result-card:hover, a.result-card:focus-visible { background: var(--red-deep); color: #fff; }
 .result-card > span { display: block; margin-bottom: 14px; color: #77736c; font-size: .7rem; font-weight: 900; letter-spacing: .1em; text-transform: uppercase; }
-.result-card:hover > span { color: #d9a4a9; }
+a.result-card:hover > span, a.result-card:focus-visible > span { color: #d9a4a9; }
 .result-match { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 12px; align-items: center; }
 .result-match > b { font-family: var(--body); font-size: 1.8rem; font-weight: 600; letter-spacing: -.045em; white-space: nowrap; }
 .result-team-list { display: grid; gap: 8px; min-width: 0; }
@@ -240,7 +240,7 @@ h1 span { color: var(--red); }
 .game-phase-upcoming > h3 { border-color: var(--red); }
 .result-card-featured { background: var(--red-deep); color: #fff; }
 .result-card-featured > span { color: #e0b1b5; }
-.result-card-featured:hover { background: var(--red); }
+a.result-card-featured:hover, a.result-card-featured:focus-visible { background: var(--red); }
 .other-games-panel { position: sticky; top: 110px; }
 .archive-other-results { margin-top: 0; padding-top: 0; border-top: 0; }
 .archive-other-results > div { grid-template-areas: 'home score away' 'meta meta meta'; }

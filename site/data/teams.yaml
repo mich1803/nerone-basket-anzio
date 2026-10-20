@@ -14,6 +14,11 @@ samurai-csi:
   short_name: Samurai CSI
   logo: /assets/teams/2026-27/samurai.png
 
+samurai:
+  name: Samurai Basket Aprilia
+  short_name: Samurai
+  logo: /assets/teams/2026-27/samurai.png
+
 atletico-san-lorenzo:
   name: Atletico San Lorenzo
   short_name: San Lorenzo

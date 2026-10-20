@@ -26,6 +26,21 @@ export default function Home() {
   const nextClubTeamId = nextGame ? [nextGame.home_team, nextGame.away_team].find(isClubTeam) : undefined;
   const nextClubLogo = nextClubTeamId ? sportsData.teams[nextClubTeamId]?.logo_on_dark : undefined;
   const latestNews = [...sportsData.news].sort((a, b) => b.date.localeCompare(a.date)).slice(0, 3);
+  const nextGameContent = <>
+    <p className="panel-label"><span>Prossima<br className="next-game-label-break" />{' '}partita</span></p>
+    <div className="next-game-state">
+      <img src={assetPath(nextClubLogo || '/assets/logo-bianco.png')} alt="" />
+      <div>
+        <strong>{nextGame ? `${nextHome} – ${nextAway}` : 'Calendario in aggiornamento'}</strong>
+        <span>{nextGame?.competitionName ?? 'Stagione 2026/27'}</span>
+      </div>
+    </div>
+    <div className="next-game-meta">
+      <span><CalendarDays size={16} /> {nextGame ? `${nextGame.date} · ${nextGame.time}` : 'Date in arrivo'}</span>
+      <span><MapPin size={16} /> {nextGame?.venue || 'Anzio'}</span>
+    </div>
+    {nextGame && <Countdown target={`${nextGame.date}T${nextGame.time || '00:00'}:00`} />}
+  </>;
 
   return (
     <main>
@@ -53,21 +68,9 @@ export default function Home() {
           <p className="side-word">ANZIO</p>
         </div>
 
-        <Link className="next-game" href={sitePath(nextGame ? `/partite/${nextGame.id}` : '/calendario')} aria-label={nextGame ? `Apri la partita ${nextHome} contro ${nextAway}` : 'Apri il calendario'}>
-          <p className="panel-label"><span>Prossima<br className="next-game-label-break" />{' '}partita</span></p>
-          <div className="next-game-state">
-            <img src={assetPath(nextClubLogo || '/assets/logo-bianco.png')} alt="" />
-            <div>
-              <strong>{nextGame ? `${nextHome} – ${nextAway}` : 'Calendario in aggiornamento'}</strong>
-              <span>{nextGame?.competitionName ?? 'Stagione 2026/27'}</span>
-            </div>
-          </div>
-          <div className="next-game-meta">
-            <span><CalendarDays size={16} /> {nextGame ? `${nextGame.date} · ${nextGame.time}` : 'Date in arrivo'}</span>
-            <span><MapPin size={16} /> {nextGame?.venue || 'Anzio'}</span>
-          </div>
-          {nextGame && <Countdown target={`${nextGame.date}T${nextGame.time || '00:00'}:00`} />}
-        </Link>
+        {nextGame && nextGame.phase !== 'friendly'
+          ? <Link className="next-game" href={sitePath(`/partite/${nextGame.id}`)} aria-label={`Apri la partita ${nextHome} contro ${nextAway}`}>{nextGameContent}</Link>
+          : <aside className="next-game" aria-label="Prossima partita">{nextGameContent}</aside>}
       </section>
 
       <PromotedSocial posts={homeSocial.posts} />

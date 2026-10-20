@@ -19,6 +19,11 @@ export const sportsData: SportsData = {
       "short_name": "Samurai CSI",
       "logo": "/assets/teams/2026-27/samurai.png"
     },
+    "samurai": {
+      "name": "Samurai Basket Aprilia",
+      "short_name": "Samurai",
+      "logo": "/assets/teams/2026-27/samurai.png"
+    },
     "atletico-san-lorenzo": {
       "name": "Atletico San Lorenzo",
       "short_name": "San Lorenzo",
@@ -755,6 +760,24 @@ export const sportsData: SportsData = {
           "round": "",
           "social_urls": [],
           "competition": "platinum"
+        },
+        {
+          "id": "2026-27-uisp-friendly-02",
+          "date": "2026-10-21",
+          "time": "21:00",
+          "status": "scheduled",
+          "home_team": "nerone",
+          "away_team": "samurai",
+          "home_score": null,
+          "away_score": null,
+          "venue": "Campo 4Kasette",
+          "address": "Via Nettunense km36.5, (4Kasette), Anzio (RM)",
+          "instagram_url": "",
+          "notes": "Amichevole",
+          "phase": "friendly",
+          "round": "",
+          "social_urls": [],
+          "competition": "platinum"
         }
       ],
       "playerStats": [],
@@ -788,6 +811,24 @@ export const sportsData: SportsData = {
               "away_score": null,
               "venue": "Istituto \"Carlo e Nello Rosselli\"",
               "address": "Istituto \"Carlo e Nello Rosselli\", Via Carroceto, Aprilia (LT)",
+              "instagram_url": "",
+              "notes": "Amichevole",
+              "phase": "friendly",
+              "round": "",
+              "social_urls": [],
+              "competition": "platinum"
+            },
+            {
+              "id": "2026-27-uisp-friendly-02",
+              "date": "2026-10-21",
+              "time": "21:00",
+              "status": "scheduled",
+              "home_team": "nerone",
+              "away_team": "samurai",
+              "home_score": null,
+              "away_score": null,
+              "venue": "Campo 4Kasette",
+              "address": "Via Nettunense km36.5, (4Kasette), Anzio (RM)",
               "instagram_url": "",
               "notes": "Amichevole",
               "phase": "friendly",
