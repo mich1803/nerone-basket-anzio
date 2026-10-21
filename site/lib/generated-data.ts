@@ -20,8 +20,8 @@ export const sportsData: SportsData = {
       "logo": "/assets/teams/2026-27/samurai.png"
     },
     "samurai": {
-      "name": "Samurai Basket Aprilia",
-      "short_name": "Samurai",
+      "name": "Samurai DR3",
+      "short_name": "Samurai DR3",
       "logo": "/assets/teams/2026-27/samurai.png"
     },
     "atletico-san-lorenzo": {
