@@ -30,7 +30,10 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
     url: absoluteSiteUrl('/'),
     logo: absoluteSiteUrl('/assets/logo-testo-bianco.png'),
     email: 'nerone.basket@gmail.com',
-    sameAs: ['https://www.instagram.com/nerone_basket_anzio/'],
+    sameAs: [
+      'https://www.instagram.com/nerone_basket_anzio/',
+      'https://www.youtube.com/@NeroneBasketAnzio',
+    ],
   };
 
   return <html lang="it"><head>

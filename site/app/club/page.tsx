@@ -80,8 +80,9 @@ export default function ClubPage() {
         </div>
         <aside className="contact-card">
           <p className="eyebrow">Contatti</p>
-          <p>Seguici su Instagram oppure scrivici via email.</p>
+          <p>Seguici su Instagram e YouTube oppure scrivici via email.</p>
           <a href="https://www.instagram.com/nerone_basket_anzio/" target="_blank" rel="noreferrer">Instagram · @nerone_basket_anzio</a>
+          <a href="https://www.youtube.com/@NeroneBasketAnzio" target="_blank" rel="noreferrer">YouTube · Nerone Basket Anzio</a>
           <a href="mailto:nerone.basket@gmail.com">nerone.basket@gmail.com</a>
         </aside>
       </section>
