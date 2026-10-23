@@ -1,13 +1,19 @@
 nerone:
   name: Nerone Basket Anzio
   short_name: Nerone
-  logo: /assets/logo-nero.png
+  logo: /assets/logo-testo-nero.png
+  logo_on_dark: /assets/logo-testo-bianco.png
 
 nerone-bounganvillae:
   name: Nerone Basket Anzio BGV
   short_name: Nerone BGV
-  logo: /assets/teams/2026-27/bgv-nero.png
-  logo_on_dark: /assets/teams/2026-27/bgv-bianco.png
+  logo: /assets/bgv-logo-testo-nero.png
+  logo_on_dark: /assets/bgv-logo-testo-bianco.png
+
+pomezia-csi:
+  name: Polisportiva Virtus Settanza Pomezia
+  short_name: Pomezia CSI
+  logo: /assets/teams/2026-27/pomezia.png
 
 samurai-csi:
   name: Samurai Basket Aprilia CSI

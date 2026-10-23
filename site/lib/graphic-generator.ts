@@ -28,8 +28,8 @@ export const SPONSORS = [
   { id: 'mastroianni', name: 'Mastroianni', logo: '/assets/sponsors/mastroianni.png' },
 ] as const;
 export const LOGOS = [
-  { id: 'nerone', name: 'Nerone', logo: '/assets/logo-testo-bianco.png', mono: '/assets/teams/2026-27/mono_white/nerone_white.png' },
-  { id: 'nerone-bounganvillae', name: 'Nerone BGV', logo: '/assets/teams/2026-27/bgv-bianco.png', mono: '' },
+  { id: 'nerone', name: 'Nerone', logo: '/assets/logo-testo-bianco.png', mono: '/assets/teams/2026-27/mono_white/nerone_white_text.png' },
+  { id: 'nerone-bounganvillae', name: 'Nerone BGV', logo: '/assets/bgv-logo-testo-bianco.png', mono: '/assets/teams/2026-27/mono_white/nerone_bgv_white_text.png' },
   { id: 'samurai-csi', name: 'Samurai', logo: '/assets/teams/2026-27/samurai.png', mono: '' },
   { id: 'ciampino', name: 'Ciampino', logo: '', mono: '/assets/teams/2026-27/mono_white/ciampino_white.png' },
 ] as const;

@@ -19,10 +19,13 @@ export default function CalendarPage() {
     away: sportsData.teams[game.away_team]?.short_name ?? game.away_team,
     homeScore: game.home_score,
     awayScore: game.away_score,
+    venue: game.venue,
+    address: game.address,
     clubTeamId: isClubTeam(game.home_team) ? game.home_team : isClubTeam(game.away_team) ? game.away_team : '',
     isNerone: isClubTeam(game.home_team) || isClubTeam(game.away_team),
     isHome: isClubTeam(game.home_team),
     isFriendly: game.phase === 'friendly',
+    calendarLabel: `${isClubTeam(game.home_team) ? (game.home_team === 'nerone' ? 'NER' : 'BGV') : (game.away_team === 'nerone' ? 'NER' : 'BGV')} · ${sportsData.teams[isClubTeam(game.home_team) ? game.away_team : game.home_team]?.short_name ?? (isClubTeam(game.home_team) ? game.away_team : game.home_team)}`,
   })));
   return (
     <main>

@@ -36,10 +36,10 @@ export default function Home() {
       </div>
     </div>
     <div className="next-game-meta">
-      <span><CalendarDays size={16} /> {nextGame ? `${nextGame.date} · ${nextGame.time}` : 'Date in arrivo'}</span>
+      <span><CalendarDays size={16} /> {nextGame ? `${nextGame.date} · ${nextGame.time || 'Orario da definire'}` : 'Date in arrivo'}</span>
       <span><MapPin size={16} /> {nextGame?.venue || 'Anzio'}</span>
     </div>
-    {nextGame && <Countdown target={`${nextGame.date}T${nextGame.time || '00:00'}:00`} />}
+    {nextGame?.time && <Countdown target={`${nextGame.date}T${nextGame.time}:00`} />}
   </>;
 
   return (

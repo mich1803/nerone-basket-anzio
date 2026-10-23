@@ -6,13 +6,19 @@ export const sportsData: SportsData = {
     "nerone": {
       "name": "Nerone Basket Anzio",
       "short_name": "Nerone",
-      "logo": "/assets/logo-nero.png"
+      "logo": "/assets/logo-testo-nero.png",
+      "logo_on_dark": "/assets/logo-testo-bianco.png"
     },
     "nerone-bounganvillae": {
       "name": "Nerone Basket Anzio BGV",
       "short_name": "Nerone BGV",
-      "logo": "/assets/teams/2026-27/bgv-nero.png",
-      "logo_on_dark": "/assets/teams/2026-27/bgv-bianco.png"
+      "logo": "/assets/bgv-logo-testo-nero.png",
+      "logo_on_dark": "/assets/bgv-logo-testo-bianco.png"
+    },
+    "pomezia-csi": {
+      "name": "Polisportiva Virtus Settanza Pomezia",
+      "short_name": "Pomezia CSI",
+      "logo": "/assets/teams/2026-27/pomezia.png"
     },
     "samurai-csi": {
       "name": "Samurai Basket Aprilia CSI",
@@ -778,6 +784,24 @@ export const sportsData: SportsData = {
           "round": "",
           "social_urls": [],
           "competition": "platinum"
+        },
+        {
+          "id": "2026-27-uisp-friendly-03",
+          "date": "2026-10-26",
+          "time": "",
+          "status": "scheduled",
+          "home_team": "pomezia-csi",
+          "away_team": "nerone-bounganvillae",
+          "home_score": null,
+          "away_score": null,
+          "venue": "Pala Margherita Hack",
+          "address": "Via Singen, 00071 Pomezia (RM)",
+          "instagram_url": "",
+          "notes": "Amichevole",
+          "phase": "friendly",
+          "round": "",
+          "social_urls": [],
+          "competition": "platinum"
         }
       ],
       "playerStats": [],
@@ -829,6 +853,24 @@ export const sportsData: SportsData = {
               "away_score": null,
               "venue": "Campo 4Kasette",
               "address": "Via Nettunense km36.5, (4Kasette), Anzio (RM)",
+              "instagram_url": "",
+              "notes": "Amichevole",
+              "phase": "friendly",
+              "round": "",
+              "social_urls": [],
+              "competition": "platinum"
+            },
+            {
+              "id": "2026-27-uisp-friendly-03",
+              "date": "2026-10-26",
+              "time": "",
+              "status": "scheduled",
+              "home_team": "pomezia-csi",
+              "away_team": "nerone-bounganvillae",
+              "home_score": null,
+              "away_score": null,
+              "venue": "Pala Margherita Hack",
+              "address": "Via Singen, 00071 Pomezia (RM)",
               "instagram_url": "",
               "notes": "Amichevole",
               "phase": "friendly",
