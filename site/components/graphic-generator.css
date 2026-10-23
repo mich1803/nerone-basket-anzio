@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Archivo+Black&family=Arimo:ital,wght@0,400;0,700;1,400&family=Bebas+Neue&family=DM+Sans:wght@400;700&display=swap');
+
+.gg { min-height: 100vh; background: #111315; color: #f7f6f2; font-family: 'DM Sans', Arial, sans-serif; }
+.gg button, .gg input, .gg select { font: inherit; }
+.gg button { cursor: pointer; }
+.gg-top { display: flex; align-items: center; justify-content: space-between; gap: 24px; min-height: 92px; padding: 18px clamp(20px, 4vw, 60px); border-bottom: 1px solid #323639; background: #181b1d; }
+.gg-top > div { display: flex; align-items: center; gap: 18px; }
+.gg-mark { display: grid; place-items: center; width: 54px; height: 54px; border: 1px solid #cb5660; color: #fff; font-family: Impact, sans-serif; font-size: 22px; letter-spacing: -.08em; }
+.gg-top p { margin: 0 0 4px; color: #c97b81; font-size: 10px; font-weight: 700; letter-spacing: .18em; }
+.gg-top h1 { margin: 0; font-family: 'Bebas Neue', Impact, sans-serif; font-size: 32px; font-weight: 400; line-height: 1; letter-spacing: .06em; text-transform: uppercase; }
+.gg-top-badge { padding: 8px 10px; border: 1px solid #505457; color: #b9bdbe; font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
+.gg-shell { display: grid; grid-template-columns: minmax(0, 1fr) minmax(350px, 520px); align-items: start; gap: clamp(24px, 4vw, 62px); max-width: 1500px; margin: auto; padding: 48px clamp(20px, 4vw, 60px) 80px; }
+.gg-editor { min-width: 0; }
+.gg-intro { margin-bottom: 30px; }
+.gg-eyebrow { margin: 0 0 8px; color: #d76e78; font-size: 11px; font-weight: 700; letter-spacing: .18em; }
+.gg-intro h2, .gg-preview-head h2 { margin: 0; font-family: 'Bebas Neue', Impact, sans-serif; font-size: clamp(42px, 5vw, 62px); font-weight: 400; line-height: 1; letter-spacing: .025em; text-transform: uppercase; }
+.gg-intro > p:last-child { max-width: 600px; margin: 11px 0 0; color: #aeb1b2; font-size: 14px; line-height: 1.6; }
+.gg-types { display: grid; grid-template-columns: repeat(4, 1fr); gap: 7px; margin-bottom: 28px; }
+.gg-types button { min-height: 52px; padding: 10px 6px; border: 1px solid #404447; background: #1d2123; color: #ccd0d0; font-size: 12px; font-weight: 700; letter-spacing: .03em; text-transform: uppercase; transition: background .15s, border-color .15s; }
+.gg-types button:hover, .gg-types button:focus-visible { border-color: #d56a72; }
+.gg-types button.active { border-color: #d65b65; background: #9f2833; color: #fff; }
+.gg-format-choice { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+.gg-format-choice button { display: grid; gap: 4px; min-height: 70px; padding: 12px; border: 1px solid #586063; background: #15191b; color: #fff; font-size: 15px; font-weight: 700; text-align: left; }
+.gg-format-choice button.active { border-color: #d65b65; background: #64242b; }
+.gg-format-choice small { color: #b5bbbc; font-size: 11px; font-weight: 400; }
+.gg-panel { margin-bottom: 14px; padding: clamp(18px, 2.5vw, 28px); border: 1px solid #33383a; background: #1c2022; }
+.gg-panel-head { display: flex; align-items: center; gap: 13px; margin-bottom: 21px; }
+.gg-panel-head > span { display: grid; place-items: center; width: 28px; height: 28px; border: 1px solid #a24b53; color: #e1848c; font-size: 11px; font-weight: 700; }
+.gg-panel-head h3 { margin: 0; font-family: 'Bebas Neue', Impact, sans-serif; font-size: 29px; font-weight: 400; letter-spacing: .035em; text-transform: uppercase; }
+.gg-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+.gg-field { display: grid; align-content: start; gap: 8px; min-width: 0; }
+.gg-field > span { color: #b8bbbc; font-size: 11px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+.gg-field input:not([type=range]), .gg-field select { width: 100%; min-width: 0; min-height: 46px; padding: 10px 12px; border: 1px solid #485053; border-radius: 0; outline: 0; background: #111517; color: #fff; font-size: 14px; }
+.gg-field input:focus-visible, .gg-field select:focus-visible { border-color: #d86670; box-shadow: 0 0 0 2px #d8667033; }
+.gg-field input::placeholder { color: #767d80; }
+.gg-field input[type=range] { width: 100%; height: 30px; margin: 0; accent-color: #c64f5b; }
+.gg-help { margin: -5px 0 18px; color: #aeb2b3; font-size: 13px; line-height: 1.55; }
+.gg-actions { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 17px; }
+.gg-actions button, .gg-csv-upload, .gg-add { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 40px; padding: 9px 12px; border: 1px solid #586063; background: #292f31; color: #fff; font-size: 12px; font-weight: 700; }
+.gg-actions button:hover, .gg-csv-upload:hover, .gg-add:hover { border-color: #d86670; }
+.gg-actions button:disabled { opacity: .55; cursor: progress; }
+.gg-csv-upload { position: relative; cursor: pointer; overflow: hidden; }
+.gg-csv-upload input { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; cursor: pointer; }
+.gg-appointment { margin: 12px 0; padding: 15px; border: 1px solid #42494b; background: #161a1c; }
+.gg-row-title { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; color: #eee; font-size: 13px; }
+.gg-row-title strong { min-width: 0; overflow-wrap: anywhere; }
+.gg-row-title button { display: grid; place-items: center; width: 30px; height: 30px; border: 0; background: transparent; color: #ce8c91; }
+.gg-row-title button:hover { color: #fff; background: #7c2d37; }
+.gg-add { margin-top: 7px; }
+.gg-upload { position: relative; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 7px; min-height: 126px; padding: 22px; border: 1px dashed #697174; background: #141819; color: #fff; text-align: center; cursor: pointer; }
+.gg-upload:hover { border-color: #d86670; }
+.gg-upload span { font-size: 14px; font-weight: 700; }
+.gg-upload small { color: #9fa5a7; font-size: 11px; }
+.gg-upload input { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; cursor: pointer; }
+.gg-sliders { margin-top: 20px; }
+.gg-local-note { color: #9fa4a5; font-size: 12px; line-height: 1.5; }
+.gg-preview { position: sticky; top: 20px; padding: 22px; border: 1px solid #444b4d; background: #23282a; }
+.gg-preview-head { display: flex; align-items: end; justify-content: space-between; gap: 10px; margin-bottom: 18px; }
+.gg-preview-head h2 { font-size: 38px; }
+.gg-preview-head > span { padding-bottom: 2px; color: #abb1b2; font-size: 11px; white-space: nowrap; }
+.gg-canvas-wrap { width: 100%; overflow: hidden; background: #090b0c; box-shadow: 0 10px 30px #0006; }
+.gg-canvas-wrap canvas { display: block; width: 100%; height: auto; aspect-ratio: 4 / 5; }
+.gg-message { margin: 12px 0; padding: 10px 12px; background: #323036; color: #ffdadc; font-size: 12px; line-height: 1.45; }
+.gg-download { display: flex; align-items: center; justify-content: center; gap: 10px; width: 100%; min-height: 52px; margin-top: 18px; border: 0; background: #b33340; color: white; font-weight: 800; letter-spacing: .035em; text-transform: uppercase; }
+.gg-download:hover:not(:disabled) { background: #cf4551; }
+.gg-download:disabled { opacity: .55; cursor: progress; }
+.gg-preview-note { margin: 12px 0 0; color: #9da4a5; font-size: 11px; text-align: center; }
+@media (max-width: 980px) { .gg-shell { grid-template-columns: minmax(0, 1fr) minmax(300px, 40%); gap: 20px; padding: 28px 20px 60px; } .gg-preview { padding: 14px; } .gg-grid { grid-template-columns: 1fr; } }
+@media (max-width: 700px) { .gg-top { min-height: 72px; padding: 12px 16px; } .gg-mark { width: 42px; height: 42px; font-size: 18px; } .gg-top h1 { font-size: 25px; } .gg-top p { font-size: 8px; } .gg-top-badge { display: none; } .gg-shell { display: flex; flex-direction: column; gap: 26px; padding: 18px 14px 50px; } .gg-editor, .gg-preview { width: 100%; } .gg-preview { position: static; } .gg-canvas-wrap { width: min(100%, 350px); margin: auto; } .gg-preview-head h2 { font-size: 30px; } .gg-intro { margin-bottom: 20px; } .gg-intro h2 { font-size: 46px; } .gg-types { gap: 4px; margin-bottom: 15px; } .gg-types button { min-height: 48px; padding: 5px 2px; font-size: 10px; } .gg-panel { padding: 17px; } .gg-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; } .gg-actions button, .gg-csv-upload { flex: 1 1 45%; } }
+@media (max-width: 420px) { .gg-grid { grid-template-columns: 1fr; } .gg-top > div { gap: 10px; } .gg-top h1 { font-size: 23px; } }
