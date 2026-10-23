@@ -8,14 +8,17 @@ export type WeekMatch = {
   gameId: string; title: string; homeTeam: string; awayTeam: string; homeLogo: string; awayLogo: string;
   competition: string; dateTime: string; address: string;
 };
-export type Glass = { id: string; x: number; y: number; width: number; height: number; layer: GlassLayer; match: WeekMatch };
+type GlassBase = { id: string; x: number; y: number; width: number; height: number; layer: GlassLayer };
+export type MatchGlass = GlassBase & { kind: 'match'; match: WeekMatch };
+export type SponsorGlass = GlassBase & { kind: 'sponsor'; sponsorId: string };
+export type Glass = MatchGlass | SponsorGlass;
 export type GraphicState = {
   type: GraphicType; month: string; leftName: string; rightName: string; appointments: Appointment[];
   sponsor: string; photo: string; subjectPhoto: string; photoX: number; photoY: number; photoZoom: number;
   weekFormat: WeekFormat; backgroundBlur: number;
   glasses: Glass[]; homeTeam: string; awayTeam: string;
   homeLogo: string; awayLogo: string; competition: string; dateTime: string; address: string;
-  homeScore: string; awayScore: string;
+  homeScore: string; awayScore: string; resultClubSide: 'home' | 'away' | 'none';
 };
 
 export const SPONSORS = [
@@ -50,7 +53,7 @@ function contain(ctx: CanvasRenderingContext2D, img: HTMLImageElement, x: number
   ctx.drawImage(img, x + (w - width) / 2, y + (h - height) / 2, width, height);
 }
 const visibleBoundsCache = new WeakMap<HTMLImageElement, { x: number; y: number; w: number; h: number }>();
-function containVisible(ctx: CanvasRenderingContext2D, img: HTMLImageElement, x: number, y: number, w: number, h: number) {
+function visibleBounds(img: HTMLImageElement) {
   let bounds = visibleBoundsCache.get(img);
   if (!bounds) {
     const mask = document.createElement('canvas');
@@ -72,9 +75,20 @@ function containVisible(ctx: CanvasRenderingContext2D, img: HTMLImageElement, x:
     }
     visibleBoundsCache.set(img, bounds);
   }
+  return bounds;
+}
+function containVisible(ctx: CanvasRenderingContext2D, img: HTMLImageElement, x: number, y: number, w: number, h: number) {
+  const bounds = visibleBounds(img);
   const scale = Math.min(w / bounds.w, h / bounds.h);
   const dw = bounds.w * scale, dh = bounds.h * scale;
   ctx.drawImage(img, bounds.x, bounds.y, bounds.w, bounds.h, x + (w - dw) / 2, y + (h - dh) / 2, dw, dh);
+}
+export async function sponsorGlassSize(sponsorId: string) {
+  const sponsor = SPONSORS.find(item => item.id === sponsorId) ?? SPONSORS[3];
+  const img = await image(sponsor.logo);
+  const bounds = visibleBounds(img);
+  const scale = Math.min(340 / bounds.w, 130 / bounds.h);
+  return { width: Math.round(bounds.w * scale + 48), height: Math.round(bounds.h * scale + 48) };
 }
 function cover(ctx: CanvasRenderingContext2D, img: HTMLImageElement, x: number, y: number, w: number, h: number, zoom = 1, panX = 0, panY = 0) {
   const scale = Math.max(w / img.width, h / img.height) * zoom;
@@ -217,9 +231,9 @@ async function week(ctx: CanvasRenderingContext2D, s: GraphicState) {
   const blurCanvas = document.createElement('canvas'); blurCanvas.width = 1080; blurCanvas.height = canvasHeight;
   const blur = blurCanvas.getContext('2d')!;
   if (photo) { blur.filter = 'blur(24px)'; blur.drawImage(originalCanvas, 0, 0); }
-  const logos = await Promise.all(s.glasses.map(async g => ({
-    home: await optionalImage(g.match.homeLogo), away: await optionalImage(g.match.awayLogo),
-  })));
+  const logos = await Promise.all(s.glasses.map(async g => g.kind === 'match'
+    ? { home: await optionalImage(g.match.homeLogo), away: await optionalImage(g.match.awayLogo), sponsor: null }
+    : { home: null, away: null, sponsor: await optionalImage((SPONSORS.find(item => item.id === g.sponsorId) ?? SPONSORS[3]).logo) }));
   const drawGlass = (g: Glass, index: number) => {
     const { x, y, width: w, height: h } = g;
     ctx.save(); ctx.shadowColor = '#0009'; ctx.shadowBlur = 16; ctx.shadowOffsetY = 9;
@@ -233,6 +247,11 @@ async function week(ctx: CanvasRenderingContext2D, s: GraphicState) {
     ctx.restore();
     ctx.save(); ctx.shadowColor = '#fff8'; ctx.shadowBlur = 9; ctx.strokeStyle = '#ffffff9c'; ctx.lineWidth = 1.5; roundRect(ctx, x + 1, y + 1, w - 2, h - 2, 41); ctx.stroke(); ctx.restore();
     ctx.save(); roundRect(ctx, x, y, w, h, 42); ctx.clip(); ctx.fillStyle = '#fff';
+    if (g.kind === 'sponsor') {
+      if (logos[index].sponsor) containVisible(ctx, logos[index].sponsor!, x + 24, y + 24, w - 48, h - 48);
+      ctx.restore();
+      return;
+    }
     const scale = Math.min(w / 440, h / 500);
     const inset = Math.max(18, w * .075);
     const textWidth = w - inset * 2;
@@ -287,8 +306,8 @@ async function risultato(ctx: CanvasRenderingContext2D, s: GraphicState) {
   lines(ctx, s.competition.toUpperCase(), 847, 34, 290, 3, 29, 34, '"DM Sans", Arial, sans-serif', '700', 'center');
   const home = await optionalImage(s.homeLogo), away = await optionalImage(s.awayLogo);
   if (home) containVisible(ctx, home, 767, 210, 160, 160);
-  const drawScore = (value: string, y: number, team: string) => {
-    const isNerone = team.toLocaleLowerCase('it-IT').includes('nerone');
+  const drawScore = (value: string, y: number, side: 'home' | 'away') => {
+    const isNerone = s.resultClubSide === side;
     ctx.save();
     ctx.font = '158px Anton, Impact, sans-serif';
     ctx.textAlign = 'center'; ctx.textBaseline = 'top';
@@ -301,8 +320,8 @@ async function risultato(ctx: CanvasRenderingContext2D, s: GraphicState) {
     ctx.fillText(value || '0', 847, y, 295);
     ctx.restore();
   };
-  drawScore(s.homeScore, 440, s.homeTeam);
-  drawScore(s.awayScore, 720, s.awayTeam);
+  drawScore(s.homeScore, 440, 'home');
+  drawScore(s.awayScore, 720, 'away');
   if (away) containVisible(ctx, away, 767, 890, 160, 145);
   text(ctx, 'PRESENTED BY', 847, 1103, 270, 27, '"DM Sans", Arial, sans-serif', '700', 'center');
   const sponsor = SPONSORS.find(item => item.id === s.sponsor) ?? SPONSORS[2];
