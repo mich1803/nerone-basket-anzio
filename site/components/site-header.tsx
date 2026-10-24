@@ -16,10 +16,15 @@ export function SiteHeader({ light = false }: { light?: boolean }) {
     <header className={`site-header ${light ? 'site-header-light' : ''}`}>
       <Link className="brand" href={sitePath('/')} aria-label="Nerone Basket Anzio — Home">
         <img
+          className="brand-mark"
           src={assetPath(`/assets/${light ? 'logo-nero.png' : 'logo-bianco.png'}`)}
           alt=""
         />
-        <span>Nerone Basket Anzio</span>
+        <img
+          className={`brand-wordmark${light ? ' brand-wordmark-dark' : ''}`}
+          src={assetPath('/assets/testo.png')}
+          alt="Nerone Basket Anzio"
+        />
       </Link>
       <nav className="desktop-nav" aria-label="Navigazione principale">
         {links.map((link) => <Link href={sitePath(link.href)} key={link.href}>{link.label}</Link>)}

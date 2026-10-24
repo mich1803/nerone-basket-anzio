@@ -29,6 +29,7 @@ function ResultCard({ game, featured = false }: { game: Game; featured?: boolean
   const home = sportsData.teams[game.home_team];
   const away = sportsData.teams[game.away_team];
   const isFriendly = game.phase === 'friendly';
+  const hasDetailPage = !isFriendly || Boolean(game.youtube_url);
   const homeLogo = featured ? home?.logo_on_dark || home?.logo : home?.logo;
   const awayLogo = featured ? away?.logo_on_dark || away?.logo : away?.logo;
   const classes = `result-card${featured ? ' result-card-featured' : ''}`;
@@ -43,9 +44,9 @@ function ResultCard({ game, featured = false }: { game: Game; featured?: boolean
     </div>
   </>;
 
-  return isFriendly
-    ? <article className={classes}>{body}</article>
-    : <Link className={classes} href={sitePath(`/partite/${game.id}`)}>{body}</Link>;
+  return hasDetailPage
+    ? <Link className={classes} href={sitePath(`/partite/${game.id}`)}>{body}</Link>
+    : <article className={classes}>{body}</article>;
 }
 
 export function GamesPageView({ competition, seasonId }: { competition: Competition; seasonId: string }) {

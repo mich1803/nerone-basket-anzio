@@ -201,7 +201,7 @@ const sitemapRoutes = [...new Set([
   ...['nerone', 'nerone-bounganvillae'].map((teamId) => `/roster/${teamId}`),
   ...players.map((player) => `/giocatori/${player.id}`),
   ...seasons.flatMap((season) => season.competitions.flatMap((competition) => competition.games
-    .filter((game) => (clubTeamIds.has(game.home_team) || clubTeamIds.has(game.away_team)) && game.phase !== 'friendly')
+    .filter((game) => (clubTeamIds.has(game.home_team) || clubTeamIds.has(game.away_team)) && (game.phase !== 'friendly' || game.youtube_url))
     .map((game) => `/partite/${game.id}`))),
   ...news.map((item) => `/notizie/${item.slug}`),
 ])];

@@ -25,6 +25,7 @@ export default function CalendarPage() {
     isNerone: isClubTeam(game.home_team) || isClubTeam(game.away_team),
     isHome: isClubTeam(game.home_team),
     isFriendly: game.phase === 'friendly',
+    hasDetailPage: game.phase !== 'friendly' || Boolean(game.youtube_url),
     calendarLabel: `${isClubTeam(game.home_team) ? (game.home_team === 'nerone' ? 'NER' : 'BGV') : (game.away_team === 'nerone' ? 'NER' : 'BGV')} · ${sportsData.teams[isClubTeam(game.home_team) ? game.away_team : game.home_team]?.short_name ?? (isClubTeam(game.home_team) ? game.away_team : game.home_team)}`,
   })));
   return (

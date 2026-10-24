@@ -54,8 +54,10 @@ h1, h2, h3, p { margin-top: 0; }
 }
 
 .brand { display: inline-flex; align-items: center; gap: 13px; width: fit-content; }
-.brand img { display: block; width: 58px; height: 64px; object-fit: contain; }
-.brand span { font-family: var(--display); font-size: 1.28rem; letter-spacing: .085em; line-height: 1; text-transform: uppercase; white-space: nowrap; }
+.brand img { display: block; object-fit: contain; }
+.brand .brand-mark { width: 58px; height: 64px; }
+.brand .brand-wordmark { width: min(190px, 18vw); height: auto; }
+.brand .brand-wordmark-dark { filter: invert(1); }
 .desktop-nav { display: flex; justify-content: center; gap: clamp(20px, 3vw, 46px); font-size: .82rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
 .desktop-nav a { transition: color 160ms ease; }
 .desktop-nav a:hover, .desktop-nav a:focus-visible { color: #d26770; }
@@ -324,7 +326,9 @@ a.bracket-match:hover { border-color: #d56d76; transform: translateY(-2px); }
 .calendar-games > div > a:first-child { display: grid; gap: 8px; }
 .calendar-games span { color: rgba(255,255,255,.62); font-size: .7rem; font-weight: 900; letter-spacing: .08em; text-transform: uppercase; }
 .calendar-games strong { line-height: 1.45; }
-.calendar-games strong b { margin: 0 6px; font-family: var(--display); font-size: 1.5rem; }
+.calendar-games strong b { margin: 0 6px; }
+.calendar-games strong .calendar-score { font-family: var(--display); font-size: 1.5rem; }
+.calendar-games strong .calendar-versus { font-family: var(--body); font-size: .78rem; font-weight: 400; letter-spacing: .08em; text-transform: uppercase; }
 .calendar-games em { display: inline-flex; align-items: center; gap: 7px; font-size: .72rem; font-style: normal; font-weight: 900; text-transform: uppercase; }
 .calendar-games .calendar-venue { display: inline-flex; align-items: center; gap: 7px; color: #fff; font-size: .72rem; font-weight: 800; line-height: 1.35; text-decoration: underline; text-decoration-color: rgba(255,255,255,.35); text-underline-offset: 3px; }
 .calendar-legend { display: flex; gap: 24px; margin-top: 45px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,.25); font-size: .78rem; font-weight: 800; text-transform: uppercase; }
@@ -393,9 +397,13 @@ a.bracket-match:hover { border-color: #d56d76; transform: translateY(-2px); }
 .scoreboard h1 { margin: 0; font-family: var(--display); font-size: clamp(2.8rem, 5vw, 5.5rem); line-height: .9; text-transform: uppercase; }
 .scoreboard > strong { display: flex; gap: 18px; align-items: center; font-family: 'Arial Narrow', Arial, sans-serif; font-size: clamp(5rem, 11vw, 11rem); font-weight: 500; letter-spacing: -.07em; font-variant-numeric: tabular-nums; line-height: 1; }
 .scoreboard > strong span { color: var(--red); }
+.scoreboard > strong.friendly-versus { color: #d26770; font-family: var(--body); font-size: clamp(1.4rem, 3vw, 2.3rem); font-weight: 500; letter-spacing: .08em; }
 .game-meta { display: flex; justify-content: center; gap: 22px 35px; flex-wrap: wrap; color: rgba(255,255,255,.7); font-size: .82rem; font-weight: 800; text-transform: uppercase; }
 .game-meta span { display: inline-flex; align-items: center; gap: 9px; }
 .social-game-link { margin-top: 30px; }
+.game-video-section h2 { margin: 0 0 25px; font-family: var(--display); font-size: clamp(3rem, 5vw, 5rem); line-height: .9; text-transform: uppercase; }
+.game-video { width: min(100%, 1120px); aspect-ratio: 16 / 9; overflow: hidden; background: #050505; }
+.game-video iframe { display: block; width: 100%; height: 100%; border: 0; }
 
 .news-empty { display: grid; grid-template-columns: minmax(180px, .45fr) 1fr; align-items: center; gap: 70px; min-height: 430px; }
 .news-mark { color: var(--red); font-family: var(--display); font-size: clamp(12rem, 28vw, 26rem); line-height: .68; }
@@ -406,7 +414,8 @@ a.bracket-match:hover { border-color: #d56d76; transform: translateY(-2px); }
 .news-card figure { height: 270px; margin: 0; overflow: hidden; }
 .news-card figure img { width: 100%; height: 100%; object-fit: cover; transition: transform 250ms ease; }
 .news-card:hover figure img { transform: scale(1.03); }
-.news-card-mark { height: 270px; padding: 20px; overflow: hidden; background: #111; color: var(--red); font-family: var(--display); font-size: 15rem; line-height: .85; }
+.news-card-placeholder { display: grid; height: 270px; place-items: center; padding: 30px; background: #111; }
+.news-card-placeholder img { width: min(58%, 220px) !important; height: 88% !important; object-fit: contain !important; opacity: .82; }
 .news-card > div { padding: 28px; }
 .news-card > div p { color: var(--red); font-size: .72rem; font-weight: 900; letter-spacing: .09em; text-transform: uppercase; }
 .news-card h2 { margin-bottom: 15px; font-family: var(--display); font-size: 2.4rem; line-height: .94; text-transform: uppercase; }
@@ -540,8 +549,8 @@ a.bracket-match:hover { border-color: #d56d76; transform: translateY(-2px); }
 
 @media (max-width: 640px) {
   .brand { gap: 10px; }
-  .brand img { width: 48px; height: 53px; }
-  .brand span { font-size: 1rem; letter-spacing: .075em; }
+  .brand .brand-mark { width: 48px; height: 53px; }
+  .brand .brand-wordmark { width: min(155px, 42vw); }
   .season-chip { padding: 7px 9px; font-size: .7rem; }
   .hero { min-height: 780px; }
   .hero-copy { padding-inline: 24px; }

@@ -17,7 +17,7 @@ export default function NewsPage() {
         <p>Comunicati, cronache, storie e aggiornamenti del Nerone Basket Anzio.</p>
       </PageIntro>
       {sportsData.news.length > 0 ? <section className="page-section news-grid">{[...sportsData.news].sort((a, b) => b.date.localeCompare(a.date)).map((news) => <Link href={sitePath(`/notizie/${news.slug}`)} className="news-card" key={news.slug}>
-        {news.cover ? <figure><img src={assetPath(news.cover)} alt="" /></figure> : <span className="news-card-mark">N</span>}
+        {news.cover ? <figure><img src={assetPath(news.cover)} alt="" /></figure> : <figure className="news-card-placeholder"><img src={assetPath('/assets/logo-testo-bianco.png')} alt="" /></figure>}
         <div><p>{new Date(`${news.date}T12:00:00`).toLocaleDateString('it-IT', { day: 'numeric', month: 'long', year: 'numeric' })}</p><h2>{news.title}</h2>{news.excerpt && <span>{news.excerpt}</span>}</div>
       </Link>)}</section> : <section className="page-section news-empty">
         <span className="news-mark">N</span>

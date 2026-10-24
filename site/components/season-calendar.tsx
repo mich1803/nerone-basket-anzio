@@ -9,7 +9,7 @@ import { Calendar, CalendarDayButton } from '@/components/ui/calendar';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { sitePath } from '@/lib/paths';
 
-type CalendarGame = { id: string; date: string; time: string; competition: string; home: string; away: string; homeScore: number | null; awayScore: number | null; venue: string; address: string; clubTeamId: string; isNerone: boolean; isHome: boolean; isFriendly: boolean; calendarLabel: string };
+type CalendarGame = { id: string; date: string; time: string; competition: string; home: string; away: string; homeScore: number | null; awayScore: number | null; venue: string; address: string; clubTeamId: string; isNerone: boolean; isHome: boolean; isFriendly: boolean; hasDetailPage: boolean; calendarLabel: string };
 
 function dateKey(value: Date) {
   return `${value.getFullYear()}-${String(value.getMonth() + 1).padStart(2, '0')}-${String(value.getDate()).padStart(2, '0')}`;
@@ -70,9 +70,9 @@ export function SeasonCalendar({ games }: { games: CalendarGame[] }) {
         <h2>{date ? date.toLocaleDateString('it-IT', { day: 'numeric', month: 'long', year: 'numeric' }) : 'Seleziona un giorno'}</h2>
         {selectedGames.length ? <div className="calendar-games">{selectedGames.map((game) => {
           const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(game.address || game.venue)}`;
-          const content = <><span>{game.competition} · {game.time || 'Orario da definire'}</span><strong>{game.home} <b>{game.isFriendly ? 'vs' : `${game.homeScore ?? '–'} : ${game.awayScore ?? '–'}`}</b> {game.away}</strong>{game.isNerone && <em>{game.isHome ? <House size={15} /> : <Car size={15} />}{game.isHome ? 'Casa' : 'Trasferta'}</em>}</>;
+          const content = <><span>{game.competition} · {game.time || 'Orario da definire'}</span><strong>{game.home} <b className={game.isFriendly ? 'calendar-versus' : 'calendar-score'}>{game.isFriendly ? 'vs' : `${game.homeScore ?? '–'} : ${game.awayScore ?? '–'}`}</b> {game.away}</strong>{game.isNerone && <em>{game.isHome ? <House size={15} /> : <Car size={15} />}{game.isHome ? 'Casa' : 'Trasferta'}</em>}</>;
           return <div key={game.id}>
-            {game.isNerone && !game.isFriendly ? <Link href={sitePath(`/partite/${game.id}`)}>{content}</Link> : content}
+            {game.isNerone && game.hasDetailPage ? <Link href={sitePath(`/partite/${game.id}`)}>{content}</Link> : content}
             {(game.address || game.venue) && <a className="calendar-venue" href={mapsUrl} target="_blank" rel="noreferrer"><MapPin size={14} />{game.venue}</a>}
           </div>;
         })}</div> : <p>Le partite appariranno qui appena sarà pubblicato il calendario ufficiale.</p>}

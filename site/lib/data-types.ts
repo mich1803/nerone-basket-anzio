@@ -4,7 +4,7 @@ export type RosterEntry = { season: string; competition: string; team_id: string
 export type Game = {
   id: string; date: string; time: string; status: string; home_team: string; away_team: string;
   home_score: number | null; away_score: number | null; venue: string; address: string;
-  instagram_url: string; social_urls: string[]; notes?: string; phase?: string; round?: string; competition: string;
+  instagram_url: string; youtube_url?: string; social_urls: string[]; notes?: string; phase?: string; round?: string; competition: string;
 };
 export type PlayerStat = {
   game_id: string; player_id: string; minutes: string; points: number; fouls: number;
